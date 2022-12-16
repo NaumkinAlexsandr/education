@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>BOM</title>
+  </head>
+  <body>
+    <div id="header" class="conteiner fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="../index.html"
+          ><h2 class="text-primary">Front-End</h2></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./html.html"><h4>HTML 5</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./css.html"><h4>CSS</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./scss.html"><h4>SCSS</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./js.html"><h4>JavaScript</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./dom.html"><h4>DOM</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./bom.html"><h4>BOM</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./http.html"><h4>HTTP</h4> </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="dropdown show">
+            <a
+              class="btn dropdown-toggle"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Browser Object Model
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#properties">Свойства</a>
+              <a class="dropdown-item" href="#method">Методы</a>
+              <a class="dropdown-item" href="#"></a>
+              <a class="dropdown-item" href="#"></a>
+              <a class="dropdown-item" href="#"></a>
+              <a class="dropdown-item" href="#"></a>
+              <a class="dropdown-item" href="#"></a>
+              <a class="dropdown-item" href="#"></a>
+              <a class="dropdown-item" href="#"></a>
+              <a class="dropdown-item" href="#"></a>
+              <a class="dropdown-item" href="#"></a>
+              <a class="dropdown-item" href="#"></a>
+              <a class="dropdown-item" href="#"></a>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <div id="header-text" class="container-fluid">
+      <div class="row">
+        <h1 class="col-sm-12 text-center text-primary">Работа с BOM.</h1>
+      </div>
+    </div>
+    <!----------------------------------------------------->
+    <div id="window" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Window</h2></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span>Глобальный объект предоставляет переменные
+            и функции, доступные в любом месте программы. По умолчанию это те,
+            что встроены в язык или среду исполнения.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="properties" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Свойства.</h2></div>
+        <div class="col-sm-3"><h3>.closed</h3></div>
+        <div class="col-sm-9">
+          <p>Свойство, указывающее было ли текущее окно закрыто или нет.</p>
+        </div>
+        <div class="col-sm-3"><h3>.devicePixelRatio</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает соотношение между физическими пикселями и пикселями на
+            дисплее текущего устройства. <br />
+            console.log(window.devicePixelRatio);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.document</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает ссылку на содержащийся в окне документ. <br />
+            console.log(window.document);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.frameElement</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает элемент, в который встроено окно, или null, если оно не
+            встроено.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.frames</h3></div>
+        <div class="col-sm-9">
+          <p>Возвращает массив дополнительных фреймов в текущем окне.</p>
+        </div>
+        <div class="col-sm-3"><h3>.length</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает число фреймов в окне. <br />
+            console.log(window.length);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.fullScreen</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Это свойство указывает, отображается ли окно в полноэкранном режиме
+            или нет.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.history</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Предоставляет интерфейс для манипулирования историей сессии
+            браузера. <br />
+            Переход на прошлую страницу - history.back(); <br />
+            Переход на последнюю страницу - history.go();
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.localStorage</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает ссылку на локальный объект хранилища, используемый для
+            хранения данных, которые могут быть доступны только первоисточникам,
+            создавшим их. <br />
+            console.log(window.localStorage);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.location</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Получает/устанавливает расположение или текущий URL для текущего
+            объекта окна. <br />
+            console.log(window.location);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.locationbar</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает объект locationbar, который может быть добавлен и убран
+            из окна. <br />
+            console.log(window.locationbar);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.menubar</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает объект menubar, который может быть добавлен и убран из
+            окна. <br />
+            console.log(window.menubar);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.personalbar</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает объект personalbar, который может быть добавлен и убран
+            из окна. <br />
+            console.log(window.personalbar);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.scrollbars</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает объект scrollbars, который может быть добавлен и убран из
+            окна. <br />
+            console.log(window.scrollbars);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.statusbar</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает объект statusbar, который может быть добавлен и убран из
+            окна. <br />
+            console.log(window.statusbar);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.toolbar</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает объект toolbar, который может быть добавлен и убран из
+            окна. <br />
+            console.log(window.toolbar);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.name</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Получает/устанавливает имя для окна. <br />
+            window.name = 'Hello World!'; <br />
+            console.log(window.name);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.navigator</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает ссылку на объект, содержащий информацию о приложении,
+            запустившем скрипт.<br />
+            console.log(window.navigator);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.opener</h3></div>
+        <div class="col-sm-9">
+          <p>Возвращает ссылку на окно, открывшее текущее окно.</p>
+        </div>
+        <div class="col-sm-3"><h3>.orientation</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает ориентацию в градусах (с зависимостью от 90 градусов).
+            <br />
+            console.log(screen.orientation);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.sessionStorage</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает ссылку на объект хранения сессии, используемый для
+            хранения данных, которые могут быть получены только источником,
+            создавшим их. <br />
+            console.log(window.sessionStorage);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.parent</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает ссылку на родителя текущего окна или встроенного фрейма.
+            Если у объекта window нет родителя, то свойство данного объекта
+            будет ссылаться на сам объект. <br />
+            console.log(window.parent);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.innerHeight</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Получает высоту области содержимого окна браузера, включая, если
+            есть, горизонтальный скроллбар. <br />
+            console.log(window.innerHeight + 'px');
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.innerWidth</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Получает ширину области содержимого окна браузера, включая, если
+            есть, вертикальный скроллбар.<br />
+            console.log(window.innerWidth + 'px');
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.outerHeight</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Получает высоту вместе с внешней частью окна. <br />
+            console.log(window.outerHeight);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.outerWidth</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Получает ширину вместе с внешней частью окна. <br />
+            console.log(window.outerWidth);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.screen</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает ссылку на объект экрана, ассоциируемый с окном. <br />
+            console.log(window.screen);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.screenX</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает горизонтальный размер левой рамки браузера пользователя с
+            левой стороны экрана.<br />
+            console.log(window.screenX);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.screenY</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает вертикальный размер верхней рамки браузера пользователя с
+            верхней стороны экрана.<br />
+            console.log(window.screenY);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.scrollMaxX</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Максимальный отступ, на который может быть проскроллено окно по
+            горизонтали.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.scrollMaxY</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Максимальный отступ, на который может быть проскроллено окно по
+            вертикали.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.pageXOffset</h3></div>
+        <div class="col-sm-9"><p>Псевдоним для window.scrollX.</p></div>
+        <div class="col-sm-3"><h3>.pageYOffset</h3></div>
+        <div class="col-sm-9"><p>Псевдоним для window.scrollY</p></div>
+        <div class="col-sm-3"><h3>.scrollX</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает число пикселей, на которое документ уже был проскроллен
+            по горизонтали.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.scrollY</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает число пикселей, на которое документ уже был проскроллен
+            по вертикали.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.speechSynthesis</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает объект, который является точкой входа для использования
+            Web Speech API, функциональности для речевого синтеза. <br />
+            console.log(window.speechSynthesis);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.top</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает ссылку на самое первое окно в иерархии текущих окон.
+            <br />
+            console.log(window.top);
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.console</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает ссылку на объект консоли, обеспечивающего доступ к
+            консоли браузера.
+          </p>
+        </div>
+        <div class="col-sm-12"><h3>Методы console</h3></div>
+        <div class="col-sm-3"><h3>.assert()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Выводит в консоль сообщение и стек вызова метода, если первый
+            аргумент false.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.clear()</h3></div>
+        <div class="col-sm-9"><p>Очистка консоли.</p></div>
+        <div class="col-sm-3"><h3>.count()</h3></div>
+        <div class="col-sm-9">
+          <p>Выводит количество вызовов метода с определённой меткой.</p>
+        </div>
+        <div class="col-sm-3"><h3>.countReset()</h3></div>
+        <div class="col-sm-9">
+          <p>Обнуляет значение счётчика с заданным значением.</p>
+        </div>
+        <div class="col-sm-3"><h3>.dir()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Отображает интерактивный список свойств указанного объекта. Этот
+            список позволит вам посмотреть дочерние объекты и их свойства.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.dirxml()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Отображает представление указанного объекта в XML/HTML-виде, если
+            это возможно.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.error()</h3></div>
+        <div class="col-sm-9"><p>Выводит сообщение об ошибке.</p></div>
+        <div class="col-sm-3"><h3>.group()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Создаёт новую группировку сообщений, сдвигая все следующие выводимые
+            строки вправо на один уровень. Для завершения группы вызовите
+            groupEnd().
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.groupCollapsed()</h3></div>
+        <div class="col-sm-9">
+          <p>Также как и group, только выводится в закрытом виде.</p>
+        </div>
+        <div class="col-sm-3"><h3>.groupEnd()</h3></div>
+        <div class="col-sm-9"><p>Выход из текущей группы.</p></div>
+        <div class="col-sm-3"><h3>.info()</h3></div>
+        <div class="col-sm-9"><p>Информационное сообщение.</p></div>
+        <div class="col-sm-3"><h3>.log()</h3></div>
+        <div class="col-sm-9"><p>Общий метод вывода информации.</p></div>
+        <div class="col-sm-3"><h3>.profile()</h3></div>
+        <div class="col-sm-9">
+          <p>Запускает профайлер, встроенный в браузер.</p>
+        </div>
+        <div class="col-sm-3"><h3>.profileEnd()</h3></div>
+        <div class="col-sm-9"><p>Останавливает профайлер.</p></div>
+        <div class="col-sm-3"><h3>.table()</h3></div>
+        <div class="col-sm-9">
+          <p>Отображает табличные данные в виде таблицы.</p>
+        </div>
+        <div class="col-sm-3"><h3>.time()</h3></div>
+        <div class="col-sm-9">
+          <p>Запускает таймер с именем из переданного параметра.</p>
+        </div>
+        <div class="col-sm-3"><h3>.timeStamp()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Ставит маркер в браузерном инструменте измерения производительности
+            Timeline или Waterfall.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.timeEnd()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Останавливает указанный таймер и записывает в лог, сколько прошло
+            секунд от его старта.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>.trace()</h3></div>
+        <div class="col-sm-9"><p>Вывод трассировки стека.</p></div>
+        <div class="col-sm-3"><h3>.warn()</h3></div>
+        <div class="col-sm-9"><p>Выводит предупреждающее сообщение.</p></div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="method" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Методы</h2></div>
+        <div class="col-sm-3"><h3>.alert()</h3></div>
+        <div class="col-sm-9">
+          <p>Отображает предупреждающее диалоговое окно.</p>
+          <button onclick="bomAlert()">Нажми</button>
+        </div>
+        <div class="col-sm-3"><h3>.prompt()</h3></div>
+        <div class="col-sm-9">
+          <p>Возвращает текст, введённый пользователем в диалоге подсказки.</p>
+          <button onclick="bomPrompt()">Нажми</button>
+        </div>
+        <div class="col-sm-3"><h3>.confirm()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Отображает диалог с сообщением, на которое пользователь должен
+            ответить.
+          </p>
+          <button onclick="bomConfirm()">Нажми</button>
+        </div>
+        <div class="col-sm-3"><h3>blur()</h3></div>
+        <div class="col-sm-9"><p>Убирает фокус с окна.</p></div>
+        <div class="col-sm-3"><h3>.focus()</h3></div>
+        <div class="col-sm-9"><p>Устанавливает фокус на текущем окне.</p></div>
+        <div class="col-sm-3"><h3>.close()</h3></div>
+        <div class="col-sm-9"><p>Закрывает текущее окно.</p></div>
+        <div class="col-sm-3"><h3>.clearImmediate()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Отменяет повторяющееся исполнение, установленное с помощью
+            setImmediate.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>setImmediate()</h3></div>
+        <div class="col-sm-9">
+          <p>Исполняет функцию после того, как браузер некую тяжёлую задачу.</p>
+        </div>
+        <div class="col-sm-3"><h3>.clearInterval()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Отменяет повторяющееся исполнение, установленное с помощью
+            .setInterval()
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>setInterval()</h3></div>
+        <div class="col-sm-9">
+          <p>Назначает выполнение функции каждые X миллисекунд.</p>
+        </div>
+        <div class="col-sm-3"><h3>.clearTimeout()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Отменяет повторяющееся исполнение, установленное с помощью
+            .setTimeout().
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>setTimeout()</h3></div>
+        <div class="col-sm-9">
+          <p>Устанавливает отложенное выполнение функции.</p>
+        </div>
+        <div class="col-sm-3"><h3>getComputedStyle()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает объект, содержащий значения всех CSS-свойств элемента.
+            <br />
+            const element = document.getElementById("ID element");<br />
+            const style = window.getComputedStyle(element, null);<br />
+            console.log(style)
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>getDefaulComputedStyle()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Получает подсчитанные стили по умолчанию для определённого элемента,
+            игнорируя авторские стили.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>getSelection()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает выбранный объект, представляющий выбранный элемент(ы).
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>matchMedia()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Возвращает объект MediaQueryList, представляющий указанную строку
+            медиавыражения.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>moveBy()</h3></div>
+        <div class="col-sm-9">
+          <p>Сдвигает текущее окно на определённое значение.</p>
+        </div>
+        <div class="col-sm-3"><h3>moveTo()</h3></div>
+        <div class="col-sm-9">
+          <p>Сдвигает окно до определённых координат.</p>
+        </div>
+        <div class="col-sm-3"><h3>open()</h3></div>
+        <div class="col-sm-9"><p>Открывает новое окно.</p></div>
+        <div class="col-sm-3"><h3>openDialog()</h3></div>
+        <div class="col-sm-9"><p>Открывает новое диалоговое окно.</p></div>
+        <div class="col-sm-3"><h3>postMessage()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Предоставляет безопасный способ для одного окна передать строку с
+            данными в другое окно, которое должно находиться в пределах того же
+            домена, что и первое.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>print()</h3></div>
+        <div class="col-sm-9">
+          <p>Открывает Print Dialog для распечатки текущего документа.</p>
+        </div>
+        <div class="col-sm-3"><h3>resizeBy()</h3></div>
+        <div class="col-sm-9">
+          <p>Меняет размер текущего окна на определённое число.</p>
+        </div>
+        <div class="col-sm-3"><h3>resizeTo()</h3></div>
+        <div class="col-sm-9"><p>Динамически меняет размер окна.</p></div>
+        <div class="col-sm-3"><h3>scroll()</h3></div>
+        <div class="col-sm-9">
+          <p>Прокручивает окно до определенного места в документе.</p>
+        </div>
+        <div class="col-sm-3"><h3>scrollBy()</h3></div>
+        <div class="col-sm-9">
+          <p>Прокручивает документ в окна на данное число.</p>
+        </div>
+        <div class="col-sm-3"><h3>scrollTo()</h3></div>
+        <div class="col-sm-9">
+          <p>Прокручивает до заданных координат в документе.</p>
+        </div>
+        <div class="col-sm-3"><h3>scrollByLines()</h3></div>
+        <div class="col-sm-9">
+          <p>Прокручивает документ на данное число строк.</p>
+        </div>
+        <div class="col-sm-3"><h3>scrollByPages()</h3></div>
+        <div class="col-sm-9">
+          <p>Прокручивает документ на данное число страниц.</p>
+        </div>
+        <div class="col-sm-3"><h3>showModalDialog()</h3></div>
+        <div class="col-sm-9"><p>Отображает модальный диалог.</p></div>
+        <div class="col-sm-3"><h3>sizeToContent()</h3></div>
+        <div class="col-sm-9">
+          <p>Подгоняет размер окна под его содержимое.</p>
+        </div>
+        <div class="col-sm-3"><h3>stop()</h3></div>
+        <div class="col-sm-9"><p>Останавливает загрузку страницы.</p></div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2></h2></div>
+        <div class="col-sm-12"><p></p></div>
+        <div class="col-sm-3"><h3></h3></div>
+        <div class="col-sm-9"><p></p></div>
+        <div class="col-sm-3"><h3></h3></div>
+        <div class="col-sm-9"><p></p></div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2></h2></div>
+        <div class="col-sm-12"><p></p></div>
+        <div class="col-sm-3"><h3></h3></div>
+        <div class="col-sm-9"><p></p></div>
+        <div class="col-sm-3"><h3></h3></div>
+        <div class="col-sm-9"><p></p></div>
+      </div>
+    </div>
+    <br />
+    <div id="back-top"><a href="#"></a></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/page_bom.js"></script>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+/*! For license information please see index.js.LICENSE.txt */
+(self.webpackChunkweb=self.webpackChunkweb||[]).push([["index"],{"./src/js/script.js":()=>{$((function(){$('a[href^="#"]').click((function(){var s=$(this).attr("href");return $("html, body").animate({scrollTop:$(s).offset().top-140},1e3),!1}))}))}},s=>{var e;e="./src/js/script.js",s(s.s=e)}]);

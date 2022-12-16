@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>SCSS</title>
+  </head>
+  <body>
+    <div id="header" class="conteiner fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="../index.html"
+          ><h2 class="text-primary">Front-End</h2></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./html.html"><h4>HTML 5</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./css.html"><h4>CSS</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./scss.html"><h4>SCSS</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./js.html"><h4>JavaScript</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./dom.html"><h4>DOM</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./bom.html"><h4>BOM</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./http.html"><h4>HTTP</h4> </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="dropdown show">
+            <a
+              class="btn dropdown-toggle"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              SCSS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <h6>Директивы</h6>
+              <a class="dropdown-item" href="#import">@import</a>
+              <a class="dropdown-item" href="#media">@media</a>
+              <a class="dropdown-item" href="#extend">@extend</a>
+              <a class="dropdown-item" href="#at-root">@at-root</a>
+              <a class="dropdown-item" href="#debug">@debug</a>
+              <a class="dropdown-item" href="#warn">@warn</a>
+              <a class="dropdown-item" href="#error">@error</a>
+              <h6>Выражения</h6>
+              <a class="dropdown-item" href="#if">@if</a>
+              <a class="dropdown-item" href="#for">@for</a>
+              <a class="dropdown-item" href="#each">@each</a>
+              <a class="dropdown-item" href="#while">@while</a>
+              <h6>Mixin</h6>
+              <a class="dropdown-item" href="#mixin">mixin</a>
+              <a class="dropdown-item" href="#argument">Аргументы</a>
+              <a class="dropdown-item" href="#content"
+                >Блоки контента в миксинах</a
+              >
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <div id="header-text" class="container-fluid">
+      <div class="row">
+        <h1 class="col-sm-12 text-center text-primary">Работа с SCSS.</h1>
+      </div>
+    </div>
+    <div id="directives" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Sass позволяет использовать функции
+            недоступные в самом CSS, например, переменные, вложенности, миксины,
+            наследование и другие приятные вещи, возвращающие удобство написания
+            CSS.
+          </p>
+        </div>
+        <div class="col-sm-12"><h2>Директивы.</h2></div>
+        <div id="import" class="col-sm-12"><h3>@import</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span>Sass расширяет CSS правило1 @import,
+            позволяя импортировать scss и sass файлы. Все импортированные scss и
+            sass файлы могут быть объединены в одном результирующем css файле.
+            Кроме того, любые переменные или миксины, объявленные в
+            импортированном файле, могут использоваться в главном файле.
+            <br />
+            <span class="one"></span>Компилятор ищет другие файлы sass в текущей
+            папке, и в каталоге файлов sass при использовании в Rack, Rails или
+            Merb. Дополнительные каталоги поиска могут задаваться с помощью
+            опции :load_paths или ключ --load-path в командной строке. <br />
+            <span class="one"></span> @import использует название файла для
+            импорта. По умолчанию, @import ищет Sass-файлы, но есть несколько
+            правил, по которым @import отрабатывает как CSS-правило:
+            <br />
+            <span class="two"></span> Если расширение файла .css <br />
+            <span class="two"></span> Если имя файла начинается с http:// <br />
+            <span class="two"></span> Если имя файла вызывается через url()
+            <br />
+            <span class="two"></span> Если правило @import включает в себя любые
+            медиа-запросы <br />
+            <span class="two"></span> Если ни одно из вышеперечисленных условий
+            не соблюдено, а расширение файлов .scss или .sass, то эти файлы
+            будут импортированы. Если расширения файлов не указаны, то Sass
+            попытается найти файлы по имени с расширением .scss или .sass и
+            импортирует их. Например:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            @import "foo.css"; <br />
+            @import "foo" screen; <br />
+            @import "http://foo.com/bar"; <br />
+            @import url(foo);
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            @import "foo.css"; <br />
+            @import "foo" screen; <br />
+            @import "http://foo.com/bar"; <br />
+            @import url(foo);
+          </p>
+        </div>
+        <div id="media" class="col-sm-12"><h3>@media</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Директива @media работает так же, как и
+            стандартное правило CSS, только с дополнительными возможностями:
+            директива может вкладываться в правила CSS. Если директива вложена в
+            css-правило, то при компиляции она будет поднята наверх таблицы
+            стилей, а все селекторы в которых была директива переместятся внутрь
+            @media. Такой метод позволяет легко добавлять правила в @media без
+            повторения селекторов или нарушения потока таблицы стилей. Например:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            .sidebar { <br />
+            <span class="one">width: 300px;</span> <br />
+            <span class="one">
+              @media screen and (orientation: landscape) {</span
+            >
+            <br />
+            <span class="two">width: 500px;</span> <br />
+            <span class="one"> }</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            .sidebar { <br />
+            <span class="one">width: 300px; </span> <br />
+            } <br />
+            @media screen and (orientation: landscape) { <br />
+            <span class="one">.sidebar {/span> </span><br />
+            <span class="two">width: 500px; </span> <br />
+            <span class="one"> }</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Запросы могут вкладываться друг в друга.
+            После компиляции эти @media будут объединены оператором and.
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss<br />
+            @media screen { <br />
+            <span class="one">.sidebar {</span> <br />
+            <span class="two">@media (orientation: landscape) {</span> <br />
+            <span class="three"> width: 500px;</span> <br />
+            <span class="two">}</span> <br />
+            <span class="one">}</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            @media screen and (orientation: landscape) {
+            <span class="one">.sidebar {</span> <br />
+            <span class="two">width: 500px; </span> <br />
+            <span class="one">} </span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Ну и, наконец, @media запросы могут
+            содержать в себе все возможности SassScript (включая переменные,
+            функции и операторы) в именах компонентов и различных значений.
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            $media: screen; <br />
+            $feature: -webkit-min-device-pixel-ratio;<br />
+            $value: 1.5;<br />
+            @media #{$media} and ($feature: $value) {<br />
+            <span class="one">.sidebar {</span> <br />
+            <span class="two"> width: 500px;</span> <br />
+            <span class="one">}</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            @media screen and (-webkit-min-device-pixel-ratio: 1.5) { <br />
+            <span class="one">.sidebar {</span> <br />
+            <span class="two">width: 500px; </span> <br />
+            <span class="one">} </span> <br />
+            }
+          </p>
+        </div>
+        <div id="extend" class="col-sm-12"><h3>@extend</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Допустим, у нас есть дизайн обычной ошибки
+            и серьезной ошибки. Мы используем такой вариант разметки:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            .error { <br />
+            <span class="one">border: 1px #f00;</span> <br />
+            <span class="one">background-color: #fdd;</span> <br />
+            } <br />
+            .seriousError { <br />
+            <span class="one">@extend .error;</span> <br />
+            <span class="one">border-width: 3px;</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            .error, .seriousError { <br />
+            <span class="one">border: 1px #f00;</span> <br />
+            <span class="one">background-color: #fdd;</span> <br />
+            } <br />
+            .seriousError {<br />
+            <span class="one"> border-width: 3px;</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span>Одиночный селектор может быть расширен
+            больше, чем одним селектором. Это означает, что он наследует все
+            стили всех расширяющих селекторов.
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            .error {<br />
+            <span class="one">border: 1px #f00;</span> <br />
+            <span class="one">background-color: #fdd;</span> <br />
+            } <br />
+            .attention {<br />
+            <span class="one"> font-size: 3em;</span> <br />
+            <span class="one"> background-color: #ff0;</span> <br />
+            } <br />
+            .seriousError {<br />
+            <span class="one"> @extend .error;</span> <br />
+            <span class="one">@extend .attention;</span> <br />
+            <span class="one">border-width: 3px;</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            .error, .seriousError {<br />
+            <span class="one"> border: 1px #f00;</span> <br />
+            <span class="one"> background-color: #fdd;</span> <br />
+            } <br />
+            .attention, .seriousError {<br />
+            <span class="one">font-size: 3em;</span> <br />
+            <span class="one"> background-color: #ff0; </span> <br />
+            } <br />
+            .seriousError {<br />
+            <span class="one"> border-width: 3px; </span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Цепное(последовательное) расширение
+            возможно для селектора, который расширяется другим селектором,
+            который, в свою очередь, расширяется третьим селектором.
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            .error { <br />
+            <span class="one">border: 1px #f00;</span> <br />
+            <span class="one">background-color: #fdd;</span> <br />
+            } <br />
+            .seriousError { <br />
+            <span class="one">@extend .error;</span> <br />
+            <span class="one"> border-width: 3px;</span> <br />
+            } <br />
+            .criticalError { <br />
+            <span class="one"> @extend .seriousError;</span> <br />
+            <span class="one">position: fixed;</span> <br />
+            <span class="one"> top: 10%;</span> <br />
+            <span class="one">bottom: 10%;</span> <br />
+            <span class="one">left: 10%;</span> <br />
+            <span class="one"> right: 10%;</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            .error, .seriousError, .criticalError { <br />
+            <span class="one">border: 1px #f00;</span> <br />
+            <span class="one"> background-color: #fdd; </span> <br />
+            } <br />
+            .seriousError, .criticalError { <br />
+            <span class="one"> border-width: 3px; </span> <br />
+            } <br />
+            .criticalError { <br />
+            <span class="one"> position: fixed;</span> <br />
+            <span class="one"> top: 10%;</span> <br />
+            <span class="one">bottom: 10%;</span> <br />
+            <span class="one">left: 10%;</span> <br />
+            <span class="one"> right: 10%; </span> <br />
+            }
+          </p>
+        </div>
+        <div id="at-root" class="col-sm-12"><h3>@at-root</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Изымает одно или несколько правил из
+            родительского селектора в корневой уровень документа. Такой способ
+            можно использовать с селекторами первого уровня вложения:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />.parent { <br />
+            <span class="one">...</span> <br />
+            <span class="one"> @at-root .child { ... } </span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            .parent { ... } <br />.child { ... }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Также этот способ может быть использован с
+            несколькими селекторами:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            .parent { <br />
+            <span class="one"> ...</span> <br />
+            <span class="one"> @at-root {</span> <br />
+            <span class="two">.child1 { ... }</span> <br />
+            <span class="two">.child2 { ... }</span> <br />
+            <span class="one">}</span> <br />
+            <span class="one">.step-child { ... }</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css
+            <br />.parent { ... } <br />.child1 { ... } <br />.child2 { ... }
+            <br />.parent .step-child { ... }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> По умолчанию @at-root изымает только
+            селекторы. Тем не менее, @at-root можно использовать и для изъятия
+            селекторов, вложенных в директивы, таких как @media. Например:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            @media print {<br />
+            <span class="one">.page { </span> <br />
+            <span class="two">width: 8in;</span> <br />
+            <span class="two">@at-root (without: media) {</span> <br />
+            <span class="three">color: red;</span> <br />
+            <span class="two">}</span> <br />
+            <span class="one">}</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            @media print { <br />
+            <span class="one">.page {</span> <br />
+            <span class="two"> width: 8in;</span> <br />
+            <span class="one">}</span> <br />
+            } .page { <br />
+            <span class="one">color: red;</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Вы можете использовать @at-root (without:
+            ...) для изъятия из любой директивы. Также вы можете изымать
+            селекторы сразу из нескольких директив, просто разделив их
+            пробелами: @at-root (without: media supports) изымет элементы из
+            запросов @media и @supports. <br />
+            <span class="one"></span> Существует два специальных значения у
+            @at-root, которые вы также можете использовать. "rule" относится к
+            обычным правилам CSS. <br />
+            <span class="one"></span> -Команда @at-root (without: rule) имеет
+            такое же значение, как и @at-root без запросов. <br />
+            <span class="one"></span> -Команда @at-root (without: all)
+            обозначает, что стили должны быть изъяты из всех директив и правил
+            CSS. <br />
+            <span class="one"></span> Если вы хотите указать какие директивы или
+            правила включать, а не список тех, которые должны быть изъяты, то вы
+            можете использовать with вместо without. Например, команда @at-root
+            (with: rule) означает, что необходимо изъять элементы из всех
+            директив, но не затрагивать вложенные правила CSS.
+          </p>
+        </div>
+        <div id="debug" class="col-sm-12"><h3>@debug</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Выводит значения функций Sass средствами
+            стандартного вывода ошибок. Это полезно для отладки функций Sass,
+            особенно для тех, что содержат сложную структуру данных.
+          </p>
+        </div>
+        <div id="warn" class="col-sm-12"><h3>@warn</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Выводит значения выражений Sass средствами
+            стандартного вывода ошибок. Данная директива полезна для библиотек,
+            которым нужно предупреждать пользователей об использовании
+            устаревших или восстановленных после незначительных ошибок миксинов.
+            Есть два основных различия между warn и debug: <br /><span
+              class="one"
+            ></span
+            >-Вы можете отключить отображение предупреждений флагом --quiet в
+            командной строке или опцией Sass :quiet. <br />
+            <span class="one"></span>-Предупреждение будет выведено вместе с
+            отрывком таблицы стилей, чтобы пользователь мог понять, где в коде
+            требуется его внимание.
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            @mixin adjust-location($x, $y) { <br />
+            <span class="one">@if unitless($x) {</span> <br />
+            <span class="two"
+              >@warn "Предположительно, значение задано в пикселях";</span
+            >
+            <br />
+            <span class="two">$x: 1px * $x;</span> <br />
+            <span class="one">}</span> <br />
+            <span class="one">@if unitless($y) {</span> <br />
+            <span class="two"
+              >@warn "Предположительно, значение задано в пикселях";</span
+            >
+            <br />
+            <span class="two">$y: 1px * $y;</span> <br />
+            <span class="one">}</span> <br />
+            <span class="one">position: relative; </span> <br />
+            <span class="one">left: $x; </span> <br />
+            <span class="one">top: $y;</span> <br />
+            }
+          </p>
+        </div>
+        <div id="error" class="col-sm-12"><h3>@error</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span>Отображает значение выражений и функций
+            Sass как фатальную ошибку, включая нормальную часть стека
+            трассировки. Эта директива полезна для проверки аргументов миксинов
+            и функций.
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            @mixin adjust-location($x, $y) { <br />
+            <span class="one"> @if unitless($x) {</span> <br />
+            <span class="two"
+              >@error "$x не может быть безразмерным, было .";</span
+            >
+            <br />
+            <span class="one"> } </span> <br />
+            <span class="one">@if unitless($y) {</span> <br />
+            <span class="two"
+              >@error "$y не может быть безразмерным, было .";</span
+            >
+            <br />
+            <span class="one">}</span> <br />
+            <span class="one"> position: relative; </span> <br />
+            <span class="one">left: $x; </span> <br />
+            <span class="one">top: $y;</span> <br />
+            }
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="expressions" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Выражения</h2></div>
+        <div id="if" class="col-sm-12"><h3>@if</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span>Директива @if принимает выражение
+            SassScript и использует стили, вложенные в неё в случае, если
+            выражение возвращает любое значение, кроме false или null:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            p { <br />
+            <span class="one"> @if 1 + 1 == 2 { </span> <br />
+            <span class="two"> border: 1px solid; </span> <br />
+            <span class="one">}</span> <br />
+            <span class="one"> @if 5 < 3 { </span> <br />
+            <span class="two">border: 2px dotted;</span> <br />
+            <span class="one">}</span> <br />
+            <span class="one"> @if null { </span> <br />
+            <span class="two">border: 3px double; </span> <br />
+            <span class="one">}</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            p { <br />
+            <span class="one"> border: 1px solid; </span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> После выражения @if может следовать
+            несколько выражений @else if и одно выражение @else. Если
+            выражение @if вернёт false, то будут производиться попытки
+            вычисления выражений @else if, пока одно из них не вернёт истину или
+            до достижения выражения @else.
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            $type: monster; <br />p { <br />
+            <span class="one"> @if $type == ocean {</span> <br />
+            <span class="two">color: blue;</span> <br />
+            <span class="one"> } @else if $type == matador {</span> <br />
+            <span class="two">color: red;</span> <br />
+            <span class="one">} @else if $type == monster {</span> <br />
+            <span class="two"> color: green;</span> <br />
+            <span class="one"> } @else {</span> <br />
+            <span class="two">color: black;</span> <br />
+            <span class="one">}</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            p { <br />
+            <span class="one">color: green; <br /></span>
+            }
+          </p>
+        </div>
+        <div id="for" class="col-sm-12"><h3>@for</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span>Директива @for выводит набор стилей
+            заданное число раз. Для каждого повторения используется
+            переменная-счётчик для изменения вывода.
+            <br />
+            <span class="one"></span> Директива имеет две формы: @for $var from
+            <начало> through <конец> и @for $var from <начало> to <конец>.
+            Заметьте различие в словах through и to. <br />
+            <span class="one"></span> $var может быть любым именем переменной,
+            таким как $i; <начало> и <конец> - выражения SassScript, которые
+            должны возвращать целые числа. Если <начало> больше, чем <конец>,
+            счётчик будет убывать, вместо того, чтобы расти. <br />
+            <span class="one"></span> Выражение @for устанавливает переменную
+            $var в каждое последующее значение в заданном диапазоне и каждый раз
+            выводит вложенные стили, используя очередное значение переменной
+            $var. Форма from ... through, диапазон включает значения <начало> и
+            <конец>, а форма from ... to не включает значение <конец>.
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            @for $i from 1 through 3 { <br />
+            <span class="one">.item-#{$i} { </span> <br />
+            <span class="two">width: 2em * $i; </span> <br />
+            <span class="one">}</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            .item-1 { <br />
+            <span class="one"> width: 2em; </span> <br />
+            } <br />
+            .item-2 {<br />
+            <span class="one"> width: 4em; </span> <br />
+            } <br />
+            .item-3 {<br />
+            <span class="one"> width: 6em; </span> <br />
+            }
+          </p>
+        </div>
+        <div id="each" class="col-sm-12"><h3>@each</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Директива @each обычно имеет вид @each
+            $var in <список или карта значений>. $var может быть любой
+            переменной, такой как $length или $name, и <список или карта
+            значений> - это выражение SassScript, возвращающее список или карту
+            значений. <br />
+            <span class="one"></span> Директива @each устанавливает $var в
+            каждое из значений списка или карты и выводит содержащиеся в ней
+            стили, используя соответствующее значение $var. Например:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />@each $animal in puma, sea-slug, egret, salamander {
+            <br />
+            <span class="one">.#{$animal}-icon {</span> <br />
+            <span class="two"
+              >background-image: url('/images/#{$animal}.png');</span
+            >
+            <br />
+            <span class="one">}</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            .puma-icon { <br />
+            <span class="one">background-image: url('/images/puma.png');</span>
+            <br />
+            }<br />
+            .sea-slug-icon { <br />
+            <span class="one"
+              >background-image: url('/images/sea-slug.png');
+            </span>
+            <br />
+            }<br />
+            .egret-icon { <br />
+            <span class="one"
+              >background-image: url('/images/egret.png');
+            </span>
+            <br />
+            }<br />
+            .salamander-icon { <br />
+            <span class="one"
+              >background-image: url('/images/salamander.png');
+            </span>
+            <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Директива @each также может использовать
+            несколько переменных по следующему принципу: @each $var1, $var2, ...
+            in <список>. Если <список> — это список списков, то значение каждого
+            элемента внутреннего списка будет назначено соответствующей
+            переменной. Например:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            @each $animal, $color, $cursor in (puma, black, default), <br />
+            <span class="three">(sea-slug, blue, pointer),</span> <br />
+            <span class="three">(egret, white, move) {</span> <br />
+            <span class="one">.#{$animal}-icon {</span> <br />
+            <span class="two"
+              >background-image: url('/images/#{$animal}.png');</span
+            >
+            <br />
+            <span class="two">border: 2px solid $color;</span> <br />
+            <span class="two"> cursor: $cursor;</span> <br />
+            <span class="one">}</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            .puma-icon {<br />
+            <span class="one">background-image: url('/images/puma.png');</span>
+            <br />
+            <span class="one">border: 2px solid black;</span> <br />
+            <span class="one">ursor: default; </span> <br />
+            c }<br />
+            .sea-slug-icon {<br />
+            <span class="one"
+              >background-image: url('/images/sea-slug.png');</span
+            >
+            <br />
+            <span class="one">border: 2px solid blue;</span> <br />
+            <span class="one">cursor: pointer; </span> <br />
+            }<br />
+            .egret-icon {<br />
+            <span class="one">background-image: url('/images/egret.png');</span>
+            <br />
+            <span class="one">border: 2px solid white;</span> <br />
+            <span class="one">cursor: move; </span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Так как мапы обрабатываются как списки или
+            пары значений, множественное присваивание с ними тоже работает.
+            Например:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            @each $header, $size in (h1: 2em, h2: 1.5em, h3: 1.2em) { <br />
+            <span class="one">#{$header} {</span> <br />
+            <span class="two">font-size: $size;</span> <br />
+            <span class="one">}</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            h1 { <br />
+            <span class="one"> font-size: 2em; </span> <br />
+            } <br />
+            h2 { <br />
+            <span class="one">font-size: 1.5em; </span> <br />
+            } <br />
+            h3 { <br />
+            <span class="one">font-size: 1.2em; </span> <br />
+            }
+          </p>
+        </div>
+        <div id="while" class="col-sm-12"><h3>@while</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span>Директива @while принимает выражение
+            SassScript и циклично выводит вложенные в неё стили, пока выражение
+            вычисляется как true. Она может быть использована для создания более
+            сложных циклов, чем тех, для которых подходит @for, хотя она бывает
+            необходима довольно редко. Например:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            $i: 6;<br />
+            @while $i > 0 {<br />
+            <span class="one">.item-#{$i} { width: 2em * $i; }</span> <br />
+            <span class="one">$i: $i - 2;</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            .item-6 {<br />
+            <span class="one">width: 12em;</span> <br />
+            } <br />
+            .item-4 {<br />
+            <span class="one">width: 8em; </span> <br />
+            } <br />
+            .item-2 {<br />
+            <span class="one">width: 4em;</span> <br />
+            }
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="mixin" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h3>Mixin</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Миксины объявляются директивой @mixin.
+            После неё должно стоять имя миксина и, опционально, его параметры, и
+            блок, содержащий тело миксина. Например, можно определить миксин
+            large-text следующим образом:
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            scss <br />
+            @mixin large-text { <br />
+            <span class="one"> font: {</span> <br />
+            <span class="two">family: Arial; </span><br />
+            <span class="two">size: 20px; </span><br />
+            <span class="two">weight: bold; </span><br />
+            <span class="one"> } </span> <br />
+            <span class="one"> color: #ff0000;</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Миксины могут также содержать селекторы,
+            возможно со свойствами. Селекторы даже могут содержать ссылки на
+            родителя. Например:
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            scss <br />
+            @mixin clearfix { <br />
+            <span class="one">display: inline-block;</span> <br />
+            <span class="one"> &:after {</span> <br />
+            <span class="two"> content: ".";</span> <br />
+            <span class="two">display: block;</span> <br />
+            <span class="two"> height: 0;</span> <br />
+            <span class="two"> clear: both;</span> <br />
+            <span class="two">visibility: hidden;</span> <br />
+            <span class="one">}</span> <br />
+            <span class="one">* html & { </span> <br />
+            <span class="two">height: 1px </span> <br />
+            <span class="one"> }</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Миксины вызываются в документ директивой
+            @include. Она принимает имя миксина и, опционально, передаваемые в
+            него аргументы, включает стили, определённые этим миксином, в
+            текущее правило. Например:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            .page-title { <br />
+            <span class="one">@include large-text;</span> <br />
+            <span class="one"> padding: 4px;</span> <br />
+            <span class="one">margin-top: 10px;</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            .page-title { <br />
+            <span class="one">font-family: Arial;</span> <br />
+            <span class="one">font-size: 20px;</span> <br />
+            <span class="one">font-weight: bold;</span> <br />
+            <span class="one">color: #ff0000;</span> <br />
+            <span class="one">padding: 4px;</span> <br />
+            <span class="one">margin-top: 10px;</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Миксины могут быть также вызваны вне
+            какого-либо правила (то есть в корне документа), при условии, что
+            они не определяют непосредственно правил и не используют ссылку на
+            родителя. Например:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            @mixin silly-links { <br />
+            <span class="one"> a {</span> <br />
+            <span class="two"> color: blue;</span> <br />
+            <span class="two"> background-color: red;</span> <br />
+            <span class="one">}</span> <br />
+            } <br />
+            @include silly-links;
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            a { <br />
+            <span class="one">color: blue;</span> <br />
+            <span class="one">background-color: red;</span> <br />
+            }
+          </p>
+        </div>
+        <div id="argument" class="col-sm-12"><h3>Аргументы.</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Миксины могут принимать значения
+            SassScript как аргументы, которые передаются при подключении миксина
+            и становятся доступными как переменные внутри него. <br />
+            <span class="one"></span> При определении миксина, аргументы пишутся
+            как имена переменных, разделённые запятыми внутри круглых скобок
+            сразу после имени. Затем, при подключении миксина, значения могут
+            быть переданы аналогичным образом. Например:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            @mixin sexy-border($color, $width) { <br />
+            <span class="one"> border: { </span> <br />
+            <span class="two">color: $color;</span> <br />
+            <span class="two">width: $width;</span> <br />
+            <span class="two">style: dashed;</span> <br />
+            <span class="one"> }</span> <br />
+            } <br />
+            p { <br />
+            <span class="one">@include sexy-border(blue, 1in); </span> <br />
+
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            p { <br />
+            <span class="one">border-color: blue;</span> <br />
+            <span class="one"> border-width: 1in;</span> <br />
+            <span class="one"> border-style: dashed;</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> В миксинах также можно определять значения
+            аргументов по умолчанию, используя обычный синтаксис установки
+            значений переменных. Затем, при подключении миксина, если ему не
+            будет передан аргумент, то будет использовано значение по умолчанию.
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            @mixin sexy-border($color, $width: 1in) { <br />
+            <span class="one">border: {</span> <br />
+            <span class="two">color: $color; </span> <br />
+            <span class="two">width: $width;</span> <br />
+            <span class="two">style: dashed;</span> <br />
+            <span class="one">}</span> <br />
+            } <br />
+            p { <br />
+            <span class="one">@include sexy-border(blue); </span> <br />
+            } <br />
+            h1 { <br />
+            <span class="one">@include sexy-border(blue, 2in);</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />p { <br />
+            <span class="one">border-color: blue;</span> <br />
+            <span class="one">border-width: 1in;</span> <br />
+            <span class="one"> border-style: dashed;</span> <br />
+            } <br />
+            h1 { <br />
+            <span class="one">border-color: blue;</span> <br />
+            <span class="one">border-width: 2in;</span> <br />
+            <span class="one"> border-style: dashed;</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12"><h3>Именованные аргументы.</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Миксины также можно вызывать используя
+            явно именованные аргументы. Например, вышеуказанный пример мог бы
+            быть записан как:
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            scss <br />p { <br />
+            <span class="one">@include sexy-border($color: blue);</span> <br />
+            }
+            <br />
+            h1 { <br />
+            <span class="one"
+              >@include sexy-border($color: blue, $width: 2in);</span
+            >
+            <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Данный способ записи делает код менее
+            кратким, но более читабельным. Также он позволяет функциям
+            представлять более гибкие интерфейсы: большое количество параметров
+            у функции не усложняет её вызов.
+            <br />
+            <span class="one"></span> Именованные аргументы можно передавать в
+            любом порядке, аргументы, имеющие значения по-умолчанию, могут быть
+            пропущены. Так как именованные аргументы - это имена переменных,
+            символы подчёркивания и дефисы могут быть использованы как
+            взаимозаменяемые.
+          </p>
+        </div>
+        <div class="col-sm-12"><h3>Переменные в аргументах.</h3></div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Иногда имеет смысл миксину или функции
+            принимать неизвестное количество аргументов. Например, миксин для
+            создания тени блока может принимать любое количество значений тени.
+            Для подобных ситуаций Sass поддерживает возможность передачи
+            "переменных аргументов" - это такие аргументы, которые передаются
+            последними в функцию или миксин, получают все остальные переданные
+            параметры и упаковывают их в список. Эти аргументы выглядят как
+            обычные, но после них следует многоточие. Например:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            @mixin box-shadow($shadows...) { <br />
+            <span class="one">-moz-box-shadow: $shadows;</span> <br />
+            <span class="one">-webkit-box-shadow: $shadows;</span> <br />
+            <span class="one">box-shadow: $shadows; </span> <br />
+            } <br />
+            .shadows { <br />
+            <span class="one"
+              >@include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);</span
+            >
+            <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            .shadows { <br />
+            <span class="one"
+              >-moz-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+            </span>
+            <br />
+            <span class="one"
+              >-webkit-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+            </span>
+            <br />
+            <span class="one">
+              box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;</span
+            >
+            <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Переменные аргументы также можно
+            использовать в миксинах. Используя тот же синтаксис, можно
+            развернуть список значений так, что каждое значение будет передано
+            как отдельный параметр или развернуть карту значений так, что каждая
+            пара будет трактована как именованный аргумент. Например:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            @mixin colors($text, $background, $border) { <br />
+            <span class="one">color: $text;</span> <br />
+            <span class="one">background-color: $background;</span> <br />
+            <span class="one">border-color: $border; </span> <br />
+            } <br />
+            $values: #ff0000, #00ff00, #0000ff; <br />
+            .primary { <br />
+            <span class="one">@include colors($values...);</span> <br />
+            } <br />
+            $value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
+            <br />
+            .secondary { <br />
+            <span class="one">@include colors($value-map...);</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            .primary { <br />
+            <span class="one">color: #ff0000;</span> <br />
+            <span class="one">background-color: #00ff00;</span> <br />
+            <span class="one">border-color: #0000ff;</span> <br />
+            } <br />
+            .secondary { <br />
+            <span class="one">color: #00ff00;</span> <br />
+            <span class="one">background-color: #0000ff;</span> <br />
+            <span class="one"> border-color: #ff0000;</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Вы можете использовать переменные
+            аргументы для того, чтобы обернуть миксин и добавить в него
+            дополнительные стили, не меняя сигнатуру аргументов этого миксина.
+            Если вы это сделаете, то именованные аргументы будут непосредственно
+            переданы в обёрнутый миксин:
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            scss<br />
+            @mixin wrapped-stylish-mixin($args...) { <br />
+            <span class="one">font-weight: bold;</span> <br />
+            <span class="one"> @include stylish-mixin($args...);</span> <br />
+            } <br />
+            .stylish { <br />
+            <span class="one"
+              >// Аргумент $width будет получен миксином "stylish-mixin" как
+              именованный</span
+            >
+            <br />
+            <span class="one"
+              >@include wrapped-stylish-mixin(#00ff00, $width: 100px);</span
+            >
+            <br />
+            }
+          </p>
+        </div>
+        <div id="content" class="col-sm-12">
+          <h3>Блоки контента в миксинах.</h3>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Существует возможность передачи блока
+            стилей в миксин, которые будут расположены среди стилей,
+            подключаемых этим миксином. Эти стили будут размещены вместо
+            директив @content, расположенных внутри миксина. Это даёт
+            возможность создания абстракций, зависящих от конструкций селекторов
+            или директив. Например:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            @mixin apply-to-ie6-only { <br />
+            <span class="one">* html {</span> <br />
+            <span class="one"> @content;</span> <br />
+            <span class="one">}</span> <br />
+            } <br />
+            @include apply-to-ie6-only { <br />
+            <span class="one">#logo {</span> <br />
+            <span class="two">background-image: url(/logo.gif);</span> <br />
+            <span class="one"> }</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css
+            <br />
+            * html #logo { <br />
+            <span class="one">background-image: url(/logo.gif);</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Блоки контента, переданные в миксин,
+            вычисляются в той же области видимости, где определён этот блок, а
+            не миксин. Это значит, что локальные переменные миксина не могут
+            быть использованы в передаваемом блоке контента и переменные будут
+            восприняты как глобальные:
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            scss <br />
+            $color: white; <br />
+            @mixin colors($color: blue) { <br />
+            <span class="one">background-color: $color;</span> <br />
+            <span class="one">@content;</span> <br />
+            <span class="one">border-color: $color;</span> <br />
+            } <br />
+            .colors { <br />
+            <span class="one">@include colors {</span> <br />
+            <span class="two"> color: $color;</span> <br />
+            <span class="one">}</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p>
+            css <br />
+            .colors { <br />
+            <span class="one">background-color: blue;</span> <br />
+            <span class="one"> color: white;</span> <br />
+            <span class="one">border-color: blue;</span> <br />
+            }
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            <span class="one"></span> Кроме того, это означает, что переменные и
+            миксины, которые используются в передаваемом блоке, зависят от
+            других стилей, вблизи которых блок объявлен:
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            scss <br />
+            #sidebar { <br />
+            <span class="one">$sidebar-width: 300px;</span> <br />
+            <span class="one">width: $sidebar-width;</span> <br />
+            <span class="one"> @include smartphone {</span> <br />
+            <span class="two"> width: $sidebar-width / 3;</span> <br />
+            <span class="one">}</span> <br />
+            }
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="back-top"><a href="#"></a></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+  </body>
+</html>

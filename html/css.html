@@ -1,0 +1,2904 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>CSS</title>
+  </head>
+  <body>
+    <div id="header" class="conteiner fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="../index.html"
+          ><h2 class="text-primary">Front-End</h2></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./html.html"><h4>HTML 5</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./css.html"><h4>CSS</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./scss.html"><h4>SCSS</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./js.html"><h4>JavaScript</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./dom.html"><h4>DOM</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./bom.html"><h4>BOM</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./http.html"><h4>HTTP</h4> </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="dropdown show">
+            <a
+              class="btn dropdown-toggle"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Элементы CSS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#css_background">Работа с фоном</a>
+              <a class="dropdown-item" href="#css_font">Работа с шрифтами</a>
+              <a class="dropdown-item" href="#css_text">Работа с текстом</a>
+              <a class="dropdown-item" href="#css_otherText"
+                >Дополнительные свойства для текста</a
+              >
+              <a class="dropdown-item" href="#css_list">Работа с макросом</a>
+              <a class="dropdown-item" href="#css_size">Размеры элемента</a>
+              <a class="dropdown-item" href="#css_position">Позиционирование</a>
+              <a class="dropdown-item" href="#css_display"
+                >Отображение элементов</a
+              >
+              <a class="dropdown-item" href="#css_flex">Flex</a>
+              <a class="dropdown-item" href="#css_grid">Grid</a>
+              <a class="dropdown-item" href="#css_otherElement"
+                >Размещение элементов</a
+              >
+              <a class="dropdown-item" href="#css_margin"
+                >Блочная модель. Margin</a
+              >
+              <a class="dropdown-item" href="#css_padding">Padding </a>
+              <a class="dropdown-item" href="#css_border">Border </a>
+              <a class="dropdown-item" href="#css_animation">Анимация</a>
+              <a class="dropdown-item" href="#css_transform">Трансформация</a>
+              <a class="dropdown-item" href="#css_transition">Переходы</a>
+              <a class="dropdown-item" href="#css_img">Изображения</a>
+              <a class="dropdown-item" href="#css_table">Таблицы</a>
+              <a class="dropdown-item" href="#pseudoElements">Псевдоэлеиенты</a>
+              <a class="dropdown-item" href="#pseudoClasses">Псевдоклассы</a>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <div id="header-text" class="container-fluid">
+      <div class="row">
+        <h1 class="col-sm-12 text-center text-primary">Работа с CSS.</h1>
+      </div>
+    </div>
+    <!----------------------------------------------------->
+    <div id="css_background" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Работа с фоном.</h2></div>
+        <div class="col-sm-12"><h3>Background - Фон.</h3></div>
+        <div class="col-sm-3"><h3>background:</h3></div>
+        <div class="col-sm-9"><p>Сокращённая форма всех свойств.</p></div>
+        <div class="col-sm-3"><h3>background-attachment:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает, будет ли прокручиваться фоновое изображение вместе с
+            содержимым элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>background-blend-mode:</h3></div>
+        <div class="col-sm-9">
+          <p>Позволяет наложить один рисунок на другой.</p>
+        </div>
+        <div class="col-sm-3"><h3>background-clip:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет, как цвет фона или фоновая картинка должна выводиться под
+            границами.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>background-color:</h3></div>
+        <div class="col-sm-9"><p>Позволяет задать цвет фона.</p></div>
+        <div class="col-sm-3"><h3>background-image:</h3></div>
+        <div class="col-sm-9"><p>Позволяет вставить картинку фона.</p></div>
+        <div class="col-sm-3"><h3>background-origin:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет область позиционирования фонового рисунка. Это свойство
+            не применяется, когда значение background-attachment задано как
+            fixed.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>background-position-x:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Задает положение фонового изображения внутри элемента по
+            горизонтали.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>background-position-y:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Задает положение фонового изображения внутри элемента по вертикали.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>background-position:</h3></div>
+        <div class="col-sm-9"><p>Позволяет менять позицию картинки.</p></div>
+        <div class="col-sm-3"><h3>background-repeat</h3></div>
+        <div class="col-sm-9">
+          <p>Позволяет отключить или подключить повторение картинки.</p>
+        </div>
+        <div class="col-sm-3"><h3>background-size:</h3></div>
+        <div class="col-sm-9"><p>Позволяет изменить размер картинки.</p></div>
+        <div class="col-sm-3"><h3>box-decoration-break:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Указывает, как оформлять фрагмент текста при его переносе на другую
+            строку. Работает только для следующих свойств: background, border,
+            border-image, box-shadow, clip-path, margin и padding.
+            <br />slice - Каждый фрагмент разрезается в месте переноса и никакие
+            эффекты оформления на месте «разреза» не отображаются. В частности,
+            граница не показывается, тень не выводится, радиус скругления
+            работает только для всего блока целиком. <br />clone - Каждый
+            фрагмент оформляется независимо. Ко всем фрагментам отдельно
+            применяется рамка, тень, фон и др.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>box-shadow:</h3></div>
+        <div class="col-sm-9"><p>Позволяет создать тень для объекта.</p></div>
+        <div class="col-sm-3"><h3>box-sizing:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет изменить этот алгоритм, чтобы свойства width и height
+            задавали размеры не контента, а размеры блока.
+            <br />content-box - Основывается на стандартах CSS, при этом
+            свойства width и height задают ширину и высоту содержимого и не
+            включают в себя значения margin, padding и border. <br />border-box
+            - Свойства width и height включают в себя значения padding и border,
+            но не margin.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>accent-color:</h3></div>
+        <div class="col-sm-9">
+          <p>Применяется для замены фона в (checkbox, radio, range).</p>
+        </div>
+        <div class="col-sm-3"><h3>isolation:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет должен ли элемент создавать новый контекст наложения. Это
+            свойство особенно полезно при использовании совместно с
+            background-blend-mode.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Работа с текстом.</h2></div>
+        <div id="css_font" class="col-sm-12"><h3>Font</h3></div>
+        <div class="col-sm-3"><h3>font-family:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет менять шрифт, а также подключать шрифты из других
+            источников, которые за ранее импортированные.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-feature-settings:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Управляет расширенными типографскими функциями в шрифтах OpenType.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-kerning:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет расстояние между буквами. В шрифтах с хорошей керриной
+            эта функция делает расстояние между символами более равномерным и
+            приятным для чтения, чем это было бы в противном случае.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-language-override:</h3></div>
+        <div class="col-sm-9">
+          <p>Управляет использованием глифов, зависящих от языка, в шрифте.</p>
+        </div>
+        <div class="col-sm-3"><h3>font-optical-sizing:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет, оптимизирован ли рендеринг текста для просмотра в разных
+            размерах.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-size-adjust:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает размер строчных букв относительно текущего размера
+            шрифта.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-size:</h3></div>
+        <div class="col-sm-9"><p>Устанавливает размер шрифта.</p></div>
+        <div class="col-sm-3"><h3>font-stretch:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет начертание шрифта. <br />semi-condensed, condensed,
+            extra-condensed,ultra-condensed - Определяет более сжатое начертание
+            шрифта. <br />semi-expanded, expanded, extra-expanded,ultra-expanded
+            - Определяет более расширенное начертание шрифта.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-style:</h3></div>
+        <div class="col-sm-9">
+          <p>Задаёт стиль шрифта. Например нормал или курсив.</p>
+        </div>
+        <div class="col-sm-3"><h3>font-synthesis:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет, какие отсутствующие шрифты, жирный шрифт, курсив или
+            маленькие заглавные буквы могут быть синтезированы браузером.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-variant-ligatures:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Управляет использованием альтернативных глифов. На эти
+            альтернативные глифы можно ссылаться альтернативными именами,
+            определенными в @font-feature-values.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-variant-caps:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Управляет использованием альтернативных глифов для заглавных букв.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-variant-east-asian:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Управляет использованием альтернативных глифов для восточноазиатских
+            шрифтов, например японского и китайского.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-variant-ligatures:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Контролирует, какие лигатуры и контекстные формы используются в
+            текстовом содержимом элемента, к которому применяется.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-variant-numeric:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Управляет использованием альтернативных начертаний для цифр, дробей
+            и порядковых числительных.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-variant-position:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Управляет использованием альтернативных глифов меньшего размера,
+            которые располагаются как верхний или нижний индекс.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-variant:</h3></div>
+        <div class="col-sm-9">
+          <p>Позволяет вам установить все варианты шрифта для шрифта.</p>
+        </div>
+        <div class="col-sm-3"><h3>font-variation-settings:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Это свойство представляет собой низкоуровневый механизм,
+            предназначенный для установки функций переменного шрифта, когда не
+            существует другого способа включить или получить доступ к этим
+            функциям. Вы должны использовать его только тогда, когда не
+            существует основных свойств для установки этих функций.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>font-weight:</h3></div>
+        <div class="col-sm-9"><p>Устанавливает начертание шрифта.</p></div>
+        <div id="css_text" class="col-sm-12"><h3>Text</h3></div>
+        <div class="col-sm-3"><h3>vertical-align:</h3></div>
+        <div class="col-sm-9"><p>Выравнивание текста по вертикали.</p></div>
+        <div class="col-sm-3"><h3>text-align:</h3></div>
+        <div class="col-sm-9"><p>Выравнивание текста по горизонтали</p></div>
+        <div class="col-sm-3"><h3>text-combine-upright:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Композиция рассматривается как единый вертикальный глиф для макета и
+            оформления.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-decoration:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет подчеркивать текст. <br /><span class="text-decoration"
+              >This can't be real!</span
+            >
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-decoration-color:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет подчеркивать текст цветом. <br /><span
+              class="text-decoration-color"
+              >This can't be real!</span
+            >
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-decoration-line:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет подчеркнуть текст в трёх положениях, можно применить
+            несколько вариантов через пробел. <br /><span
+              class="text-decoration-line"
+              >This can't be real!</span
+            >
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-decoration-skip-ink:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет прервать линию если она налезет на букву. <br /><span
+              class="text-decoration-skip-ink"
+              >parapsychologists</span
+            >
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-decoration-skip:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Указывает, какие части содержимого элемента должны пропускать любые
+            текстовые украшения, влияющие на элемент.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-decoration-style:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Задает стиль линий, заданных параметром text-decoration-line.
+            <br /><span class="text-decoration-style">This can't be real!</span>
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-emphasis:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Применяет метки выделения к тексту (кроме пробелов и управляющих
+            символов).
+            <br /><span class="text-emphasis">This can't be real!</span>
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-emphasis-color:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет изменить цвет метки. <br /><span
+              class="text-emphasis-color"
+              >This can't be real!</span
+            >
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-emphasis-position:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет изменить позицию метки.
+            <br /><span class="text-emphasis-position"
+              >This can't be real!</span
+            >
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-emphasis-style:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет изменить стиль метки.
+            <br /><span class="text-emphasis-style">This can't be real!</span>
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-indent:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет размер отступа (пустого места) перед строкой в текстовом
+            блоке.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-justify:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет какой тип выравнивания следует применить к тексту, когда
+            text-align: justify; применяется к элементу.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-orientation:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает ориентацию текстовых символов в строке. Это влияет
+            только на текст в вертикальном режиме (когда не ). Это полезно для
+            управления отображением языков, использующих вертикальное письмо, а
+            также для создания вертикальных заголовков таблиц.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-overflow:</h3></div>
+        <div class="col-sm-9">
+          <p>Обрезает текст который вылазит за пределы области.</p>
+        </div>
+        <div class="col-sm-3"><h3>text-rendering:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Предоставляет механизму рендеринга информацию о том, что следует
+            оптимизировать при рендеринге текста.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-shadow:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет создать тень для текста.
+            <br /><span class="text-shadow">This can't be real!</span>
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-size-adjust:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Контролирует алгоритм увеличения текста, используемый на некоторых
+            смартфонах и планшетах.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-transform:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Можно использовать для отображения текста в верхнем или нижнем
+            регистре или с заглавными буквами каждого слова.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>text-underline-position:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Указывает положение подчеркивания, которое устанавливается с
+            использованием значения свойства.
+          </p>
+        </div>
+        <div id="css_otherText" class="col-sm-12">
+          <h3>Дополнительные свойства для текста.</h3>
+        </div>
+        <div class="col-sm-3"><h3>color:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет цвет текста элемента. <br /><span class="color"
+              >This can't be real!</span
+            >
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>inline-size:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет горизонтальные или вертикальные размеры блока в
+            зависимости от режима написания.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>writing-mode:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Расположение текста горизонтального или вертикального, также как
+            положение и направление блока.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>letter-spacing:</h3></div>
+        <div class="col-sm-9">
+          <p>Определяет меж буквенное расстояние в тексте.</p>
+        </div>
+        <div class="col-sm-3"><h3>line-break:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает способ разрыва строки текста на китайском, японском
+            или корейском.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>line-height-step:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Задает единицу шага для высоты строки. Когда свойство установлено,
+            высота строкового блока округляется до ближайшего кратного единице
+            измерения.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>line-height:</h3></div>
+        <div class="col-sm-9">
+          <p>Устанавливает величину пространства между строками.</p>
+        </div>
+        <div class="col-sm-3"><h3>counter-increment:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Увеличивает или уменьшает значение счетчика CSS на заданное
+            значение. <br />
+            Пример: counter-increment: example-counter 5; Получаем: Глава: 5
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>counter-reset:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Сбрасывает счетчик CSS до заданного значения. <br />
+            Пример: counter-reset: chapter-count 5; Получаем: Глава 1: Глава
+            1.6: Глава 1.7
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>counter-set:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает для счетчика CSS заданное значение.
+
+            <br />
+            Пример: counter-set: chapter-count 5; Получаем: Глава 1: Глава 5:
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>direction:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Предназначен для сайтов, в которых имеет значение направление
+            текста. Например, при использовании арабского алфавита чтение
+            происходит справа налево.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>hyphens:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Сообщает браузеру, как расставлять переносы слов в блоке текста.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>user-select:</h3></div>
+        <div class="col-sm-9">
+          <p>Поволяет запретить выделение для текста в выбранной области.</p>
+        </div>
+        <div class="col-sm-3"><h3>white-space:</h3></div>
+        <div class="col-sm-9">
+          <p>Текс в одной строке без переноса.</p>
+        </div>
+        <div class="col-sm-3"><h3>resize:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Указывает, можно ли пользователю изменять размеры текстового поля.
+            <br />none - Размеры элемента не изменяются. <br />both - Можно
+            изменять размеры элемента по горизонтали и вертикали.
+            <br />horizontal - Можно изменять размеры элемента только по
+            горизонтали. <br />vertical - Можно изменять размеры элемента только
+            по вертикали. <br />inherit - Наследует значение родителя.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>word-break:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет, где будет установлен перевод на новую строку в случае
+            превышения текстом границ блока. <br />normal - Используются правила
+            переноса строк по умолчанию. Как правило, в этом случае строки не
+            переносятся или переносятся в тех местах, где явно задан перенос
+            (например, с помощью тега < br >). <br />break-all - Перенос строк
+            добавляется автоматически, чтобы слово поместилось в заданную ширину
+            блока. Значение не работает для текста на китайском, корейском или
+            японском языке. <br />keep-all - Не разрешает перенос строк в словах
+            на китайском, корейском или японском языке. Для остальных языков
+            действует как normal.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>word-spacing:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает длину пробела между словами и между тегами.
+            <br />normal - Устанавливает интервал между словами как обычно.
+            <br />inherit - Наследует значение родителя.
+          </p>
+        </div>
+        <div id="css_list" class="col-sm-12"><h3>Работа с макросом.</h3></div>
+        <div class="col-sm-3"><h3>list-style:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Универсальное свойство, позволяющее одновременно задать стиль
+            маркера, его положение, а также изображение, которое будет
+            использоваться в качестве маркера.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>list-style-image:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет вставить картинку вместо макроса. <br />none - Отменяет
+            изображение в качестве маркера для родительского элемента. <br />url
+            - Относительный или абсолютный путь к графическому файлу. Значение
+            можно указывать в одинарных, двойных кавычках или без них.
+            <br />inherit - Наследует значение родителя.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>list-style-position:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Обтекаемость макроса. <br />inside - Маркер является частью
+            текстового блока и отображается в элементе списка. <br />outside -
+            Текст выравнивается по левому краю, а маркеры размещаются за
+            пределами текстового блока.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>list-style-type</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Меняет вид макроса. <br />circle - Маркер в виде кружка. <br />disc
+            - Маркер в виде точки. <br />square - Маркер в виде квадрата.
+            <br />armenian - Традиционная армянская нумерация. <br />decimal -
+            Арабские числа (1, 2, 3, 4,...). <br />decimal-leading-zero -
+            Арабские числа с нулем впереди для цифр меньше десяти (01, 02,
+            03,...). <br />georgian - Традиционная грузинская нумерация.
+            <br />lower-alpha - Строчные латинские буквы (a, b, c, d,...).
+            <br />lower-greek - Строчные греческие буквы (α, β, γ, δ,...).
+            <br />lower-latin - Это значение аналогично lower-alpha.
+            <br />lower-roman - Римские числа в нижнем регистре (i, ii, iii, iv,
+            v,...). <br />upper-alpha - Заглавные латинские буквы (A, B, C,
+            D,...). <br />upper-latin - Это значение аналогично upper-alpha.
+            <br />upper-roman - Римские числа в верхнем регистре (I, II, III,
+            IV, V,...). <br />none - Отменяет маркеры для списка. <br />inherit
+            - Наследует значение родителя.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="css_size" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Размеры элемента.</h2></div>
+        <div class="col-sm-3"><h3>height:</h3></div>
+        <div class="col-sm-9"><p>Позволят обозначать высоту элемента.</p></div>
+        <div class="col-sm-3"><h3>width:</h3></div>
+        <div class="col-sm-9"><p>Позволят обозначать ширину элемента.</p></div>
+        <div class="col-sm-3"><h3>max-height:</h3></div>
+        <div class="col-sm-9">
+          <p>Устанавливает максимальную высоту элемента.</p>
+        </div>
+        <div class="col-sm-3"><h3>min-height:</h3></div>
+        <div class="col-sm-9">
+          <p>Устанавливает минимальную высоту элемента.</p>
+        </div>
+        <div class="col-sm-3"><h3>max-width:</h3></div>
+        <div class="col-sm-9">
+          <p>Устанавливает максимальную ширину элемента.</p>
+        </div>
+        <div class="col-sm-3"><h3>min-width:</h3></div>
+        <div class="col-sm-9">
+          <p>Устанавливает минимальную ширину элемента.</p>
+        </div>
+        <div class="col-sm-3"><h3>max-block-size:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет максимальный горизонтальный или вертикальный размер блока
+            элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>min-block-size:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет минимальный горизонтальный или вертикальный размер блока
+            элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>max-inline-size:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет максимальный размер блока элемента по горизонтали или
+            вертикали в зависимости от режима записи.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>min-inline-size:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет минимальный размер блока элемента по горизонтали или
+            вертикали в зависимости от режима записи.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="css_position" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Позиционирование.</h2></div>
+        <div class="col-sm-3"><h3>position: static</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Это значение позволяет элементу находиться в обычном его состоянии,
+            расположенном на своём месте в документе. Свойства top, right,
+            bottom, left и z-index не применяются к данному элементу. Это
+            значение по умолчанию.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>position: relative</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Элемент позиционируется в соответствии с нормальным потоком
+            документа, а затем смещается относительно себя на основе значений
+            top, right, bottom и left. Смещение не влияет на положение любых
+            других элементов; таким образом, пространство, заданное для элемента
+            в макете страницы, такое же, как если бы позиция была static.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>position: absolute</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Элемент удаляется из обычного потока документов, и для элемента в
+            макете страницы не создаётся пробела. Он расположен относительно его
+            ближайшего относительно позиционированного предка, если таковой
+            имеется; в противном случае он помещается относительно исходного
+            содержащего блока. Его конечная позиция определяется значениями top,
+            right, bottom, и left.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>position: fixed</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Элемент выбивается из обычного потока документа, и для элемента в
+            макете страницы не создаётся пространство.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>position: sticky</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Элемент позиционируется в соответствии с нормальным потоком
+            документа, а затем смещается относительно его ближайшего
+            прокручивающего предка и содержащего блока (ближайший родительский
+            уровень блока), включая элементы, связанные с таблицей, на основе
+            значений top, right, bottom, и left. Смещение не влияет на положение
+            любых других элементов.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>z-index:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Любые позиционированные элементы на веб-странице могут накладываться
+            друг на друга в определенном порядке, имитируя тем самым третье
+            измерение, перпендикулярное экрану. Каждый элемент может находиться
+            как ниже, так и выше других объектов веб-страницы, их размещением по
+            z-оси и управляет z-index. Это свойство работает только для
+            элементов, у которых значение position задано как absolute, fixed
+            или relative.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="css_display" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>Отображение элементов.</h2>
+        </div>
+        <div class="col-sm-3"><h3>display: block</h3></div>
+        <div class="col-sm-9">
+          <p>Блочные элементы располагаются один над другим, вертикально.</p>
+        </div>
+        <div class="col-sm-3"><h3>display: inline</h3></div>
+        <div class="col-sm-9">
+          <p>Элементы располагаются на той же строке, последовательно.</p>
+        </div>
+        <div class="col-sm-3"><h3>display: inline-block</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Это значение – означает элемент, который продолжает находиться в
+            строке (inline), но при этом может иметь важные свойства блока.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>display: inline-table</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет, что элемент является таблицей как при использовании тега
+            < table >, но при этом таблица является встроенным элементом и
+            происходит ее обтекание другими элементами, например, текстом.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>display: inline-flex</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Встроенная версия flex позволяет элементу и его дочерним элементам
+            иметь свойства flex, оставаясь при этом в обычном потоке
+            документа/веб-страницы. В принципе, вы можно разместить два
+            встроенных гибких контейнера в одной строке, если ширина была
+            достаточно мала, без лишнего стиля, чтобы позволить им существовать
+            в одной строке.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>display: flex</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Это сокращённое свойство, определяющее способность гибкого элемента
+            растягиваться или сжиматься для заполнения собой доступного
+            свободного пространства.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>display: flexbox</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Эффективно справляется с выравниванием, распределением и
+            направлением элементов страницы. Двумя основными понятиями этой
+            модели макета являются главная ось и поперечная ось. Главная ось
+            flex-контейнера – это основное направление, вдоль которого
+            выстраиваются flex-элементы, поперечная же ось ей перпендикулярна.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>display: grid</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Это набор пересекающихся горизонтальных и вертикальных линий,
+            которые создают размерность и позиционируют систему координат для
+            контента в самом grid -контейнере.
+          </p>
+        </div>
+        <div id="css_flex" class="col-sm-12"><h3>Flex</h3></div>
+        <div class="col-sm-3"><h3>flex-direction:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Помогает изменить порядок расположения блоков.
+            <br />row - Элементы размещаются по направлению текста.
+            <br />row-reverse - Элементы отображаются в обратном порядке к
+            направлению текста. <br />column - Элементы располагаются сверху
+            вниз. <br />column-reverse - Элементы располагаются снизу вверх.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>flex-wrap:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Переносит объект на новую строчку если он вылазит за область, также
+            можно изменить расположение блоков.
+            <br />nowrap - Размеры элементов устанавливаются автоматически, чтоб
+            они поместились в один ряд. <br />wrap - Элементы автоматически
+            переносятся на новую строку. <br />wrap-reverse - Элементы
+            автоматически переносятся на новую строку, но строки расположены в
+            обратном порядке.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>flex-flow:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Является сокращением для отдельных свойств flex-direction и
+            flex-wrap.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>flex-basis:</h3></div>
+        <div class="col-sm-9"><p>Задаёт базовый размер элемента.</p></div>
+        <div class="col-sm-3"><h3>flex-grow:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет увеличить размер элемента за счёт пустого пространства.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>flex-shrink:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет уменьшить размер контейнера за счёт своего пространства.
+          </p>
+        </div>
+        <div id="css_grid" class="col-sm-12"><h3>Grid</h3></div>
+        <div class="col-sm-3"><h3>gap (grid-gap):</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Создает отступы между блоками. Отступ задаётся с помощью %, em, px и
+            т.д.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>grid-column-gap:</h3></div>
+        <div class="col-sm-9"><p>Создает отступы между рядами.</p></div>
+        <div class="col-sm-3"><h3>grid-row-gap:</h3></div>
+        <div class="col-sm-9"><p>Создает отступы между строк.</p></div>
+        <div class="col-sm-3"><h3>grid-auto-columns:</h3></div>
+        <div class="col-sm-9"><p>Задаёт одинаковую ширину всем блокам.</p></div>
+        <div class="col-sm-3"><h3>grid-auto-flow:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет поменять последовательность размещения блоков с
+            горизонтального на вертикальный. <br />row - Вертикальное
+            расположение. <br />columns - Горизонтальное расположение.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>grid-auto-rows:</h3></div>
+        <div class="col-sm-9"><p>Задаёт одинаковую высоту всем блокам.</p></div>
+        <div class="col-sm-3"><h3>grid-column:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет указать начальную и конечную позицию любого блока по
+            вертикали. <br />
+            grid-column: 1/3;
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>grid-column-end:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет указать конечную позицию любого блока по вертикали.
+            <br />grid-column-end: 3;
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>grid-column-start:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет указать начальную позицию любого блока по вертикали.
+            <br />grid-column-start: 1;
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>grid-row:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет указать начальную и конечную позицию любого блока по
+            горизонтали. <br />grid-row: 1/3;
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>grid-row-end:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет указать конечную позицию любого блока по горизонтали.
+            <br />grid-row-end: 3;
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>grid-row-start:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет указать начальную позицию любого блока по горизонтали.
+            <br />grid-row-start: 1;
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>grid-area:</h3></div>
+        <div class="col-sm-9">
+          <p>Позволяет выделить область (шапка, секция и футер).</p>
+        </div>
+        <div class="col-sm-3"><h3>grid-template-areas:</h3></div>
+        <div class="col-sm-9"><p>Создаёт области из объектов.</p></div>
+        <div class="col-sm-3"><h3>grid-template-columns:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Указывает количество колонок и их размеры в ширину. <br />repeat
+            (auto-fill) - Создаёт пространство для эфемерных элементов.
+            <br />repeat (auto-fit) - Не создаёт пространство для эфемерных
+            элементов.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>grid-template-rows:</h3></div>
+        <div class="col-sm-9">
+          <p>Указывает количество рядов и их размеры в высоту.</p>
+        </div>
+        <div id="css_otherElement" class="col-sm-12">
+          <h3>Размещение элементов.</h3>
+        </div>
+        <div class="col-sm-3"><h3>align-content:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Выравнивание элементов и заполнение ими контейнера. <br />
+            flex-start - Элементы группируются в верхней части контейнера.
+            <br />
+            flex-end - Элементы группируются в нижней части контейнера. <br />
+            center - Элементы группируются вертикально по центру контейнера.
+            <br />
+            space-between - Элементы отображаются с одинаковыми расстояниями
+            между ними. <br />
+            space-around - Элементы отображаются с одинаковыми расстояниями
+            вокруг них. <br />
+            space-evenly - Элементы отображаются с одинаковыми расстояниями
+            вокруг ними. <br />
+            stretch - Ряды растягиваются, чтоб заполнить контейнер равномерно.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>align-items:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Производит выравнивание всех элементов внутри флекс контейнера вдоль
+            поперечной оси.
+            <br />center - Элементы располагаются по центру строки контейнера
+            (середина поперечной оси, или оси столбца). <br />flex-start -
+            Элементы располагаются в начале строки контейнера. <br />flex-end -
+            Элементы располагаются в конце строки контейнера. <br />baseline -
+            Элементы распологаются по их базовой линии. <br />initial -
+            Устанавливает свойство в значение по умолчанию. <br />inherit -
+            Указывает, что значение наследуется от родительского элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>align-self:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Выравнивает флекс-элементы текущей строки, переписывая значение
+            align-items.
+            <br />auto - Берёт родительское значение align-items или stretch,
+            если нет родителя. <br />flex-start - Элемент выравнивается в начале
+            поперечной оси контейнера. <br />flex-end - Элемент выравнивается в
+            конце поперечной оси контейнера. <br />center - Элемент
+            выравнивается по центральной линии на поперечной оси. <br />baseline
+            - Элемент выравнивается по базовой линии текста. <br />stretch -
+            Элемент растягивается таким образом, чтобы занять всё свободное
+            пространство контейнера по поперечной оси.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>justify-items:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Производит выравнивание всех элементов макета сетки по оси строки.
+            <br />stretch - Элементы растягиваются по размеру строки ячейки
+            контейнера. <br />center - Элементы размещаются в середине каждой
+            ячейки контейнера. <br />start - Элементы размещаются по начальному
+            краю ячеек. <br />end - Элементы размещаются по конечному краю
+            ячеек. <br />baseline - Элементы распологаются по их базовой линии.
+            <br />initial - Устанавливает свойство в значение по умолчанию.
+            <br />inherit - Указывает, что значение наследуется от родительского
+            элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>justify-content:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Производит выравнивание всех элементов внутри флекс контейнера по
+            вертикали.
+            <br />flex-start - Элементы позиционируются в начале контейнера.
+            <br />flex-end - Элементы позиционируются в конце контейнера.
+            <br />center- Элементы позиционируются в центре контейнера.
+            <br />space-between - Элементы отображаются с одинаковыми
+            расстояниями между ними. <br />space-around - Элементы отображаются
+            с одинаковыми расстояниями вокруг них. <br />space-evenly - Элементы
+            отображаются с одинаковыми расстояниями вокруг ними. <br />initial -
+            Устанавливает свойство в значение по умолчанию. <br />inherit -
+            Указывает, что значение наследуется от родительского элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>justify-self:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Производит выравнивание элемента макета сетки внутри ячейки по оси
+            строки.
+            <br />stretch - Элемент растягивается по размеру столбца ячейки
+            контейнера. <br />center - Элемент располагается по центру столбца
+            ячейки контейнера. <br />start - Элемент располагается по начальному
+            краю ячейки. <br />end - Элемент располагается по конечному краю
+            ячейки. <br />baseline - Элемент распологается по его базовой линии.
+            <br />initial - <br />Устанавливает свойство в значение по
+            умолчанию. <br />inherit - Указывает, что значение наследуется от
+            родительского элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>place-content:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет вам выравнивать содержимое как по блочному, так и по
+            встроенному направлениям одновременно (т. е. по свойствам и ) в
+            соответствующей системе макета, такой как Grid или Flexbox
+            .place-content align-contentjustify-content
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>place-items:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет одновременно выравнивать элементы и колонки, и ряда (т.е.
+            по свойствам align-items и justify-items) в соответствующей системе
+            раскладки, такой как Grid или Flexbox. Если задано одно значение,
+            оно используется для выравнивания и в колонке, и в ряду.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>place-self:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет вам выравнивать отдельный элемент одновременно как в
+            блочном, так и в линейном направлении (т. е. свойства и ) в
+            соответствующей системе макета, такой как Grid или Flexbox . Если
+            второе значение отсутствует, для него также используется первое
+            значение.place-self align-selfjustify-self
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>order:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет перемещать отдельные дочерние элементы по сторонам (-1, 0,
+            1).
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>clear:</h3></div>
+        <div class="col-sm-9">
+          <p>Позволяет убрать обтекаемость при использовании.</p>
+        </div>
+        <div class="col-sm-3"><h3>clip:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Обрезает область по прямоугольнику. Все, что не помещается в эту
+            область, будет обрезано и становится невидимым.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>float:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет, по какой стороне будет выравниваться элемент, при этом
+            остальные элементы будут обтекать его с других сторон. Когда
+            значение свойства float равно none, элемент выводится на странице
+            как обычно, при этом допускается, что одна строка обтекающего текста
+            может быть на той же линии, что и сам элемент.
+            <br />
+            left - Выравнивает элемент по левому краю, а все остальные элементы,
+            вроде текста, обтекают его по правой стороне.
+            <br />
+            right - Выравнивает элемент по правому краю, а все остальные
+            элементы обтекают его по левой стороне. <br />
+            none - Обтекание элемента не задается. <br />
+            inherit - Наследует значение родителя.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>overflow:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет обрезать содержимое которое не вмещается в блок, также
+            можно создать скрол.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>overflow-anchor:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет отказаться от поведения привязки прокрутки браузера,
+            которое регулирует положение прокрутки, чтобы свести к минимуму
+            сдвиги содержимого.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>overflow-block:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает, что будет отображаться, когда содержимое переполняет
+            начальные и конечные края блока. Это может быть ничего, полоса
+            прокрутки или содержимое переполнения.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>overflow-clip-margin:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет, насколько далеко за пределы своих границ может быть
+            закрашен элемент , прежде чем он будет обрезан.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>overflow-inline:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает, что отображается, когда содержимое выходит за пределы
+            встроенных начального и конечного краев блока.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>overflow-wrap:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Применяется к строковым элементам, устанавливая должен ли браузер
+            расставлять переносы строк внутри неразрывной строки, чтобы избежать
+            выхода текста за границы элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>overflow-x:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Управляет отображением содержания блочного элемента по горизонтали,
+            если контент целиком не помещается и выходит за область сверху или
+            снизу от блока.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>overflow-y:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Управляет отображением содержания блочного элемента по вертикали,
+            если контент целиком не помещается и выходит за область сверху или
+            снизу от блока.
+            <br />
+            visible - Отображается все содержание элемента, даже за пределами
+            установленной высоты. <br />
+            hidden - Отображается только область внутри элемента, остальное
+            будет скрыто. <br />
+            scroll - Всегда добавляется вертикальная полоса прокрутки. <br />
+            auto - В зависимости от браузера. В основном, вертикальная полоса
+            прокрутки добавляется только при необходимости.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>visibility:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Предназначен для отображения или скрытия элемента, включая рамку
+            вокруг него и фон. При скрытии элемента, хотя он и становится не
+            виден, место, которое элемент занимает, остается за ним. Если
+            предполагается вывод разных элементов в одно и то же место экрана,
+            для обхода этой особенности следует использовать абсолютное
+            позиционирование или воспользоваться свойством display.
+            <br />visible - Отображает элемент как видимый. <br />hidden -
+            Элемент становится невидимым или правильней сказать, полностью
+            прозрачным, поскольку он продолжает участвовать в форматировании
+            страницы. <br />collapse - Если это значение применяется не к
+            строкам или колонкам таблицы, то результат его использования будет
+            таким же, как hidden. В случае использования collapse для
+            содержимого ячеек таблиц, то заданные строки и колонки убираются, а
+            таблица перестраивается по новой. <br />inherit - Наследует значение
+            родителя.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>inset-block:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет начальное и конечное смещение логического блока элемента,
+            которое сопоставляется с физической вставкой в ​​зависимости от
+            режима записи элемента, направления и ориентации текста.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>inset-block-end:</h3></div>
+        <div class="col-sm-9"><p>Только конечное смещение.</p></div>
+        <div class="col-sm-3"><h3>inset-block-start:</h3></div>
+        <div class="col-sm-9"><p>Только начальное смещение.</p></div>
+        <div class="col-sm-3"><h3>inset-inline:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет логическое начальное и конечное смещения элемента во
+            встроенном направлении, которые сопоставляются с физическими
+            смещениями в зависимости от режима записи элемента, направления и
+            ориентации текста.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>inset-inline-end:</h3></div>
+        <div class="col-sm-9"><p>Только конечное смещение.</p></div>
+        <div class="col-sm-3"><h3>inset-inline-start:</h3></div>
+        <div class="col-sm-9"><p>Только начальное смещение.</p></div>
+        <div class="col-sm-3"><h3>opacity:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает непрозрачность элемента. Непрозрачность - это степень,
+            в которой содержимое скрывается за элементом, является
+            противоположностью прозрачности.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>object-fit:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Управляет соотношением сторон заменяемых элементов, таких как < img
+            > и < video >, когда у них задана ширина или высота, а также
+            способом масштабирования. Свойство object-fit может сохранять
+            исходные пропорции элемента или наоборот, искажать пропорции, в
+            угоду соблюдения размеров.
+            <br />fill - Элемент масштабируется, чтобы соответствовать заданным
+            размерам, при этом пропорции игнорируются. <br />contain - Элемент
+            масштабируется, чтобы целиком уместиться в заданные размеры с
+            соблюдением пропорций. <br />cover - Элемент увеличивается или
+            уменьшается, чтобы целиком заполнить заданную область с сохранением
+            пропорций. <br />none - Сохраняются исходные пропорции элемента,
+            установленные значения ширины или высоты не влияют на содержимое.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>object-position:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет выравнивание контента выбранного замещаемого элемента
+            внутри блока элемента. На областях блока, не покрытых объектом
+            замещаемого элемента, будет отображаться фон элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>perspective:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет расстояние от плоскости экрана до точки сходимости линий
+            и тем самым задаёт, насколько выражен эффект перспективы. Точка
+            сходимости по умолчанию располагается в центре элемента и может быть
+            изменена с помощью свойства perspective-origin.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>perspective-origin:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Задаёт координаты точки, куда смотрит наблюдатель. Это свойство
+            работает совместно со свойством perspective и определяет точку
+            сходимости линий при перспективе.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="box_model" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Блочная модель.</h2></div>
+        <div id="css_margin" class="col-sm-12">
+          <h3>Margin - Внешний отступ.</h3>
+        </div>
+        <div class="col-sm-3"><h3>margin:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Создает отступ за пределами блока. Отступ задаётся в %, рх, em и
+            т.д. <br />
+            margin: 1em - Применяется ко всем четырём сторонам. <br />
+            margin: 5% auto - по вертикали | по горизонтали. <br />
+            margin: 1em auto 2em - сверху | горизонтально | снизу. <br />margin:
+            2px 1em 0 auto - сверху | справа | снизу | слева.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>margin-left:</h3></div>
+        <div class="col-sm-9"><p>Отступ слева.</p></div>
+        <div class="col-sm-3"><h3>margin-right:</h3></div>
+        <div class="col-sm-9"><p>Отступ справа.</p></div>
+        <div class="col-sm-3"><h3>margin-top:</h3></div>
+        <div class="col-sm-9"><p>Отступ сверху.</p></div>
+        <div class="col-sm-3"><h3>margin-bottom:</h3></div>
+        <div class="col-sm-9"><p>Отступ снизу.</p></div>
+        <div class="col-sm-3"><h3>margin-block-end:</h3></div>
+        <div class="col-sm-9">
+          <p>Определяет конечное поле логического блока элемента</p>
+        </div>
+        <div class="col-sm-3"><h3>margin-block-start:</h3></div>
+        <div class="col-sm-9">
+          <p>Определяет начальное поле логического блока элемента.</p>
+        </div>
+        <div class="col-sm-3"><h3>margin-block:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет начальные и конечные поля логического блока элемента,
+            которые сопоставляются с физическими полями в зависимости от режима
+            записи элемента, направления и ориентации текста
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>margin-inline-end:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяется отступом логического элемента края, который
+            сопоставляется с отступом в зависимости от направления написания,
+            направленности и расположения текста.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>margin-inline-start:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяется отступом логического элемента края, который
+            сопоставляется с отступом в зависимости от направления написания,
+            направленности и расположения текста.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>margin-inline:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет как логические встроенные начальные, так и конечные поля
+            элемента, которые сопоставляются с физическими полями в зависимости
+            от режима записи элемента, направления и ориентации текста.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>margin-trim:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет контейнеру обрезать поля своих дочерних элементов там, где
+            они примыкают к краям контейнера.
+          </p>
+        </div>
+        <div id="css_padding" class="col-sm-12">
+          <h3>Padding - Внутренний отступ.</h3>
+        </div>
+        <div class="col-sm-3"><h3>padding:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Создает отступ внутри блока. Отступ задаётся в %, рх, em и т.д.
+            <br />
+            padding: 1em - Применяется ко всем четырём сторонам. <br />
+            padding: 5% auto - по вертикали | по горизонтали. <br />
+            padding: 1em auto 2em - сверху | горизонтально | снизу.
+            <br />padding: 2px 1em 0 auto - сверху | справа | снизу | слева.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>padding-left:</h3></div>
+        <div class="col-sm-9"><p>Отступ слева.</p></div>
+        <div class="col-sm-3"><h3>padding-right:</h3></div>
+        <div class="col-sm-9"><p>Отступ справа.</p></div>
+        <div class="col-sm-3"><h3>padding-top:</h3></div>
+        <div class="col-sm-9"><p>Отступ сверху.</p></div>
+        <div class="col-sm-3"><h3>padding-bottom:</h3></div>
+        <div class="col-sm-9"><p>Отступ снизу.</p></div>
+        <div class="col-sm-3"><h3>padding-block-end:</h3></div>
+        <div class="col-sm-9">
+          <p>Определяет отступ конца логического блока элемента.</p>
+        </div>
+        <div class="col-sm-3"><h3>padding-block-start:</h3></div>
+        <div class="col-sm-9">
+          <p>Определяет отступ начала логического блока элемента.</p>
+        </div>
+        <div class="col-sm-3"><h3>padding-inline-end:</h3></div>
+        <div class="col-sm-9">
+          <p>Определяет отступ конца логического элемента.</p>
+        </div>
+        <div class="col-sm-3"><h3>padding-inline-start:</h3></div>
+        <div class="col-sm-9">
+          <p>Определяет отступ начала логического элемента.</p>
+        </div>
+        <div id="css_border" class="col-sm-12"><h3>Border - Рамка.</h3></div>
+        <div class="col-sm-3"><h3>border</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Универсальное свойство border позволяет одновременно установить
+            толщину, стиль и цвет границы вокруг элемента. Значения могут идти в
+            любом порядке, разделяясь пробелом, браузер сам определит, какое из
+            них соответствует нужному свойству.
+            <br />dotted - Рамка из точек. <br />dashed - Прерывистая рамка.
+            <br />solid - Сплошная рамка. <br />double - Двойная сплошная рамка.
+            <br />inset - Вдавленная рамка. <br />outset - Выдавленная рамка.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>border-left:</h3></div>
+        <div class="col-sm-9"><p>Рамка слева.</p></div>
+        <div class="col-sm-3"><h3>border-right:</h3></div>
+        <div class="col-sm-9"><p>Рамка справа.</p></div>
+        <div class="col-sm-3"><h3>border-top:</h3></div>
+        <div class="col-sm-9"><p>Рамка сверху.</p></div>
+        <div class="col-sm-3"><h3>border-bottom:</h3></div>
+        <div class="col-sm-9"><p>Рамка снизу.</p></div>
+        <div class="col-sm-3"><h3>border-block:</h3></div>
+        <div class="col-sm-9"><p>Рамка сверху и снизу.</p></div>
+        <div class="col-sm-3"><h3>border-block-end:</h3></div>
+        <div class="col-sm-9"><p>Рамка снизу.</p></div>
+        <div class="col-sm-3"><h3>border-block-start:</h3></div>
+        <div class="col-sm-9"><p>Рамка сверху.</p></div>
+        <div class="col-sm-3"><h3>border-inline:</h3></div>
+        <div class="col-sm-9"><p>Рамка слева и справа.</p></div>
+        <div class="col-sm-3"><h3>border-inline-end:</h3></div>
+        <div class="col-sm-9"><p>Рамка справа.</p></div>
+        <div class="col-sm-3"><h3>border-inline-start:</h3></div>
+        <div class="col-sm-9"><p>Рамка слева.</p></div>
+        <div class="col-sm-3"><h3>border-radius:</h3></div>
+        <div class="col-sm-9"><p>Создает закругление сторон.</p></div>
+        <div class="col-sm-3"><h3>border-top-left-radius:</h3></div>
+        <div class="col-sm-9"><p>Верхний левый угол.</p></div>
+        <div class="col-sm-3"><h3>border-top-right-radius:</h3></div>
+        <div class="col-sm-9"><p>Верхний правый угол.</p></div>
+        <div class="col-sm-3"><h3>border-bottom-left-radius:</h3></div>
+        <div class="col-sm-9"><p>Нижний левый угол.</p></div>
+        <div class="col-sm-3"><h3>border-bottom-right-radius</h3></div>
+        <div class="col-sm-9"><p>Нижний правый угол.</p></div>
+        <div class="col-sm-3"><h3>border-start-end-radius:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет радиус логической границы элемента, который
+            сопоставляется с радиусом физической границы в зависимости от
+            элементов.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>border-start-start-radius:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет радиус логической границы элемента, который
+            сопоставляется с радиусом физической границы в зависимости от
+            элементов.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>border-end-end-radius:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет радиус логической границы элемента, который
+            сопоставляется с радиусом физической границы в зависимости от
+            элементов.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>border-end-start-radius:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет радиус логической границы элемента, который
+            сопоставляется с радиусом физической границы в зависимости от
+            элементов.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>border-color:</h3></div>
+        <div class="col-sm-9"><p>Полностью цветная рамка.</p></div>
+        <div class="col-sm-3"><h3>border-left-color:</h3></div>
+        <div class="col-sm-9"><p>Цветная рамка слева.</p></div>
+        <div class="col-sm-3"><h3>border-right-color:</h3></div>
+        <div class="col-sm-9"><p>Цветная рамка справа.</p></div>
+        <div class="col-sm-3"><h3>border-top-color:</h3></div>
+        <div class="col-sm-9"><p>Цветная рамка сверху.</p></div>
+        <div class="col-sm-3"><h3>border-bottom-color:</h3></div>
+        <div class="col-sm-9"><p>Цветная рамка снизу.</p></div>
+        <div class="col-sm-3"><h3>border-block-color:</h3></div>
+        <div class="col-sm-9"><p>Цветная рамка сверху и снизу.</p></div>
+        <div class="col-sm-3"><h3>border-block-end-color:</h3></div>
+        <div class="col-sm-9"><p>Цветная рамка снизу.</p></div>
+        <div class="col-sm-3"><h3>border-block-start-color:</h3></div>
+        <div class="col-sm-9"><p>Цветная рамка сверху.</p></div>
+        <div class="col-sm-3"><h3>border-inline-color:</h3></div>
+        <div class="col-sm-9"><p>Цветная рамка слева и справа.</p></div>
+        <div class="col-sm-3"><h3>border-inline-end-color:</h3></div>
+        <div class="col-sm-9"><p>Цветная рамка справа.</p></div>
+        <div class="col-sm-3"><h3>border-inline-start-color:</h3></div>
+        <div class="col-sm-9"><p>Цветная рамка слева.</p></div>
+        <div class="col-sm-3"><h3>border-style:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает стиль границы вокруг элемента. Допустимо задавать
+            индивидуальные стили для разных сторон элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>border-left-style:</h3></div>
+        <div class="col-sm-9"><p>Устанавливает стиль слева.</p></div>
+        <div class="col-sm-3"><h3>border-right-style:</h3></div>
+        <div class="col-sm-9"><p>Устанавливает стиль справа.</p></div>
+        <div class="col-sm-3"><h3>border-bottom-style:</h3></div>
+        <div class="col-sm-9"><p>Устанавливает стиль снизу.</p></div>
+        <div class="col-sm-3"><h3>border-top-style:</h3></div>
+        <div class="col-sm-9"><p>Устанавливает стиль сверху.</p></div>
+        <div class="col-sm-3"><h3>border-block-style:</h3></div>
+        <div class="col-sm-9"><p>Устанавливает стиль сверху и снизу.</p></div>
+        <div class="col-sm-3"><h3>border-block-end-style:</h3></div>
+        <div class="col-sm-9"><p>Устанавливает стиль снизу.</p></div>
+        <div class="col-sm-3"><h3>border-block-start-style:</h3></div>
+        <div class="col-sm-9"><p>Устанавливает стиль сверху.</p></div>
+        <div class="col-sm-3"><h3>border-inline-style:</h3></div>
+        <div class="col-sm-9"><p>Устанавливает стиль слева и справа.</p></div>
+        <div class="col-sm-3"><h3>border-inline-end-style:</h3></div>
+        <div class="col-sm-9"><p>Устанавливает стиль справа.</p></div>
+        <div class="col-sm-3"><h3>border-inline-start-style:</h3></div>
+        <div class="col-sm-9"><p>Устанавливает стиль слева.</p></div>
+        <div class="col-sm-3"><h3>border-width:</h3></div>
+        <div class="col-sm-9"><p>Устанавливает ширину рамки.</p></div>
+        <div class="col-sm-3"><h3>border-left-width</h3></div>
+        <div class="col-sm-9"><p>Устанавливает ширину рамки слева.</p></div>
+        <div class="col-sm-3"><h3>border-right-width</h3></div>
+        <div class="col-sm-9"><p>Устанавливает ширину рамки справа.</p></div>
+        <div class="col-sm-3"><h3>border-top-width</h3></div>
+        <div class="col-sm-9"><p>Устанавливает ширину рамки сверху.</p></div>
+        <div class="col-sm-3"><h3>border-bottom-width</h3></div>
+        <div class="col-sm-9"><p>Устанавливает ширину рамки снизу.</p></div>
+        <div class="col-sm-3"><h3>border-image:</h3></div>
+        <div class="col-sm-9">
+          <p>Рисует изображение вокруг заданного элемента.</p>
+        </div>
+        <div class="col-sm-3"><h3>border-image-outset:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет величину, на которую область границы изображения выходит
+            за пределы блока границы.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>border-image-repeat:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет, должна ли граница изображения быть повторена,
+            масштабируема или растянута.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>border-image-slice:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет, как разделить изображение, используемое в роли
+            изображения-границы и указанное в свойстве border-image-sourcecss3.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>border-image-source:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Указывает путь (относительный или абсолютный) к изображению, которое
+            будет использовано в качестве границы. Допускается использование
+            градиентов вместо изображения.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>border-image-width:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Задает ширину границы-изображения путем определения смещения (внутрь
+            элемента от края границы).
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>border-collapse:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет имеют ли ячейки внутри общие или отдельные границы.
+            <br />collapse - Смежные ячейки имеют общие границы (модель
+            рендеринга таблицы со свернутой границей). <br />separate - Смежные
+            ячейки имеют четкие границы (модель рендеринга таблицы с
+            разделенными границами).
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>border-spacing:</h3></div>
+        <div class="col-sm-9">
+          <p>Задаёт расстояние между границами соседних ячеек в файле.</p>
+        </div>
+        <div class="col-sm-3"><h3>outline:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Универсальное свойство, одновременно устанавливающее цвет, стиль и
+            толщину внешней границы на всех четырёх сторонах элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>outline-color:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Указывает цвет внешней границы элемента. В отличие от линии,
+            задаваемой через border, линия через свойство outline отображается
+            вокруг элемента, не влияя на ширину блока или его положение.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>outline-offset</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает расстояние между рамкой, созданной с помощью свойства
+            outline, и краем или границей элемента добавленной через border.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>outline-width:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет толщину внешней границы элемента. В отличие от свойства
+            border-width, для outline-width нельзя задать границу для каждой
+            стороны элемента индивидуально. Чтобы outline-width работал,
+            необходимо установить у свойства outline-style любое значение кроме
+            none.
+            <br />thin - Тонкая линия. Значение в пикселях может изменяться в
+            зависимости от браузера, но обычно составляет 1 пиксель.
+            <br />medium - Линия средней толщины (3 пикселя). <br />thick -
+            Линия большой толщины (6 пикселей).
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>outline-style</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает стиль внешней границы элемента. В отличие от линии,
+            задаваемой через border, линия через outline отображается вокруг
+            элемента, не влияя на ширину блока или его положение.
+            <br />none - Граница не отображается. Это значение перекрывает
+            свойство outline-width, если оно присутствует. <br />dotted - Линия
+            состоящая из набора точек. <br />dashed - Пунктирная линия,
+            состоящая из серии коротких отрезков. <br />solid - Сплошная линия.
+            <br />double - Двойная линия. <br />groove - Создаёт эффект
+            вдавленной рамки. <br />ridge - Создаёт эффект рельефной границы.
+            <br />inset - Псевдотрёхмерная рамка, при которой правая и нижняя
+            граница осветляется, а левая и верхняя линии затемняются.
+            <br />outset - Псевдотрёхмерная рамка, при которой левая и верхняя
+            граница имеют более светлый оттенок, чем заданный цвет, а правая и
+            нижняя линии затемняются.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="css_animation" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>Анимация, трансформация и переходы.</h2>
+        </div>
+        <div class="col-sm-12"><h3>Анимация.</h3></div>
+        <div class="col-sm-3"><h3>animation-name:</h3></div>
+        <div class="col-sm-9">
+          <p>Определяет имя блока @keyframes, настраивающего кадры анимации.</p>
+        </div>
+        <div class="col-sm-3"><h3>animation-duration:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет длительность перехода. Можно указать время анимирования
+            всех свойств перехода сразу или для каждого свойства в отдельности.
+            Значение может задаваться в секундах (s) или миллисекундах (ms).
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>animation-timing-function:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет функцию, указывающую, как вычисляются промежуточные
+            значения свойств. Большинство временных функций может быть
+            определено графиком соответствующей функции, образующей четырьмя
+            точками кривую Безье.
+            <br />ease - Функция по умолчанию, анимация начинается медленно,
+            разгоняется быстро и замедляется в конце. <br />ease-in - Анимация
+            начинается медленно, а затем плавно ускоряется в конце.
+            <br />ease-out - Анимация начинается быстро и плавно замедляется в
+            конце. <br />ease-in-out - Анимация медленно начинается и медленно
+            заканчивается. <br />linear - Линейная функция, анимация происходит
+            равномерно на протяжении всего времени, без колебаний в скорости.
+            <br />step-start - Задаёт пошаговую анимацию, разбивая анимацию на
+            отрезки, изменения происходят в начале каждого шага. <br />step-end
+            - Задаёт пошаговую анимацию, разбивая анимацию на отрезки, изменения
+            происходят в начале каждого шага. <br />initial - Устанавливает
+            значение свойства в значение по умолчанию. <br />inherit - Наследует
+            значение свойства от родительского элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>animation-delay:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Указывает продолжительность ожидания перед запуском эффекта перехода
+            свойства при изменении его значения.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>animation-iteration-count:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет количество повторений анимации; вы можете использовать
+            значение infinite для бесконечного повторения анимации.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>animation-direction:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Дает возможность при каждом повторе анимации идти по альтернативному
+            пути, либо сбросить все значения и повторить анимацию.
+            <br />normal - Анимация проигрывается вперёд каждую итерацию, то
+            есть, когда анимация заканчивается, она сразу сбрасывается в
+            начальное положение и снова проигрывается. <br />reverse - Анимация
+            проигрывается наоборот, с последнего положения до первого и потом
+            снова сбрасывается в конечное положение и снова проигрывается.
+            <br />alternate - Анимация меняет направление в каждом цикле, то
+            есть в первом цикле она начинает с начального положения, доходит до
+            конечного, а во втором цикле продолжает с конечного и доходит до
+            начального и так далее. <br />alternate-reverse - Анимация начинает
+            проигрываться с конечного положения и доходит до начального, а в
+            следующем цикле продолжая с начального переходит в конечное.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>animation-play-state:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет приостановить и возобновить анимацию. <br />running -
+            Анимация проигрывается. <br />paused - Анимация поставлена на паузу.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>animation-fill-mode:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Настраивает значения, используемые анимацией, до и после исполнения.
+          </p>
+        </div>
+        <div id="css_transform" class="col-sm-12">
+          <h3>Трансформация.</h3>
+        </div>
+        <div class="col-sm-3"><h3>transform-box:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            content-box - Блок содержимого используется в качестве справочного
+            блока. Ссылочный блок a < table >является граничным блоком его
+            блока-оболочки таблицы, а не его блока таблицы.
+            <br />border-box - Поле границы используется в качестве эталонного
+            поля. Ссылочный блок a < table > является граничным блоком его
+            блока-оболочки таблицы, а не его блока таблицы. <br />fill-box -
+            Ограничивающая рамка объекта используется в качестве эталонной
+            рамки. <br />stroke-box - Ограничивающая рамка штриха используется в
+            качестве эталонной рамки. <br />view-box - Ближайшее окно просмотра
+            SVG используется в качестве эталонного блока.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>transform-origin:</h3></div>
+        <div class="col-sm-9">
+          <p>Устанавливает источник для преобразований элемента.</p>
+        </div>
+        <div class="col-sm-3"><h3>transform-style:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет положение дочернего элемента в 3D-пространстве или в той
+            же плоскости, что и родительский элемент. <br />preserve-3d -
+            Показывает, что дочерний элемент должен быть спозиционирован в
+            3D-пространстве. <br />flat - Показывает, что дочерний элемент лежит
+            в той же плоскости, что и родительский.
+          </p>
+        </div>
+        <div id="css_transition" class="col-sm-12">
+          <h3>Переходы.</h3>
+        </div>
+        <div class="col-sm-3"><h3>transition-delay:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Указывает продолжительность ожидания перед запуском эффекта перехода
+            свойства при изменении его значения.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>transition-duration:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет длительность перехода. Можно указать время анимирования
+            всех свойств перехода сразу или для каждого свойства в отдельности.
+            Значение может задаваться в секундах (s) или миллисекундах (ms).
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>transition-property:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Указывает имя или имена свойств, чьи переходы должны анимироваться.
+            Изменение других свойств будет происходить обычным образом.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>transition-timing-function:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет функцию, указывающую, как вычисляются промежуточные
+            значения свойств. Большинство временных функций может быть
+            определено графиком соответствующей функции, образующей четырьмя
+            точками кривую Безье.
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".el1"
+                  >Пример transition</a
+                >
+              </div>
+              <div class="collapse el1">
+                <div class="col-sm-4">
+                  <p>
+                    width: 100px; <br />
+                    transition-property: width; <br />
+                    transition-duration: 5s; <br />
+                    transition-delay: 2s; <br />:hover {width: 400px;}
+                  </p>
+                </div>
+                <div class="col-sm-8"><div class="transition"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3"><h3>offset:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Задает все свойства, необходимые для анимации элемента по заданному
+            пути.
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".el2"
+                  >Пример offset</a
+                >
+              </div>
+              <div class="collapse el2">
+                <div class="col-sm-4 offsetElement">
+                  <p>
+                    <br />
+                    #offsetElement { <br />
+                    <span class="one">width: 50px;</span>
+                    <br />
+                    <span class="one">height: 50px;</span>
+                    <br />
+                    <span class="one">background-color: blue; </span>
+                    <br />
+                    <span class="one"
+                      >offset: path('M 10 10 L 300 10 L 200 300 z') auto;</span
+                    >
+                    <br />
+                    <span class="one">animation: move 3s linear infinite;</span
+                    ><br />
+                    }
+                    <br />
+                    @keyframes move { <br />
+                    <span class="one">from {</span>
+                    <br />
+                    <span class="two">offset-distance: 0%;</span>
+                    <br /><span class="one">}</span>
+                    <br />
+                    <span class="one">to { </span><br />
+                    <span class="two">offset-distance: 100%;</span>
+                    <br />
+                    }
+                  </p>
+                </div>
+                <div class="col-sm-8 offsetElement">
+                  <div class="offset"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3"><h3>offset-rotate:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет ориентацию/направление элемента при его расположении
+            вдоль.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>offset-distance:</h3></div>
+        <div class="col-sm-9">
+          <p>Определяет положение offset-path размещаемого элемента.</p>
+        </div>
+        <div class="col-sm-3"><h3>backface-visibility:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет, видно ли заднюю грань элемента, когда он повёрнут к
+            пользователю.<br />visible - Отображает элемент как видимый.
+            <br />hidden - Элемент становится невидимым или правильней сказать,
+            полностью прозрачным, поскольку он продолжает участвовать в
+            форматировании страницы. <br />collapse - Если это значение
+            применяется не к строкам или колонкам таблицы, то результат его
+            использования будет таким же, как hidden. В случае использования
+            collapse для содержимого ячеек таблиц, то они реагируют, словно к
+            ним было добавлено display: none. Иными словами, заданные строки и
+            колонки убираются, а таблица перестраивается по новой. Это значение
+            не поддерживается браузером Internet Explorer. <br />inherit -
+            Наследует значение родителя.
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".el6"
+                  >Пример backface-visibility</a
+                >
+              </div>
+              <div class="collapse el6">
+                <div class="col-sm-6 offsetElementTwo">
+                  <div class="el6">
+                    <p class="text-center">visible</p>
+                    <table>
+                      <tr>
+                        <td>
+                          <div class="container">
+                            <div class="cube showbf">
+                              <div class="face front">1</div>
+                              <div class="face back">2</div>
+                              <div class="face right">3</div>
+                              <div class="face left">4</div>
+                              <div class="face top">5</div>
+                              <div class="face bottom">6</div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-sm-6 offsetElementTwo">
+                  <div class="el6">
+                    <p class="text-center">hidden</p>
+                    <table>
+                      <tr>
+                        <td>
+                          <div class="container">
+                            <div class="cube hidebf">
+                              <div class="face front">1</div>
+                              <div class="face back">2</div>
+                              <div class="face right">3</div>
+                              <div class="face left">4</div>
+                              <div class="face top">5</div>
+                              <div class="face bottom">6</div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3"><h3>rotate:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Пзволяет задавать преобразования поворота индивидуально и независимо
+            от свойства. Это лучше соответствует типичному использованию
+            пользовательского интерфейса и избавляет от необходимости запоминать
+            точный порядок функций преобразования для указания в свойстве.rotate
+            transformtransform.
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".el5"
+                  >Пример rotate</a
+                >
+              </div>
+              <div class="collapse el5">
+                <div class="col-sm-4 offsetElementTwo">
+                  <p>
+                    .div { <br />
+                    <span class="one">width: 150px; </span> <br />
+                    <span class="one">margin: 0 auto;</span> <br />
+                    }<br />
+                    .rotate { <br />
+                    <span class="one">transition: rotate 1s;</span> <br />
+                    }
+                    <br />
+                    .div:hover .rotate { <br />
+                    <span class="one"> rotate: 1 -0.5 1 180deg;</span>
+                    <br />}
+                  </p>
+                </div>
+                <div class="col-sm-8 offsetElementTwo">
+                  <div class="el5">
+                    <p class="rotate">Rotate</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3"><h3>scale:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет задавать преобразования масштаба индивидуально и
+            независимо от свойства. Это лучше соответствует типичному
+            использованию пользовательского интерфейса и избавляет от
+            необходимости помнить точный порядок функций преобразования для
+            указания значения.scale transformtransform
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".el4"
+                  >Пример scale</a
+                >
+              </div>
+              <div class="collapse el4">
+                <div class="col-sm-4 offsetElementTwo">
+                  <p>
+                    .div { <br />
+                    <span class="one">width: 150px;</span> <br />
+                    <span class="one">margin: 0 auto;</span> <br />}
+                    <br />.scale { <br />
+                    <span class="one">transition: scale 1s;</span> <br />}
+                    <br />.div:hover .scale { <br />
+                    <span class="one">scale: 2 1;</span> <br />}
+                  </p>
+                </div>
+                <div class="col-sm-8 offsetElementTwo">
+                  <div class="el4">
+                    <p class="scale">Scale</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3"><h3>translate:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет задавать преобразования перевода индивидуально и
+            независимо от свойства. Это лучше соответствует типичному
+            использованию пользовательского интерфейса и избавляет от
+            необходимости помнить точный порядок функций преобразования для
+            указания значения.translate transformtransform
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".el3"
+                  >Пример translate</a
+                >
+              </div>
+              <div class="collapse el3">
+                <div class="col-sm-4 offsetElementTwo">
+                  <p>
+                    .div { <br />
+                    <span class="one">width: 150px;</span> <br />
+                    <span class="one">margin: 0 auto;</span> <br />}
+                    <br />.translate { <br />
+                    <span class="one">transition: translate 1s; </span><br />}
+                    <br />.div:hover .translate { <br />
+                    <span class="one">translate: 50px 150px;</span>
+                    <br />}
+                  </p>
+                </div>
+                <div class="col-sm-8 offsetElementTwo">
+                  <div class="el3">
+                    <p class="translate">Translation</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="css_img" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Изображения.</h2></div>
+        <div class="col-sm-3"><h3>aspect-ratio:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Задает предпочтительное соотношение сторон для поля, которое будет
+            использоваться при расчете автоматических размеров и некоторых
+            других функциях макета.aspect-ratio
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>image-rendering:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Сообщает браузеру, каким алгоритмом интерполировать изображение при
+            масштабировании его размеров.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>mix-blend-mode:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет режим смешивания цветов выбранного элемента с низ
+            лежащими слоями.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>shape-image-threshold:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Задает пороговое значение альфа-канала, используемое для извлечения
+            формы с использованием изображения в качестве значения для
+            .shape-image-threshold shape-outside
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>shape-margin:</h3></div>
+        <div class="col-sm-9"><p>Задает поле для фигуры.</p></div>
+        <div class="col-sm-3"><h3>shape-outside:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Свойство определяет фигуры, вокруг которых может обтекать текст.
+            <br />circle() - Текст может обтекать по кругу. <br />ellipse() -
+            Текст может обтекать в форме эллипса. <br />inset() - Текст может
+            обтекать в форме прямоугольника <br />polygon() - Текст может
+            обтекать в форме треугольника
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".el8"
+                  >Пример circle</a
+                >
+              </div>
+              <div class="collapse el8">
+                <div class="col-sm-4 offsetElementThree">
+                  <p>
+                    .div { <br />
+                    <span class="one">float: left;</span> <br />
+                    <span class="one">height: 200px;</span> <br />
+                    <span class="one">width: 200px;</span> <br />
+                    <span class="one">shape-outside: circle();</span>
+                    <br />
+                    <span class="one">-webkit-shape-outside: circle();</span>
+                    <br />
+                    <span class="one">clip-path: circle();</span> <br />
+                    <span class="one">-webkit-clip-path: circle();</span>
+                    <br />
+                    <span class="one">background: $buttonNeon; </span><br />}
+                  </p>
+                </div>
+                <div class="col-sm-8 offsetElementThree">
+                  <div class="circle">
+                    <div class="left"></div>
+                    <p>
+                      Sometimes a web page's text content appears to be
+                      funneling your attention towards a spot on the page to
+                      drive you to follow a particular link. Sometimes you don't
+                      notice. Sometimes a web page's text content appears to be
+                      funneling your attention towards a spot on the page to
+                      drive you to follow a particular link. Sometimes you don't
+                      notice.Sometimes a web page's text content appears to be
+                      funneling your attention towards a spot on the page to
+                      drive you to follow a particular link. Sometimes you don't
+                      notice.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".el9"
+                  >Пример ellipse</a
+                >
+              </div>
+              <div class="collapse el9">
+                <div class="col-sm-4 offsetElementThree">
+                  <p>
+                    .div {
+                    <br />
+                    <span class="one">float: left;</span> <br />
+                    <span class="one">shape-outside: ellipse();</span>
+                    <br />
+                    <span class="one">-webkit-shape-outside: ellipse();</span>
+                    <br />
+                    <span class="one">clip-path: ellipse(); </span> <br />
+                    <span class="one">-webkit-clip-path: ellipse(); </span>
+                    <br />
+                    <span class="one">width: 150px;</span> <br />
+                    <span class="one">height: 300px;</span> <br />
+                    <span class="one">background: $buttonNeon;</span>
+                    <br />}
+                  </p>
+                </div>
+                <div class="col-sm-8 offsetElementThree">
+                  <div class="ellipse">
+                    <div class="left"></div>
+                    <p>
+                      Sometimes a web page's text content appears to be
+                      funneling your attention towards a spot on the page to
+                      drive you to follow a particular link. Sometimes you don't
+                      notice. Sometimes a web page's text content appears to be
+                      funneling your attention towards a spot on the page to
+                      drive you to follow a particular link. Sometimes you don't
+                      notice.Sometimes a web page's text content appears to be
+                      funneling your attention towards a spot on the page to
+                      drive you to follow a particular link. Sometimes you don't
+                      notice.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".el10"
+                  >Пример inset</a
+                >
+              </div>
+              <div class="collapse el10">
+                <div class="col-sm-4 offsetElementThree">
+                  <p>
+                    .div {
+                    <br />
+                    <span class="one">float: left;</span> <br />
+                    <span class="one">shape-outside: inset(75px);</span> <br />
+                    <span class="one">-webkit-shape-outside: inset(75px);</span>
+                    <br />
+                    <span class="one">clip-path: inset(75px);</span> <br />
+                    <span class="one">-webkit-clip-path: inset(75px); </span>
+                    <br />
+                    <span class="one"> width: 300px;</span> <br />
+                    <span class="one"> height: 300px; </span> <br />
+                    <span class="one">background: $buttonNeon;</span> <br />}
+                  </p>
+                </div>
+                <div class="col-sm-8 offsetElementThree">
+                  <div class="inset">
+                    <div class="left"></div>
+                    <p>
+                      Sometimes a web page's text content appears to be
+                      funneling your attention towards a spot on the page to
+                      drive you to follow a particular link. Sometimes you don't
+                      notice. Sometimes a web page's text content appears to be
+                      funneling your attention towards a spot on the page to
+                      drive you to follow a particular link. Sometimes you don't
+                      notice.Sometimes a web page's text content appears to be
+                      funneling your attention towards a spot on the page to
+                      drive you to follow a particular link. Sometimes you don't
+                      notice.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".el7"
+                  >Пример polygon</a
+                >
+              </div>
+              <div class="collapse el7">
+                <div class="col-sm-4 offsetElement">
+                  <p>
+                    .div { <br />
+                    <span class="one"> width: 40%;</span> <br />
+                    <span class="one">height: 12ex;</span>
+                    <br />
+                    <span class="one">background-color: $buttonNeon;</span>
+                    <br />
+                    <span class="one">float: left;</span>
+                    <br />
+                    <span class="one"
+                      >shape-outside: polygon(0 0, 100% 100%, 0 100%);</span
+                    >
+                    <br />
+                    <span class="one"
+                      >-webkit-shape-outside: polygon(0 0, 100% 100%, 0
+                      100%);</span
+                    >
+                    <br />
+                    <span class="one"
+                      >clip-path: polygon(0 0, 100% 100%, 0 100%);</span
+                    >
+                    <br />
+                    <span class="one"
+                      >-webkit-clip-path: polygon(0 0, 100% 100%, 0 100%);</span
+                    >
+                    <br />}
+                  </p>
+                </div>
+                <div class="col-sm-8 offsetElement">
+                  <div class="polygon">
+                    <div class="left"></div>
+                    <p>
+                      Sometimes a web page's text content appears to be
+                      funneling your attention towards a spot on the page to
+                      drive you to follow a particular link. Sometimes you don't
+                      notice. Sometimes a web page's text content appears to be
+                      funneling your attention towards a spot on the page to
+                      drive you to follow a particular link. Sometimes you don't
+                      notice.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="css_table" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Таблицы.</h2></div>
+        <div class="col-sm-3"><h3>caption-side:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет положение заголовка таблицы, который задается с помощью
+            тега < caption >, относительно самой таблицы.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>columns:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает количество столбцов, а также ширину этих столбцов.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>column-width:</h3></div>
+        <div class="col-sm-9">
+          <p>Устанавливает идеальную ширину столбца.</p>
+        </div>
+        <div class="col-sm-3"><h3>column-count:</h3></div>
+        <div class="col-sm-9">
+          <p>Разбивает содержимое элемента на заданное число столбцов.</p>
+        </div>
+        <div class="col-sm-3"><h3>column-fill:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Применяется к родительскому элементу, разбитому на столбцы и
+            указывает как содержимое располагается внутри столбца.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>column-gap</h3></div>
+        <div class="col-sm-9">
+          <p>Устанавливает промежуток (интервал) между колонками.</p>
+        </div>
+        <div class="col-sm-3"><h3>column-span:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет элементу охватывать все столбцы. Например для заголовка.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>column-rule:</h3></div>
+        <div class="col-sm-9">
+          <p>Устанавливает ширину, стиль и цвет линии.</p>
+        </div>
+        <div class="col-sm-3"><h3>column-rule-color:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает цвет линии, расположенной между колонками при
+            мультиколоночной вёрстке.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>column-rule-style:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Устанавливает стиль линии, расположенной между колонками при
+            мультиколоночной вёрстке.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>column-rule-width:</h3></div>
+        <div class="col-sm-9">
+          <p>Задает ширину линии, нарисованной между столбцами.</p>
+        </div>
+        <div class="col-sm-3"><h3>empty-cells:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет, будут ли отображаться границы и фон вокруг < table
+            >ячеек, не имеющих видимого содержимого.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>table-layout:</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Задает алгоритм, используемый для разметки < table > ячеек, строк и
+            столбцов.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="pseudoElements" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Псевдоэлеиенты.</h2></div>
+        <div class="col-sm-3"><h3>::after</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Он часто используется для добавления в конце содержимого к элементу
+            со content свойством.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>::before</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Он часто используется для добавления в начале содержимого к элементу
+            со content свойством.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>::backdrop</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Псевдоэлемент отображается ниже самого верхнего элемента в стеке по
+            оси Z, но выше всех остальных элементов на странице, если они
+            имеются. Обычно применяется для затемнения страницы, чтобы
+            акцентировать внимание на фотографии или диалоговом окне, которые
+            выводятся поверх такого затемнения.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>::cue</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Он может быть использован для задания стилей титров и других реплик
+            в медиа с VTT треками.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>::first-letter</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет стиль первого символа в тексте элемента, к которому
+            добавляется. Это позволяет создавать в тексте буквицу и выступающий
+            инициал.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>::first-line</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет стиль первой строки блочного текста. Длина этой строки
+            зависит от многих факторов, таких как используемый шрифт, размер
+            окна браузера, ширина блока, языка и т.д.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>::marker</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Применяет стили к маркеру элемента списка, которые обычно содержит
+            значок или номер. Работает с любым элементом или псевдоэлементом, к
+            которого установлен display: list-item, например, у такого как < li
+            > или < summary >.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>::part()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Представляет любой элемент в теневом дереве , который имеет
+            соответствующий атрибут.::part
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>::placeholder</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Псевдоэлемент, с помощью которого задаётся стилевое оформление
+            подсказывающего текста, созданного атрибутом placeholder.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>::selection</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет изменить (color, background-color, text-decoration и
+            text-shadow) для выделяемого текста.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>::slotted()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой любой элемент, помещённый в слот внутри
+            HTML-шаблона.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="pseudoClasses" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Псевдоклассы.</h2></div>
+        <div class="col-sm-3"><h3>:active</h3></div>
+        <div class="col-sm-9"><p>Активный элемент.</p></div>
+        <div class="col-sm-3"><h3>:hover</h3></div>
+        <div class="col-sm-9"><p>При наведение на элемент</p></div>
+        <div class="col-sm-3"><h3>:visited</h3></div>
+        <div class="col-sm-9"><p>Посещённый элемент.</p></div>
+        <div class="col-sm-3"><h3>:link</h3></div>
+        <div class="col-sm-9"><p>Для ещё не посещённых ссылок.</p></div>
+        <div class="col-sm-3"><h3>:focus</h3></div>
+        <div class="col-sm-9"><p>Создаёт фокус на объекте.</p></div>
+        <div class="col-sm-3"><h3>:focus-visible</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Применяется, в то время как элемент соответствует псевдоклассу
+            :focus, и определяет с помощью эвристики, что фокус должен быть
+            сделан очевидным для элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:focus-within</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет стиль элемента, когда он сам или элементы внутри него
+            получают фокус.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:not()</h3></div>
+        <div class="col-sm-9">
+          <p>Можно создать исключение для какого-то класса.</p>
+        </div>
+        <div class="col-sm-3"><h3>:checked</h3></div>
+        <div class="col-sm-9">
+          <p>Работает с чек боксом и радио, создавая при этом бордер.</p>
+        </div>
+        <div class="col-sm-3"><h3>:invalid</h3></div>
+        <div class="col-sm-9">
+          <p>Когда поле используется не по назначению.</p>
+        </div>
+        <div class="col-sm-3"><h3>:valid</h3></div>
+        <div class="col-sm-9">
+          <p>Когда поле используется по назначению.</p>
+        </div>
+        <div class="col-sm-3"><h3>:required</h3></div>
+        <div class="col-sm-9">
+          <p>Задает параметры для обязательных полей.</p>
+        </div>
+        <div class="col-sm-3"><h3>:optional</h3></div>
+        <div class="col-sm-9">
+          <p>Задает параметры для необязательных полей.</p>
+        </div>
+        <div class="col-sm-3"><h3>:first</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Используется с @-правилом @page, представляя первую страницу
+            документа при печати.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:first-of-type</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Задаёт правила стилей для первого элемента определённого типа в
+            группе братских элементов.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:first-child</h3></div>
+        <div class="col-sm-9">
+          <p>Первый элемент среди группы родственных элементов.</p>
+        </div>
+        <div class="col-sm-3"><h3>:last-of-type</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Задаёт правила стилей для последнего элемента определённого типа в
+            группе братских элементов.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:last-child</h3></div>
+        <div class="col-sm-9">
+          <p>Последний элемент среди группы родственных элементов.</p>
+        </div>
+        <div class="col-sm-3"><h3>:nth-child()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Сопоставляет элементы на основе их положения среди группы братьев и
+            сестёр :nth-child(-n+5), также можно выбрать чётные и нечётные.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:nth-last-child()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Сопоставляет элементы на основе их положения среди группы братьев и
+            сестер, считая с конца :nth-child(-n+5), также можно выбрать чётные
+            и нечётные.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:only-child</h3></div>
+        <div class="col-sm-9">
+          <p>Представляет собой элемент без братьев и сестер.</p>
+        </div>
+        <div class="col-sm-3"><h3>:nth-last-of-type()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Используется для добавления стиля к элементам указанного типа на
+            основе нумерации в дереве элементов, отсчёт ведётся от последнего
+            элемента.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:nth-of-type()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Используется для добавления стиля к элементам указанного типа на
+            основе нумерации в дереве элементов.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:any-link</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой элемент, который действует как исходный якорь
+            гиперссылки, независимо от того, была ли она посещена. Другими
+            словами, он соответствует всем элементам < a >, < area >, или < link
+            >, которые имеют атрибут href. Таким образом, он соответствует всем
+            элементам, которые используют :link или :visited.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:autofill</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Выбирает такой элемент, который является единственным потомком
+            такого типа.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:default</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Находит элемент формы, установленный по умолчанию для группы
+            связанных элементов. Этот селектор используется для элементов: <
+            button >, < input type="checkbox" >, < input type="radio" >, и <
+            option > .
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:blank</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Представляет пустые элементы, т. е. те, которые не содержат дочерних
+            элементов или текста.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:defined</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Находит любой элемент, который был определён, включая любой
+            стандартный элемент, встроенный в браузер, и пользовательские
+            элементы.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:disabled</h3></div>
+        <div class="col-sm-9">
+          <p>Применяет стиль к заблокированным элементам форм.</p>
+        </div>
+        <div class="col-sm-3"><h3>:empty</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Представляет пустые элементы, т. е. те, которые не содержат дочерних
+            элементов, текста, пробелов или переноса строк.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:enabled</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Используется для применения стиля к доступным (не заблокированным)
+            элементам форм.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:fullscreen</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Псевдокласс :fullscreen применяется к элементам, когда браузер
+            находится в полноэкранном режиме.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:has()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Отображает элемент в том случае, если любой из селекторов,
+            переданный в качестве параметра (относительно :scope), соответствует
+            хотя бы одному элементу.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:host</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Выбирает теневой хост теневого DOM , содержащий CSS, внутри которого
+            он используется — другими словами, это позволяет вам выбрать
+            пользовательский элемент внутри его теневого DOM.:host
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:in-range</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Применяется к элементам форм, у которых введённое пользователем
+            значение находится в заранее заданном диапазоне. Сам диапазон
+            устанавливается с помощью атрибутов min и max, они, соответственно,
+            задают минимальное и максимальное значение.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:indeterminate</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Задаёт стиль для элементов форм, таким как флажки и переключатели,
+            когда они находятся в неопределённом состоянии.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:lang()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет язык, который используется в документе или его фрагменте.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:left</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Используется с at-правилом @page, предоставляет все левые страницы
+            печатного документа.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:right</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Соответствует правильной странице при печати страницы. Он позволяет
+            вам описать стиль правых страниц.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:only-of-type</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Применяется к дочернему элементу указанного типа, только если он
+            единственный у родителя.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:out-of-range</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Применяется к полям форм, у которых введённое пользователем значение
+            выходит из заданного диапазона. Псевдокласс работает только для тех
+            полей, где пользователь может сам ввести значение, несмотря на
+            ограничения.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:paused</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Это псевдокласс состояния ресурса, который будет соответствовать
+            аудио-, видео- или аналогичному ресурсу, который может быть
+            «воспроизведен» или «приостановлен», когда этот элемент
+            «приостановлен».
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:placeholder-shown</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Определяет стиль элемента input или textarea, который в данный
+            момент отображает текст подсказки, заданной атрибутом placeholder.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:playing</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Это псевдокласс состояния ресурса, который будет соответствовать
+            аудио-, видео- или аналогичному ресурсу, который может быть
+            «воспроизведен» или «приостановлен», когда этот элемент
+            «приостановлен».
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:read-only</h3></div>
+        <div class="col-sm-9">
+          <p>Применяется к полям формы, у которых задан атрибут readonly.</p>
+        </div>
+        <div class="col-sm-3"><h3>:read-write</h3></div>
+        <div class="col-sm-9">
+          <p>Применяется к полям формы, доступных для изменения.</p>
+        </div>
+        <div class="col-sm-3"><h3>:root</h3></div>
+        <div class="col-sm-9">
+          <p>Находит корневой элемент дерева документа.</p>
+        </div>
+        <div class="col-sm-3"><h3>:scope</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Представляет элементы , которые являются ориентиром для
+            сопоставления селекторов.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:target</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Применяется к целевому элементу, иными словами, к идентификатору,
+            который указан в адресной строке браузера.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:user-invalid</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Представляет любой проверенный элемент формы, значение которого
+            недействительно из-за их ограничений проверки после того, как
+            пользователь взаимодействовал с ним.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:user-valid</h3></div>
+        <div class="col-sm-9">
+          <p>
+            Представляет любой проверенный элемент формы, значение которого
+            правильно проверяется на основе его ограничений проверки . Однако, в
+            отличие от этого, :validон соответствует только после того, как
+            пользователь взаимодействовал с ним.
+          </p>
+        </div>
+        <div class="col-sm-3"><h3>:where()</h3></div>
+        <div class="col-sm-9">
+          <p>
+            В качестве аргумента принимается список селекторов и выбирает только
+            те элементы, которые могут быть выбраны из переданного списка.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="back-top"><a href="#"></a></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+  </body>
+</html>

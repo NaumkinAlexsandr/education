@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>HTML5</title>
+  </head>
+  <body>
+    <div id="header" class="conteiner fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="../index.html"
+          ><h2 class="text-primary">Front-End</h2></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./html.html"><h4>HTML 5</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./css.html"><h4>CSS</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./scss.html"><h4>SCSS</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./js.html"><h4>JavaScript</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./dom.html"><h4>DOM</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./bom.html"><h4>BOM</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./http.html"><h4>HTTP</h4> </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="dropdown show">
+            <a
+              class="btn dropdown-toggle"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Элементы HTML5
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#html_metaTag"
+                >Метаданные документа</a
+              >
+              <a class="dropdown-item" href="#html_sectioning"
+                >Секционирование содержания</a
+              >
+              <a class="dropdown-item" href="#html_text"
+                >Текстовое содержание</a
+              >
+              <a class="dropdown-item" href="#html_textSemantics"
+                >Встроенные текстовые семантики</a
+              >
+              <a class="dropdown-item" href="#html_multimedia"
+                >Изображения и мультимедиа</a
+              >
+              <a class="dropdown-item" href="#html_embeddedContent"
+                >Встроенное содержание</a
+              >
+              <a class="dropdown-item" href="#html_scripting">Скриптинг</a>
+              <a class="dropdown-item" href="#html_edits"
+                >Разграничительные правки</a
+              >
+              <a class="dropdown-item" href="#html_table">Содержание таблиц</a>
+              <a class="dropdown-item" href="#html_form">Формы</a>
+              <a class="dropdown-item" href="#html_interactive"
+                >Интерактивные элементы</a
+              >
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <div id="header-text" class="container-fluid">
+      <div class="row">
+        <h1 class="col-sm-12 text-center text-primary">Работа с HTML.</h1>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>Основные элементы</h2>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            Основные элементы являются основой любого HTML документа. Вы
+            увидите эти элементы в исходном коде для всех
+            веб-страниц после задания типа документа на первой строке на
+            странице. DOCTYPE определяет, какую версию (X) HTML
+            эта страница использует. Элементы
+            страницы находятся между открывающим и закрывающим тегом
+            <span class="tag">html</span><span class="tag">/html</span>. Элемент
+            <span class="tag">html</span> называется корневым элементом.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">html</span><span class="tag">/html</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой корень (элемент верхнего уровня) HTML-документа,
+            поэтому его так же называют корневым элементом. Все другие элементы
+            должны быть потомками этого элемента (должны находиться внутри
+            него).
+          </p>
+        </div>
+        <!------------------------------------------------->
+        <div id="html_metaTag" class="col-sm-12">
+          <h2>Метаданные документа</h2>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            Метаданные содержат информацию о странице. Они включают в
+            себя информацию о стилях, скрипты и данные, чтобы
+            помочь программному обеспечению (поисковые системы, браузеры и т.д.)
+            использовать и отображать страницу. Метаданные для стилей и
+            скрипты могут быть определены на странице или ссылке на другой файл,
+            который имеет информацию.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3 id="tag3">
+            <span class="tag">base</span><span class="tag">/base</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Определяет основной адрес (URL), используемый для всех относительных
+            адресов (URLs) в документе. Может быть только один <span
+              class="tag"
+              class="tag"
+              >base</span
+            >
+            элемент в одном документе.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">head</span><span class="tag">/head</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Содержит машиночитаемую информацию (metadata) о документе, например
+            его заголовок, скрипты и страницы стилей.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">link /</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Определяет отношения между текущим документом и внешним ресурсом.
+            Этот элемент чаще всего используется для ссылки на  CSS, а также для
+            создания иконок сайта (как для иконок в стиле "favicon", так и для
+            иконок домашних экранов и приложений мобильных устройств) среди
+            прочего.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">meta /</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет такие Metadata, которые не могут быть представлены
+            другими HTML-метатегами, такими как <span class="tag">base</span>,
+            <span class="tag">link</span>, <span class="tag">script</span>,
+            <span class="tag">style</span> или <span class="tag">title</span>.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">style</span><span class="tag">/style</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Содержит стилевую информацию для документа или его части. По
+            умолчанию стилевые инструкции внутри этого элемента считаются
+            написанными на CSS.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">title</span><span class="tag">/title</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Определяет заголовок документа, который отображается в заголовке
+            окна Browser или на вкладке страницы. Он содержит только текст, а
+            теги внутри элемента игнорируются.
+          </p>
+        </div>
+        <!------------------------------------------------->
+        <div id="html_sectioning" class="col-sm-12">
+          <h2>Секционирование содержания.</h2>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            Секционирование содержания элементов позволяет разложить содержимое
+            документа на логические части. Используйте секционирование элементов
+            для создания общих черт содержания страницы, включая шапку и
+            подвал и заголовочные элементы для обозначения разделов.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">address</span><span class="tag">/address</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Задаёт контактные данные для ближайшего родительского<span
+              class="tag"
+              >article</span
+            >
+
+            или <span class="tag">body</span>; В последнем случае применяется ко
+            всему документу, визуально выделяется курсивом.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">article</span><span class="tag">/article</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет самостоятельную часть документа, страницы, приложения
+            или сайта, предназначенную для независимого распространения или
+            повторного использования.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">aside</span><span class="tag">/aside</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой часть документа, чьё содержимое только косвенно
+            связанно с основным содержимым документа.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">footer</span><span class="tag">/footer</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой нижний колонтитул (футер, подвал) для своего
+            ближайшего секционного контента или секционного корня. Футер обычно
+            содержит информацию об авторе раздела, информацию об авторском праве
+            или ссылки на связанные документы.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">header</span><span class="tag">/header</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой вводный контент, обычно группу вводных или
+            навигационных средств. Он может содержать другие элементы-заголовки,
+            а также логотип, форму поиска, имя автора и другие элементы.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">h1</span><span class="tag">/h1</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Элементы <span class="tag">h1</span
+            ><span class="tag">/h6</span> представляют собой 6 уровней
+            заголовков секций. <span class="tag">h1</span> это наибольший
+            заголовок и <span class="tag">h6</span> - наименьший.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">main</span><span class="tag">/main</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Предназначен для основного контента (содержимого)
+            <span class="tag">body</span> документа (страницы). Основной контент
+            состоит из контента, который непосредственно относится к главной
+            теме документа или её развивает.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">nav</span><span class="tag">/nav</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Определяет отдельную секцию документа, назначение которой
+            обозначение ссылок навигации (как внутри текущего документа, так и
+            ведущих на другую страницу). В качестве примера такой секции можно
+            привести меню, якорные ссылки.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">section</span><span class="tag">/section</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой автономный раздел — который не может быть
+            представлен более точным по семантике элементом — внутри
+            HTML-документа.
+          </p>
+        </div>
+        <!------------------------------------------------->
+        <div id="html_text" class="col-sm-12">
+          <h2>Текстовое содержание.</h2>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            Используйте текстовые элементы HTML для организации блоков или
+            разделов содержания, размещённые между тегами открытия 
+            <span class="tag">body</span> и закрытия
+            <span class="tag">/body</span>. Важное значение для accessibility
+            и SEO, чтобы эти элементы определили цель или структуру этого
+            контента.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">blockquote</span
+            ><span class="tag">/blockquote</span>
+          </h3>
+        </div>
+        <div class="col-sm-9"><p>Для создания цитат.</p></div>
+        <div class="col-sm-3">
+          <h3><span class="tag">div</span><span class="tag">/div</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Является универсальным контейнером для потокового контента. Он не
+            влияет на контент или макет до тех пор, пока не будет стилизован с
+            помощью CSS.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">dd</span><span class="tag">/dd</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Предоставляет подробности или определение предшествующего термина
+            <span class="tag">dt</span> в списке определений
+            <span class="tag">dl</span>.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">dl</span><span class="tag">/dl</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой список описаний. Этот элемент служит контейнером
+            для списка пар терминов (определяемых элементом
+            <span class="tag">dt</span>) и их описаний (определяемых
+            элементами <span class="tag">dd</span>). Этот элемент обычно
+            используют при создании глоссария или для отображения метаданных
+            (списка пар ключ-значение).
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">dt</span><span class="tag">/dt</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Определяет термин в описании или списке определений, как таковой
+            должен использоваться внутри элемента <span class="tag">dl</span>.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">figcaption</span
+            ><span class="tag">/figcaption</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Для создания заголовка иллюстрации используется с элементом
+            <span class="tag">figure</span>.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">figure</span><span class="tag">/figure</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Иллюстрация с необязательной подписью представляет самостоятельный
+            контент, которая указывается с помощью элемента<span class="tag"
+              >figcaption</span
+            >.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">hr</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Элемент служит для тематического разделения абзацев. Рисует
+            горизонтальную прямую.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">menu</span><span class="tag">/menu</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет группу команд, которые пользователь может выполнить или
+            активировать. Он включает как меню-списки, которые могут
+            отображаться в верхней части экрана, так и контекстные меню,
+            например, такие, что могут появиться под кнопкой после нажатия.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">p</span><span class="tag">/p</span></h3>
+        </div>
+        <div class="col-sm-9"><p>Представляет собой абзац.</p></div>
+        <div class="col-sm-3">
+          <h3><span class="tag">pre</span><span class="tag">/pre</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой предварительно отформатированный текст, который
+            должен быть представлен точно так, как написано в HTML-файле.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">ul</span><span class="tag">/ul</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Используется для неупорядоченного списка - в частности для
+            маркированного списка.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">ol</span><span class="tag">/ol</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Используется для упорядоченного списка — в частности для
+            пронумерованного списка.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">li</span><span class="tag">/li</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>Используется для создания элементов списка.</p>
+        </div>
+        <!------------------------------------------------->
+        <div id="html_textSemantics" class="col-sm-12">
+          <h2>Встроенные текстовые семантики.</h2>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            Используйте встроенную в HTML текстовую семантику, чтобы
+            определить смысл, структуру или стиль текста,
+            линий или части текста.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">a</span><span class="tag">/a</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Определяет гиперссылку для перехода на определённое место на
+            странице или на другую страницу в Интернете. Также он может быть
+            использован для создания якоря — это место назначения для
+            гиперссылок внутри страницы: так ссылки не ограничены только
+            в перемещении между страницами.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">abbr</span><span class="tag">/abbr</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой аббревиатуру и, опционально, может показывать её
+            расшифровку. Расшифровка записывается в атрибут <span class="tag"
+              >title</span
+            >. Иные значения<span class="tag">title</span>, кроме расшифровки
+            аббревиатуры не допускаются.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">bdi</span><span class="tag">/bdi</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            HTML-элемент<span class="tag">bdi</span> изолирует от окружающего
+            текста текстовый фрагмент, направление в котором может отличаться от
+            направления окружающего текста (но не обязательно отличается).
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">bdo</span><span class="tag">/bdo</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Переопределения двунаправленного текста переопределяет текущее
+            направление текста так, что текст внутри отображается в другом
+            направлении.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">br /</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>Переносит содержимое на новую строку.</p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">cite</span><span class="tag">cite</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет из себя ссылку на источник цитаты. Он должен включать в
+            себя название произведения или URL, который может быть в сокращённом
+            виде в соответствии с правилами, используемых для добавления
+            метаданных цитирования.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">code</span><span class="tag">/code</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Отображает его содержимое в стиле, предназначенном для указания на
+            то, что текст является коротким фрагментом компьютерного кода.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">data</span><span class="tag">/data</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>Связывает данное содержимое с машиночитаемым представлением.</p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">dfn</span><span class="tag">/dfn</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Используется для указания термина, определяемого в контексте фразы
+            или предложения.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">em</span><span class="tag">/em</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Элемент отмечает акцентируемый текст. Элемент<span class="tag"
+              >em</span
+            >
+            может быть вложенным, причём каждый уровень вложенности указывает на
+            большую степень акцента.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">kbd</span><span class="tag">/kbd</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Указывает на то, что текст внутри элемента  описывает
+            пользовательский ввод с клавиатуры, голосовой ввод или ввод с
+            использованием любого другого типа устройств ввода текста.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">mark</span><span class="tag">/mark</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет текст, выделенный в справочных целях из-за
+            своей актуальности в определённом контексте. Например, он может быть
+            использован на странице с результатом поиска, в
+            которой выделяется каждый экземпляр искомого слова.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">q</span><span class="tag">/q</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Указывает, что заключенный в нем текст является короткой встроенной
+            цитатой. Большинство современных браузеров реализуют это, заключая
+            текст в кавычки.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">rp</span><span class="tag">/rp</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Используется для обеспечения резервных скобок для браузеров, которые
+            не поддерживают отображение рубиновых аннотаций с использованием
+            элемента. Один элемент должен заключать в себя каждую из открывающих
+            и закрывающих скобок, заключающих в себя элемент, содержащий текст
+            аннотации.<span class="tag">rt</span> <span class="tag">rp</span>
+            <span class="tag">ruby</span>.
+            <ruby>
+              漢 <rp>(</rp><rt>kan</rt><rp>)</rp> 字 <rp>(</rp><rt>ji</rt
+              ><rp>)</rp>
+            </ruby>
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">rt</span><span class="tag">/rt</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Элемент определяет компонент ruby-текста ruby-аннотации, который
+            используется для предоставления информации о произношении, переводе
+            или транслитерации для восточноазиатской типографики. Элемент всегда
+            должен находиться внутри элемента.<span class="tag">rt</span>
+            <span class="tag">rp</span> <span class="tag">ruby</span>.
+            <ruby>
+              漢 <rp>(</rp><rt>kan</rt><rp>)</rp> 字 <rp>(</rp><rt>ji</rt
+              ><rp>)</rp>
+            </ruby>
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">ruby</span><span class="tag">/ruby</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Предназначен для добавления небольшой аннотации сверху или снизу от
+            заданного текста. Такая форма записи преимущественно используется
+            для идеографической письменности вроде китайского языка, но может
+            применяться и для других языков, если требуется написать один текст
+            над другим. <ruby> 明日 <rp>(</rp><rt>Ashita</rt><rp>)</rp> </ruby>
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">samp</span><span class="tag">/samp</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Используется для включения встроенного текста, который представляет
+            образец (или цитату) вывода компьютерной программы. Его содержимое
+            обычно отображается с использованием моноширинного шрифта браузера
+            по умолчанию.
+            <br /><samp>Keyboard not found <br />Press F1 to continue</samp>
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">small</span><span class="tag">/small</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой побочные комментарии и мелкий шрифт, такие как
+            авторские права и юридический текст, независимо от его стиля
+            представления. <br /><small
+              >The content is licensed under a Creative Commons
+              Attribution-ShareAlike 2.5 Generic License.</small
+            >
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">span</span><span class="tag">/span</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Является основным строковым контейнером для фразового контента,
+            который, по существу, ничего не представляет. Он может
+            использоваться для группировки элементов в целях стилизации
+            (использование атрибутов class или id) или потому, что они имеет
+            общие значения атрибутов, например lang.
+          </p>
+        </div>
+
+        <div class="col-sm-3">
+          <h3><span class="tag">sub</span><span class="tag">/sub</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>Нижний индекс Н<sub>2</sub>О</p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">sup</span><span class="tag">/sup</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>Верхний индекс x<sup>2</sup></p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">time</span><span class="tag">/time</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Используется для представления либо времени в 24-рехчасовом формате,
+            либо точной даты по Григорианскому календарю (с опциональным
+            указанием времени и часового пояса).
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">s</span><span class="tag">/s</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Отображает текст с зачеркиванием или перечеркнутой линией. <br /><s
+              >This can't be real!</s
+            >
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">u</span><span class="tag">/u</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Подчёркивает текс линией.
+            <br /><u>This can't be real!</u>
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">b</span><span class="tag">/b</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Отображают содержимое жирным шрифтом.
+            <br /><b>This can't be real!</b>
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">strong</span><span class="tag">/strong</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Отображают содержимое жирным шрифтом.
+            <br /><strong>This can't be real!</strong>
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">i</span><span class="tag">/i</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>Выделение текста курсивом. <br /><i>This can't be real!</i></p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">var</span><span class="tag">/var</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Выделение текста курсивом.
+            <br /><var>This can't be real!</var>
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">wbr /</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Предоставляет возможность переноса слова – позицию в тексте, где
+            браузер может по желанию разбить строку, в противном случае его
+            правила разрыв а строки не будут создавать разрыв в этом месте.
+          </p>
+        </div>
+        <!------------------------------------------------->
+        <div id="html_multimedia" class="col-sm-12">
+          <h2>Изображения и мультимедиа.</h2>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            HTML позволяет использовать различные мультимедийные ресурсы, такие
+            как изображения, аудио и видео.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">area</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Определяет активную область на изображении и, при желании, связывает
+            её с гипертекстовой ссылкой. Этот элемент используется только внутри
+            элемента <span class="tag">map</span>.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">map</span><span class="tag">/map</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Используется с элементами area для определения карты изображения
+            (интерактивной области ссылок).
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">audio</span><span class="tag">/audio</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Используется для встраивания звукового контента в документ. Он может
+            содержать один или более источников аудио, представленных с помощью
+            атрибута src или элемента source – браузер выберет один наиболее
+            подходящий. Он так же может предназначаться для потокового
+            мультимедиа, используя интерфейс MediaStream. Атрибуты:
+            <br />
+            autoplay - автоматически воспроизводятся треки. <br />controls -
+            создаёт элемент управления. <br />loop - проигрыватель будет
+            автоматически возвращаться в начало при достижении конца аудио.
+            <br />muted - отключённый звук с начала. <br />preload - загружает
+            файл вместе с страницей. <br />src - ссылка на аудио.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">img /</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>Встраивает изображение в документ. Это замещаемый элемент.</p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">track /</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Используется как дочерний элемент медиа-элементов<span class="tag"
+              >audio</span
+            >
+            и <span class="tag">video</span>. Позволяет указать
+            синхронизированные текстовые дорожки (или данные на основе времени),
+            например, для автоматической обработки субтитров. Файлы треков
+            используют формат WebVTT (.vtt файлы) — Web Video Text Tracks
+            или Timed Text Markup Language (TTML).
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">video</span><span class="tag">/video</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Для встраивания видео контента в документ. Видео элемент может
+            содержать один или несколько источников видео. Чтобы указать
+            источник видео, необходимо использовать атрибут src или
+            элемент source; браузер сам определит наиболее подходящий источник.
+          </p>
+        </div>
+        <!------------------------------------------------->
+        <div id="html_embeddedContent" class="col-sm-12">
+          <h2>Встроенное содержание.</h2>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            Содержание мультимедийных HTML включает в себя другие материалы,
+            даже если они не всегда легко взаимодействуют.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">embed /</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Вставляет расширенный контент в выбранное место документа. Этот
+            контент может быть представлен от внешнего приложения или другого
+            источника интерактивного контента, такого как плагин для браузера,
+            например.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">iframe</span><span class="tag">/iframe</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>Позволяет добавить контент с другого сайта.</p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">object</span><span class="tag">/object</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Сообщает браузеру, как загружать и отображать объекты, которые
+            исходно браузер не понимает. Как правило, такие объекты требуют
+            подключения к браузеру специального модуля, который называется
+            плагин, или запуска вспомогательной программы. Атрибуты:
+            <br />align - Определяет, как объект будет выравниваться на странице
+            и способ его обтекания текстом.<br />archive - Устанавливает путь к
+            файлам, необходимым для работы объекта.<br />classid - Адрес
+            программы (приложения или плагина), которая работает с данным
+            объектом, и будет запускать его.<br />code - Имя объекта для его
+            выполнения.<br />codebase - Путь к папке с объектом, который указан
+            атрибутом code или classid.<br />codetype - Указывает на тип
+            объекта, который задан атрибутом classid.<br />data - Адрес файла
+            для его отображения в окне браузера.<br />height - Высота
+            объекта.<br />hspace - Горизонтальный отступ от объекта до
+            окружающего контента.<br />tabindex - Определяет порядок перехода
+            между элементами с помощью клавиши Tab.<br />type - MIME-тип
+            объекта.<br />vspace - Вертикальный отступ от объекта до окружающего
+            контента.<br />width - Ширина объекта.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">param /</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Предназначен для передачи значений параметров Java-апплетам или
+            объектам веб-страницы, созданным с помощью тегов<span class="tag"
+              >applet</span
+            >
+            или <span class="tag">object</span>.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">picture</span><span class="tag">/picture</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Служит контейнером для одного или более элементов source и одного
+            элемента img для обеспечения оптимальной версии изображения для
+            различных размеров экрана.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">portal</span><span class="tag">/portal</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет встроить другую HTML-страницу в текущую, чтобы обеспечить
+            более плавную навигацию по новым страницам.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">source /</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Указывает несколько медиа-ресурсов для элементов
+            <span class="tag">picture</span>,
+            <span class="tag">video</span> и <span class="tag">audio</span>. Это
+            пустой элемент. Он обычно используется для обслуживания одного и
+            того же медиа-контента в нескольких форматах, поддерживаемых
+            различными браузерами.
+          </p>
+        </div>
+        <!------------------------------------------------->
+        <div id="html_scripting" class="col-sm-12"><h2>Скриптинг.</h2></div>
+        <div class="col-sm-12">
+          <p>
+            Содержание мультимедийных HTML включает в себя другие материалы,
+            даже если они не всегда легко взаимодействуют.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">canvas</span><span class="tag">/canvas</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Элемент может быть использован для отрисовки графики через
+            скрипты (обычно используется JavaScript). Например, его можно
+            использовать для отрисовки графиков, делать композиции фото или
+            даже выполнять анимации. Вы можете (и должны) дать альтернативное
+            содержание внутри блока <span class="tag">canvas</span>. Этот
+            контент будет рендерится в обоих браузерах, в старых которые не
+            поддерживают <span class="tag">canvas</span> и в браузерах с
+            отключённым JavaScript.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">noscript</span><span class="tag">/noscript</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Определяет секцию <span class="tag">html</span> кода, которая будет
+            вставлена, если в браузере пользователя нет либо отключена
+            поддержка JavaScript.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">script</span><span class="tag">/script</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Используется для встраивания или подключения исполняемого JavaScript
+            кода.
+          </p>
+        </div>
+        <!------------------------------------------------->
+        <div id="html_edits" class="col-sm-12">
+          <h2>Разграничительные правки.</h2>
+        </div>
+        <div class="col-sm-12">
+          <p>Эти элементы позволяют вам отметить определённые части текста.</p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">del</span><span class="tag">/del</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>Представляет диапазон текста, который был удалён из документа.</p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">ins</span><span class="tag">/ins</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой диапазон текста, который был добавлен в документ.
+          </p>
+        </div>
+        <!------------------------------------------------->
+        <div id="html_table" class="col-sm-12"><h2>Содержание таблиц.</h2></div>
+        <div class="col-sm-12">
+          <p>
+            Эти элементы используются для создания и обработки табличных данных.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">caption</span><span class="tag">/caption</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Элемент заголовка таблицы. Если этот элемент используется,
+            он всегда должен быть первым вложенным элементом тэга <span
+              class="tag"
+            ></span
+            >table.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">col /</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Определяет столбец в таблице и используется для определения общей
+            семантики на всех ячейках. Обычно он находится в элементе colgroup.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">colgroup</span><span class="tag">/colgroup</span>
+          </h3>
+        </div>
+        <div class="col-sm-9"><p>Определяет группу столбцов в таблице.</p></div>
+        <div class="col-sm-3">
+          <h3><span class="tag">table</span><span class="tag">/table</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Информацию представленная в двумерной таблице, состоящей из строк и
+            столбцов ячеек, содержащих данные.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">td</span><span class="tag">/td</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Определяет ячейку таблицы которая содержит данные. Участвует
+            в табличной модели.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">th</span><span class="tag">/th</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>Определяет ячейку как заголовок группы ячеек таблицы.</p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">tr</span><span class="tag">/tr</span></h3>
+        </div>
+        <div class="col-sm-9"><p>Определяет ряд ячеек в таблице.</p></div>
+        <div class="col-sm-3">
+          <h3><span class="tag">thead</span><span class="tag">/thead</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>Набор строк, определяющих заголовок столбцов таблицы.</p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">tbody</span><span class="tag">/tbody</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>Набор строк таблицы, составляющие тело таблицы.</p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">tfoot</span><span class="tag">/tfoot</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Элемент подвала таблицы определяющий набор строк суммирующих столбцы
+            таблицы.
+          </p>
+        </div>
+        <!------------------------------------------------->
+        <div id="html_form" class="col-sm-12"><h2>Формы.</h2></div>
+        <div class="col-sm-12">
+          <p>
+            HTML содержит некоторое количество элементов, которые используются
+            вместе для создания форм, которые пользователь может заполнить и
+            отправить на сервер. Доступно множество информации по этой теме
+            в руководстве по HTML формам.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">button</span><span class="tag">/button</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Создаёт кликабельную кнопку, которая может быть использована в
+            формах или в любом другом месте документа, который требует простой,
+            стандартной кнопки. По умолчанию, кнопки HTML обычно представлены в
+            стиле, аналогичном стилю хост-платформы, на которой работает user
+            agent, но вы можете изменить внешний вид кнопки, используя CSS.
+            Атрибуты:
+            <br />accesskey - Доступ к элементам формы с помощью горячих клавиш.
+            <br />autofocus - Устанавливает, что кнопка получает фокус после
+            загрузки страницы. <br />disabled - Блокирует доступ и изменение
+            элемента. <br />form - Связывает между собой форму и кнопку.
+            <br />formaction - Задаёт адрес, на который пересылаются данные
+            формы при нажатии на кнопку. <br />formenctype - Способ кодирования
+            данных формы. <br />formmethod - Указывает метод пересылки данных
+            формы. <br />formnovalidate - Отменяет проверку формы на
+            корректность. <br />
+            formtarget - Открывает результат отправки формы в новом окне или
+            фрейме. <br />name - Определяет уникальное имя кнопки. <br />type -
+            Тип кнопки — обычная, для отправки данных формы на сервер или для
+            очистки формы. <br />value - Значение кнопки, которое будет
+            отправлено на сервер или прочитано с помощью скриптов.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">datalist</span><span class="tag">/datalist</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Содержит набор опций (option), доступных для выбора. Выбранное
+            значение будет установлено для элемента <span class="tag"
+              >input</span
+            >, с атрибутом list.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">fieldset</span><span class="tag">/fieldset</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Используется для группировки нескольких элементов управления без
+            веб-форм.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">form</span><span class="tag">/form</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет (собой) раздел документа, содержащий интерактивные
+            элементы управления, которые позволяют пользователю отправлять
+            информацию на веб-сервер. Атрибуты: <br />accept-charset -
+            Устанавливает кодировку, в которой сервер может принимать и
+            обрабатывать данные. <br />action - Адрес программы или документа,
+            который обрабатывает данные формы. <br />autocomplete - Включает
+            автозаполнение полей формы. <br />enctype - Способ кодирования
+            данных формы. <br />method - Метод протокола HTTP. name Имя формы.
+            <br />novalidate - Отменяет встроенную проверку данных формы на
+            корректность ввода. <br />target - Имя окна или фрейма, куда
+            обработчик будет загружать возвращаемый результат.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">input /</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Используется для создания интерактивных элементов управления в
+            веб-формах для получения данных от пользователя; в зависимости от
+            устройства и user agent, доступен широкий выбор типов входных данных
+            и виджетов управления. Из-за огромного количества возможных
+            сочетаний типов ввода и атрибутов это один из самых мощных и сложных
+            элементов HTML. Атрибуты: <br />accept - Устанавливает фильтр на
+            типы файлов, которые вы можете отправить через поле загрузки файлов.
+            <br />accesskey - Переход к элементу с помощью комбинации клавиш.
+            <br />align - Определяет выравнивание изображения. <br />alt -
+            Альтернативный текст для кнопки с изображением. <br />autocomplete -
+            Включает или отключает автозаполнение. <br />autofocus -
+            Устанавливает фокус в поле формы. <br />border - Толщина рамки
+            вокруг изображения. <br />checked - Предварительно активированный
+            переключатель или флажок. <br />disabled - Блокирует доступ и
+            изменение элемента. <br />form - Связывает поле с формой по её
+            идентификатору. <br />formaction - Определяет адрес обработчика
+            формы. <br />formenctype - Устанавливает способ кодирования данных
+            формы при их отправке на сервер. <br />formmethod - Сообщает
+            браузеру каким методом следует передавать данные формы на сервер.
+            <br />formnovalidate - Отменяет встроенную проверку данных на
+            корректность. <br />formtarget - Определяет окно или фрейм в которое
+            будет загружаться результат, возвращаемый обработчиком формы.
+            <br />list - Указывает на список вариантов, которые можно выбирать
+            при вводе текста. <br />max - Верхнее значение для ввода числа или
+            даты. <br />maxlength - Максимальное количество символов разрешенных
+            в тексте. <br />min - Нижнее значение для ввода числа или даты.
+            <br />multiple - Позволяет загрузить несколько файлов одновременно.
+            <br />name - Имя поля, предназначено для того, чтобы обработчик
+            формы мог его идентифицировать. <br />pattern - Устанавливает шаблон
+            ввода. <br />placeholder - Выводит подсказывающий текст.
+            <br />readonly - Устанавливает, что поле не может изменяться
+            пользователем. <br />required - Обязательное для заполнения поле.
+            <br />size - Ширина текстового поля. <br />src - Адрес графического
+            файла для поля с изображением. <br />step - Шаг приращения для
+            числовых полей. <br />tabindex - Определяет порядок перехода между
+            элементами с помощью клавиши Tab. <br />type - Сообщает браузеру, к
+            какому типу относится элемент формы. <br />value - Значение
+            элемента.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">label</span><span class="tag">/label</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой подпись к элементу пользовательского интерфейса.
+            Атрибуты:
+            <br />accesskey - Доступ к элементам формы с помощью горячих клавиш.
+            <br />for - Идентификатор элемента, с которым следует установить
+            связь.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">legend</span><span class="tag">/legend</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой заголовок содержания родительского
+            элемента fieldset. Атрибуты: <br />accesskey - Переход к группе
+            элементов формы с помощью комбинации клавиш. <br />align -
+            Определяет выравнивание текста. <br />title - Добавляет всплывающую
+            подсказку к тексту заголовка.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3><span class="tag">meter</span><span class="tag">/meter</span></h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой скалярное значение в пределах известного
+            диапазона или дробного значения. Атрибуты: <br />value -
+            Устанавливает значение. Обязательный атрибут. <br />min - Задает
+            минимально возможное значение. <br />max - Задает максимально
+            возможное значение. <br />low - Определяет предел, при достижении
+            которого значение считается низким. <br />high - Определяет предел,
+            при достижении которого значение считается высоким. <br />optimum -
+            Определяет наилучшее или оптимальное значение.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">optgroup</span><span class="tag">/optgroup</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Позволяет группировать опции, находящиеся внутри элемента <span
+              class="tag"
+              >select</span
+            >.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">option</span><span class="tag">/option</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Используется для определения пункта списка контейнера select,
+            элемента optgroup, или элемента datalist. Элемент <span class="tag"
+              >option</span
+            >
+            может представлять раздел меню всплывающих окон и других перечней
+            или списков HTML документа. Атрибуты: <br />disabled - Заблокировать
+            для доступа элемент списка. <br />label - Указание метки пункта
+            списка. <br />selected - Заранее устанавливает определенный пункт
+            списка выделенным. <br />
+            value - Значение пункта списка, которое будет отправлено на сервер
+            или прочитано с помощью скриптов.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">output</span><span class="tag">/output</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Является контейнерным элементом, в котором сайт или приложение могут
+            выводить результаты вычислений или действий пользователя.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">progress</span><span class="tag">/progress</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Отображает индикатор, показывающий ход выполнения задачи, обычно
+            отображаемый в виде прогресс бара (индикатора выполнения).
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">select</span><span class="tag">/select</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой элемент управления который содержит меню опций.
+            Атрибуты:
+            <br />accesskey - Позволяет перейти к списку с помощью некоторого
+            сочетания клавиш. <br />autofocus - Устанавливает, что список
+            получает фокус после загрузки страницы. <br />disabled - Блокирует
+            доступ и изменение элемента. <br />form - Связывает список с формой.
+            <br />multiple - Позволяет одновременно выбирать сразу несколько
+            элементов списка.<br />
+            name - Имя элемента для отправки на сервер или обращения через
+            скрипты. required Список обязателен для выбора перед отправкой
+            формы. <br />size - Количество отображаемых строк списка.<br />
+            tabindex - Определяет последовательность перехода между элементами
+            при нажатии на клавишу
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">textarea</span><span class="tag">/textarea</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Представляет собой элемент формы для создания области, в которую
+            можно вводить несколько строк текста. Атрибуты: <br />accesskey -
+            Переход к полю с помощью сочетания клавиш. <br />autofocus -
+            Автоматическое получение фокуса. <br />cols - Ширина поля в
+            символах. <br />disabled - Блокирует доступ и изменение элемента.
+            <br />form - Связывает текстовое поле с формой по её идентификатору.
+            <br />maxlength - Максимальное число введенных символов. <br />name
+            - Имя поля, предназначено для того, чтобы обработчик формы мог его
+            идентифицировать. <br />placeholder - Указывает замещающийся текст.
+            <br />readonly - Устанавливает, что поле не может изменяться
+            пользователем. <br />required - Обязательное для заполнения поле.
+            <br />rows - Высота поля в строках текста. <br />tabindex - Порядок
+            перехода между элементами при нажатии на клавишу Tab. <br />wrap -
+            Параметры переноса строк.
+          </p>
+        </div>
+        <!------------------------------------------------->
+        <div id="html_interactive" class="col-sm-12">
+          <h2>Интерактивные элементы.</h2>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            HTML содержит в себе элементы, которые помогают создавать
+            интерактивные объекты пользовательского интерфейса.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">details</span><span class="tag">/details</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>Используется для раскрытия скрытой (дополнительной) информации.</p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">dialog</span><span class="tag">/dialog</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Определяет диалоговое окно или другой интерактивный элемент, такой
+            как инспектор или окно. Элементы <span class="tag">form</span> могут
+            интегрироваться с диалогом с помощью указания
+            атрибута method="dialog". Когда отправляется такая форма, диалог
+            закрывается с returnValue равным value нажатой кнопки submit.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <h3>
+            <span class="tag">summary</span><span class="tag">/summary</span>
+          </h3>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            Определяет сводку, заголовок или легенду для
+            <span class="tag">details</span> поля раскрытия элемента. Щелчок по
+            <span class="tag">summary</span> элементу переключает состояние
+            родительского <span class="tag">details</span> элемента открытым и
+            закрытым.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="back-top"><a href="#"></a></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/page_html.js"></script>
+  </body>
+</html>

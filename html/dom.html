@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <div id="header" class="conteiner fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="../index.html"
+          ><h2 class="text-primary">Front-End</h2></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./html.html"><h4>HTML 5</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./css.html"><h4>CSS</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./scss.html"><h4>SCSS</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./js.html"><h4>JavaScript</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./dom.html"><h4>DOM</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./bom.html"><h4>BOM</h4> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./http.html"><h4>HTTP</h4> </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="dropdown show">
+            <a
+              class="btn dropdown-toggle"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Document Object Model
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#dom">DOM</a>
+              <a class="dropdown-item" href="#dom_findElement"
+                >Поиск элементов</a
+              >
+              <a class="dropdown-item" href="#dom_changeProperties"
+                >Изменение свойств элементов HTML</a
+              >
+              <a class="dropdown-item" href="#dom_attribute">Атрибуты</a>
+              <a class="dropdown-item" href="#dom_classes">Классы</a>
+              <a class="dropdown-item" href="#dom_createNodes"
+                >Методы для создания узлов</a
+              >
+              <a class="dropdown-item" href="#dom_create"
+                >Добавление и удаление элементов</a
+              >
+              <a class="dropdown-item" href="#dom_cloneNode"
+                >Клонирование элементов</a
+              >
+              <a class="dropdown-item" href="#dom_listener">Обработчик</a>
+              <a class="dropdown-item" href="#dom_delegation"
+                >Делегирование событий</a
+              >
+            </div>
+          </div>
+          <div class="dropdown show">
+            <a
+              class="btn dropdown-toggle"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Браузерные события
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#developments_mouseEvents"
+                >События мыши</a
+              >
+              <a class="dropdown-item" href="#developments_management"
+                >События на элементах управления</a
+              >
+              <a class="dropdown-item" href="#developments_focus"
+                >События фокуса</a
+              >
+              <a class="dropdown-item" href="#developments_keyboards"
+                >Клавиатурные события.</a
+              >
+              <a class="dropdown-item" href="#developments_cssEvents"
+                >CSS events.</a
+              >
+              <a class="dropdown-item" href="#developments_page"
+                >События журнала сессии</a
+              >
+              <a class="dropdown-item" href="#developments_composition"
+                >События Text Composition</a
+              >
+              <a class="dropdown-item" href="#developments_print"
+                >События печати</a
+              >
+              <a class="dropdown-item" href="#developments_resource"
+                >События ресурса</a
+              >
+              <a class="dropdown-item" href="#developments_network"
+                >Сетевые события</a
+              >
+              <a class="dropdown-item" href="#developments_web"
+                >События веб-сокетов</a
+              >
+              <a class="dropdown-item" href="#developments_view"
+                >События представления</a
+              >
+              <a class="dropdown-item" href="#developments_buffer"
+                >События буфера обмена</a
+              >
+              <a class="dropdown-item" href="#developments_drag"
+                >События Drag & Drop</a
+              >
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <div id="header-text" class="container-fluid">
+      <div class="row">
+        <h1 class="col-sm-12 text-center text-primary">Работа с DOM.</h1>
+      </div>
+    </div>
+    <!----------------------------------------------------->
+    <div id="dom" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>Document Object Model.</h2>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            DOM – это объектная модель документа, которую браузер создаёт в
+            памяти компьютера на основании HTML-кода, полученного им от сервера.
+            Если сказать по-простому, то HTML-код – это текст страницы, а DOM –
+            это набор связанных объектов, созданных браузером при парсинге её
+            текста.
+          </p>
+        </div>
+        <div class="col-sm-12 dom-model">
+          <div class="col-sm-6"><img src="../img/dom.png" alt="dom" /></div>
+          <div class="col-sm-6">
+            <p>
+              Узел html образован элементом <span>html</span>. Узлы
+              <span>head</span> и <span>body</span> имеют родительскую связь с
+              <span>html</span>. Узел <span>head</span> связан с
+              <span>link</span>, <span>meta</span> и <span>title</span> и
+              является для них родителем. В свою очередь
+              <span>body</span> связан с <span>header</span>,
+              <span>section</span> и <span>footer</span> и является для них
+              родителем. Элемент <span>section</span> имеет трёх детей
+              <span>div</span>, <span>p</span> и <span>a</span>. <br />Не зная
+              как устроено DOM-дерево и связи между узлами найти какой-то
+              определенный элемент в нём будет достаточно затруднительно.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <h3>Навигация по DOM-элементам.</h3>
+        </div>
+        <div class="col-sm-12 dom-model">
+          <div class="col-sm-6">
+            <img src="../img/dom-links.svg" alt="dom-links" />
+          </div>
+          <div class="col-sm-6">
+            <p>
+              DOM позволяет нам делать что угодно с элементами и их содержимым,
+              но для начала нужно получить соответствующий DOM-объект.
+              <br />
+              Все операции с DOM начинаются с объекта document. Это главная
+              «точка входа» в DOM. Из него мы можем получить доступ к любому
+              узлу. <br />
+              Так выглядят основные ссылки, по которым можно переходить между
+              узлами DOM.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-5"><h3>document.documentElement</h3></div>
+        <div class="col-sm-7">
+          <p>Самый верхний узел документа он соответствует тегу < html >.</p>
+        </div>
+        <div class="col-sm-5"><h3>document.head</h3></div>
+        <div class="col-sm-7"><p>Применяется к тегу < head ></p></div>
+        <div class="col-sm-5"><h3>document.body</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Другой часто используемый DOM-узел – узел тега < body >. Для
+            сокращения кода в дальнейшем используем переменную. <br />const
+            bodyElement = document.body;
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.childNodes</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Содержит список всех детей, включая текстовые узлы.
+            bodyElement.childNodes
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.hasChildNodes</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Для проверки есть ли у элемента дочерние узлы.
+            bodyElement.hasChildNodes
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.firstChild</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Обеспечивают быстрый доступ к первому дочернему элементу.
+            bodyElement.firstChild
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.lastChild</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Обеспечивают быстрый доступ к последнему дочернему элементу.
+            bodyElement.lastChild
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.previousSibling</h3></div>
+        <div class="col-sm-7">
+          <p>Предыдущий узел того же родителя. bodyElement.previousSibling</p>
+        </div>
+        <div class="col-sm-5"><h3>.nextSibling</h3></div>
+        <div class="col-sm-7">
+          <p>Следующий узел того же родителя. bodyElement.nextSibling</p>
+        </div>
+        <div class="col-sm-5"><h3>.parentNode</h3></div>
+        <div class="col-sm-7"><p>Родитель. bodyElement.parentNode</p></div>
+        <div class="col-sm-12 dom-model">
+          <div class="col-sm-6">
+            <img src="../img/dom-links-elements.svg" alt="dom-links" />
+          </div>
+          <div class="col-sm-6">
+            <p>
+              <br />
+              Навигационные свойства, описанные выше, относятся ко всем узлам в
+              документе. В частности, в childNodes находятся и текстовые узлы и
+              узлы-элементы и узлы-комментарии, если они есть.
+
+              <br />
+              Но для большинства задач текстовые узлы и узлы-комментарии нам не
+              нужны. Мы хотим манипулировать узлами-элементами, которые
+              представляют собой теги и формируют структуру страницы.
+
+              <br />
+              Поэтому давайте рассмотрим дополнительный набор ссылок, которые
+              учитывают только узлы-элементы.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-5"><h3>.children</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Коллекция детей, которые являются элементами. bodyElement.children
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.firstElementChild</h3></div>
+        <div class="col-sm-7">
+          <p>Первый дочерний элемент. bodyElement.firstElementChild</p>
+        </div>
+        <div class="col-sm-5"><h3>.lastElementChild</h3></div>
+        <div class="col-sm-7">
+          <p>Последний дочерний элемент. bodyElement.lastElementChild</p>
+        </div>
+        <div class="col-sm-5"><h3>.previousElementSibling</h3></div>
+        <div class="col-sm-7">
+          <p>Предыдущий соседний элемент. bodyElement.previousElementSibling</p>
+        </div>
+        <div class="col-sm-5"><h3>.nextElementSibling</h3></div>
+        <div class="col-sm-7">
+          <p>Следующий соседний элемент. bodyElement.nextElementSibling</p>
+        </div>
+        <div class="col-sm-5"><h3>.parentElement</h3></div>
+        <div class="col-sm-7">
+          <p>Родительский элемент. bodyElement.parentElement</p>
+        </div>
+        <div id="dom_findElement" class="col-sm-12">
+          <h3>Поиск элементов.</h3>
+        </div>
+        <div class="col-sm-5"><h3>.getElementById(id)</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Находит элемент по идентификатору элемента, является статическим.
+            document.getElementById(id)
+          </p>
+        </div>
+        <div class="col-sm-5">
+          <h3>.getElementsByName(name)</h3>
+        </div>
+        <div class="col-sm-7">
+          <p>
+            Находит элементы по имени, является динамичным (живым).
+            document.getElementsByName(name)
+          </p>
+        </div>
+        <div class="col-sm-5">
+          <h3>.getElementsByTagName(name)</h3>
+        </div>
+        <div class="col-sm-7">
+          <p>
+            Находит элементы по имени тегов. Способен искать внутри элементов и
+            является динамичным (живым). document.getElementsByTagName(name)
+          </p>
+        </div>
+        <div class="col-sm-5">
+          <h3>.getElementsByClassName(name)</h3>
+        </div>
+        <div class="col-sm-7">
+          <p>
+            Находит элементы под названием класса. Способен искать внутри
+            элементов и является динамичным (живым).
+            document.getElementsByClassName(name)
+          </p>
+        </div>
+        <div class="col-sm-5">
+          <h3>.querySelectorAll(selector)</h3>
+        </div>
+        <div class="col-sm-7">
+          <p>
+            Находит элементы соответствующему css селектору. Способен искать
+            внутри элементов и является статическим.
+            document.querySelectorAll(selector)
+            <br />Поиск по тегу первого уровня вложенности.
+            document.querySelectorAll(selector > selector) <br />Поиск по
+            нескольким класам. document.querySelectorAll(selector, selector)
+            <br />Поиск по вложенным класам. document.querySelectorAll(selector
+            selector)
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.querySelector(selector)</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Находит первый элемент соответствующему css селектору. Способен
+            искать внутри элементов и является статическим.
+            document.querySelector(selector)
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.closest</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Ищет ближайшего предка который соответствует css селектору.
+            document.querySelector(selector).closest(selector)
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.matches</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Ничего не ищет, а проверяет, удавлетворяет ли элемент css селекторуб
+            возвращает true или false.
+            <br />const element = document.querySelectorAll('.first__div');
+            <br />for (let el of element) { <br />if
+            (el.matches('[class$="first__div_red"]')) { <br />
+            console.log('Red'); <br />} else if
+            (el.matches('[class$="first__div_blue"]')) { <br />
+            console.log('Blue'); <br />} <br />}
+          </p>
+        </div>
+        <div id="dom_changeProperties" class="col-sm-12">
+          <h3>Изменение свойств элементов HTML.</h3>
+        </div>
+        <div class="col-sm-5"><h3>.innerHTML</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Изменяет внутренний HTML элемент.<br />
+            element.innerHTML = новое содержимое html
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.outerHTML</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Отличие от innerHTML состоит в том что кроме содержимого мы получаем
+            объект целиком.<br />
+            element.outerHTML = новое содержимое html
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.insertAdjacentHTML</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Позволяет вставлять произвольный HTML в любое место документа, в том
+            числе и между узлами!
+            <br />html - Строка HTML, которую нужно вставить. <br />where - Куда
+            по отношению к elem вставлять строку. Всего четыре варианта: <br />
+            beforeBegin – перед elem. <br />afterBegin – внутрь elem, в самое
+            начало. <br />beforeEnd – внутрь elem, в конец. <br />afterEnd –
+            после elem. <br />element.insertAdjacentHTML(where, html);
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.insertAdjacentElement</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Метод добавляет переданный элемент в DOM-дерево относительно
+            элемента, вызвавшего метод.
+            <br />element - Элемент, добавляемый в DOM-дерево. <br />where -
+            Куда по отношению к elem вставлять строку. Всего четыре варианта:
+            <br />
+            beforeBegin – перед elem. <br />afterBegin – внутрь elem, в самое
+            начало. <br />beforeEnd – внутрь elem, в конец. <br />afterEnd –
+            после elem. <br />element.insertAdjacentElement(where, element);
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.insertAdjacentText</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Метод помещает заданный текстовый узел в указанную позицию
+            относительно элемента, который передан в вызове метода.
+            <br />element - Текст, который будет помещён в заданную позицию.
+            <br />where - Куда по отношению к elem вставлять строку. Всего
+            четыре варианта: <br />
+            beforeBegin – перед elem. <br />afterBegin – внутрь elem, в самое
+            начало. <br />beforeEnd – внутрь elem, в конец. <br />afterEnd –
+            после elem. <br />element.insertAdjacentText(where, element);
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.textContent</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Позволяет получить непосредственно содержимое. При этом внесеные
+            изменения передаются в виде строки полностью. <br />
+            element.textContent = новое содержимое html
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.style</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Изменение стиля элемента HTML. <br />
+            element.style.property = new style
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".dom1"
+                  >Пример style</a
+                >
+              </div>
+              <div class="collapse dom1">
+                <div class="col-sm-4 offsetElement">
+                  <p id="style-text">Начальный текст.</p>
+                  <button onclick="changeStyle()">Нажми</button>
+                </div>
+                <div class="col-sm-8 offsetElement">
+                  <p>
+                    function changeStyle() { <br />
+                    <span class="one"
+                      >const element =
+                      document.getElementById('style-text');</span
+                    >
+                    <br />
+                    <span class="one">element.style.color = 'lightblue';</span>
+                    <br />
+                    <span class="one">element.style.fontSize = '24px';</span>
+                    <br />
+                    <span class="one"
+                      >element.innerHTML = 'Конечный текст';</span
+                    >
+                    <br />
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5"><h3>getComputedStyle</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Позволяет получить все стили элемента. <br />
+            getComputedStyle(element)
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".dom7"
+                  >Пример getComputedStyle</a
+                >
+              </div>
+              <div class="collapse dom7">
+                <p></p>
+                <div class="col-sm-4 offsetElement">
+                  <div class="getStyle">Text</div>
+                  <div class="getStyle1">
+                    .div { font-size: 20px; color: white; margin: 10px 0;}
+                  </div>
+                  <button onclick="getStyle()">Нажми</button>
+                </div>
+                <div class="col-sm-8 offsetElement">
+                  <p>
+                    function getStyle() { <br />
+                    <span class="one"
+                      >const element1 =
+                      document.querySelector('.getStyle');</span
+                    >
+                    <br />
+                    <span class="one"
+                      >const element2 =
+                      document.querySelector('.getStyle1');</span
+                    >
+                    <br />
+                    <span class="one"
+                      >const el1 = getComputedStyle(element1);</span
+                    >
+                    <br />
+                    <span class="one"
+                      >element2.innerHTML = `font-size: ` + el1.fontSize + ' ' +
+                      `color: ` + el1.color;</span
+                    >
+                    <br />
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="dom_attribute" class="col-sm-12"><h3>Атрибуты.</h3></div>
+        <div class="col-sm-12">
+          <p>
+            С помощью нестандартных атрибутов можно привязать к элементу данные,
+            доступные в JavaScript. Это делается с помощью атрибутов с
+            названиями, которые начинаются на data-
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.hasAttribute</h3></div>
+        <div class="col-sm-7">
+          <p>Проверяет наличие атрибута. <br />element.hasAttribute(name)</p>
+        </div>
+        <div class="col-sm-5"><h3>.getAttribute</h3></div>
+        <div class="col-sm-7">
+          <p>Получает значение атрибута. <br />element.getAttribute(name)</p>
+        </div>
+        <div class="col-sm-5"><h3>.setAttribute</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Устанавливает атрибут. <br />element.setAttribute(имя, значение)
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.removeAttribute</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Удаляет атрибут.<br />
+            element.removeAttribute(name)
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".dom2"
+                  >Пример</a
+                >
+              </div>
+              <div class="collapse dom2">
+                <div class="col-sm-4 offsetElement">
+                  <p>
+                    Есть тег < p id="attribute-text" >
+                    <br />Проверим есть ли в теги id, выведим id и добавим
+                    class="text"
+                  </p>
+                  <p id="attribute-text">Начальный текст.</p>
+                  <button onclick="changeAttribute()">Нажми</button>
+                </div>
+                <div class="col-sm-8 offsetElement">
+                  <p>
+                    function changeAttribute() {
+                    <br />
+                    <span class="one"
+                      >const element =
+                      document.getElementById('attribute-text');</span
+                    >
+                    <br />
+                    <span class="one"
+                      >element.setAttribute('class', 'text');</span
+                    >
+                    <br />
+                    <span class="one">element.innerHTML = </span><br />
+                    <span class="two">`hasAttribute('id'): ` + </span> <br />
+                    <span class="two">element.hasAttribute('id') + ' ' +</span>
+                    <br />
+                    <span class="two">`getAttribute('id'): ` + </span> <br />
+                    <span class="two">element.getAttribute('id') + ' ' +</span>
+                    <br />
+                    <span class="two">`hasAttribute('class'): ` + </span> <br />
+                    <span class="two">element.hasAttribute('class');</span>
+                    <br />}
+                    <br />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="dom_classes" class="col-sm-12"><h3>Классы.</h3></div>
+        <div class="col-sm-5"><h3>.className</h3></div>
+        <div class="col-sm-7">
+          <p>Отвечает за значение атрибута class элемента. element.className</p>
+        </div>
+        <div class="col-sm-5"><h3>.classList</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Возвращает псевдомассив DOMTokenList, содержащий все классы
+            элемента. <br />
+            element.classList
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.classList.contains</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Возвращает true/false, в зависимости от того, есть ли у элемента
+            класс class. <br />element.classList.contains("class")
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.classList.add</h3></div>
+        <div class="col-sm-7">
+          <p>Добавляет класс. <br />element.classList.add("class")</p>
+        </div>
+        <div class="col-sm-5"><h3>.classList.remove</h3></div>
+        <div class="col-sm-7">
+          <p>Удаляет класс. <br />element.classList.remove("class")</p>
+        </div>
+        <div class="col-sm-5"><h3>.classList.toggle</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Если класса нет, добавляет его, если есть – удаляет.
+            <br />element.classList.toggle("class")
+          </p>
+        </div>
+        <div id="dom_createNodes" class="col-sm-12">
+          <h3>Методы для создания узлов.</h3>
+        </div>
+        <div class="col-sm-5"><h3>document.write(html)</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Записывает html на страницу «прямо здесь и сейчас». Строка html
+            может быть динамически сгенерирована, поэтому метод достаточно
+            гибкий. Мы можем использовать JavaScript, чтобы создать полноценную
+            веб-страницу и записать её в документ.
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>document.createElement(tag)</h3></div>
+        <div class="col-sm-7"><p>Создаёт элемент с заданным тегом.</p></div>
+        <div class="col-sm-5"><h3>document.createTextNode(value)</h3></div>
+        <div class="col-sm-7">
+          <p>Создаёт текстовый узел (редко используется),</p>
+        </div>
+        <div id="dom_create" class="col-sm-12">
+          <h3>Добавление и удаление элементов.</h3>
+        </div>
+        <div class="col-sm-5"><h3>.append()</h3></div>
+        <div class="col-sm-7">
+          <p>Добавляет узлы или строки в конец выбранного тега.</p>
+        </div>
+        <div class="col-sm-5">
+          <h3>.prepend()</h3>
+        </div>
+        <div class="col-sm-7">
+          <p>Вставляет узлы или строки в начало выбранного тега.</p>
+        </div>
+        <div class="col-sm-5">
+          <h3>.before()</h3>
+        </div>
+        <div class="col-sm-7">
+          <p>Вставляет узлы или строки до выбранного тега.</p>
+        </div>
+        <div class="col-sm-5">
+          <h3>.after()</h3>
+        </div>
+        <div class="col-sm-7">
+          <p>Вставляет узлы или строки после выбранного тега.</p>
+        </div>
+        <div class="col-sm-5"><h3>.replaceWith()</h3></div>
+        <div class="col-sm-7">
+          <p>Заменяет выбранный тег заданными узлами или строками.</p>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".dom3"
+                  >Пример</a
+                >
+              </div>
+              <div class="collapse dom3">
+                <div class="col-sm-4 offsetElement">
+                  <div class="list_ol">
+                    <ol id="list_ol">
+                      <li>0</li>
+                      <li>1</li>
+                      <li>2</li>
+                    </ol>
+                  </div>
+                  <button onclick="addElemets()">Нажми</button>
+                </div>
+                <div class="col-sm-8 offsetElement">
+                  <p>
+                    function addElemets() { <br />
+                    <span class="one"
+                      >list_ol.before('before'); // вставить строку "before"
+                      перед < ol ></span
+                    >
+                    <br />
+                    <span class="one"
+                      >list_ol.after('after'); // вставить строку "after" после
+                      < ol ></span
+                    >
+                    <br />
+                    <span class="one"
+                      >let liFirst = document.createElement('li');</span
+                    >
+                    <br />
+                    <span class="one">liFirst.innerHTML = 'prepend';</span>
+                    <br />
+                    <span class="one"
+                      >list_ol.prepend(liFirst); // вставить liFirst в начало <
+                      ol ></span
+                    >
+                    <br />
+                    <span class="one"
+                      >let liLast = document.createElement('li');</span
+                    >
+                    <br />
+                    <span class="one">liLast.innerHTML = 'append';</span> <br />
+                    <span class="one"
+                      >list_ol.append(liLast); // вставить liLast в конец < ol
+                      ></span
+                    >
+                    <br />
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="dom_cloneNode" class="col-sm-12">
+          <h3>Клонирование элементов.</h3>
+        </div>
+        <div class="col-sm-5"><h3>.cloneNode(deep)</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Клонирует элемент, если deep==true, то со всеми дочерними
+            элементами.
+            <br />element.cloneNode(deep)
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.cloneNode(true)</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Создаёт «глубокий» клон элемента – со всеми атрибутами и дочерними
+            элементами.
+            <br />element.cloneNode(true)
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.cloneNode(false)</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Клон будет без дочерних элементов. <br />element.cloneNode(false)
+          </p>
+        </div>
+        <div id="dom_listener" class="col-sm-12"><h3>Обработчик.</h3></div>
+        <div class="col-sm-5"><h3>.addEventListener()</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Это функция, которая первым параметром принимает название евента, а
+            вторым параметром функцию, которая выполнится, когда мы кликнем.
+            <br />element.addEventListener()
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.removeEventListener()</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Используется для удаления обработчика.
+            <br />element.removeEventListener()
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>.dispatchEvent()</h3></div>
+        <div class="col-sm-7">
+          <p>Генерирует событие на объекте. <br />element.dispatchEvent()</p>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".dom4"
+                  >Пример обработчика</a
+                >
+              </div>
+              <div class="collapse dom4">
+                <div class="col-sm-4 offsetElement">
+                  <p>При наведение на первый элемент, появляется второй.</p>
+                  <div class="firstElement"><p>First element</p></div>
+                  <div style="display: none" class="secondElement">
+                    <p>Second element</p>
+                  </div>
+                </div>
+                <div class="col-sm-8 offsetElement">
+                  <p>
+                    const firstElement =
+                    document.querySelector('.firstElement'); <br />
+                    const secondElement =
+                    document.querySelector('.secondElement'); <br />
+                    firstElement.addEventListener('mouseover', function () {
+                    <br />
+                    <span class="one"
+                      >secondElement.style.display = 'block';</span
+                    >
+                    <br />
+                    }); <br />
+                    firstElement.addEventListener('mouseout', function () {
+                    <br />
+                    <span class="one"
+                      >secondElement.style.display = 'none';</span
+                    >
+                    <br />
+                    });
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="dom_delegation" class="col-sm-12">
+          <h3>Делегирование событий.</h3>
+        </div>
+        <div class="col-sm-5"><h3>event.target</h3></div>
+        <div class="col-sm-7">
+          <p>Является ссылкой на объект, который был инициатором события.</p>
+        </div>
+        <div class="col-sm-5"><h3>event.stopPropagation()</h3></div>
+        <div class="col-sm-7">
+          <p>Для остановки всплывания нужно вызвать метод.</p>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".dom5"
+                  >Пример всплытия</a
+                >
+              </div>
+              <div class="collapse dom5">
+                <div class="col-sm-4 offsetElement">
+                  <section class="first_form" onclick="alert('section')">
+                    section
+                    <form onclick="alert('form')">
+                      form
+                      <div onclick="alert('div')">div</div>
+                    </form>
+                  </section>
+                </div>
+                <div class="col-sm-8 offsetElement">
+                  <p>
+                    Если в примере выше кликнуть на div, то последовательно
+                    выведутся alert: div → form → section. Этот процесс
+                    называется всплытием, потому что события «всплывают» от
+                    внутреннего элемента вверх через родителей, подобно тому,
+                    как всплывает пузырёк воздуха в воде.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="collapse-group">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a
+                  data-toggle="collapse"
+                  data-parent="#collapse-group"
+                  href=".dom6"
+                  >Пример event.target</a
+                >
+              </div>
+              <div class="collapse dom6">
+                <p>
+                  event.target – это исходный элемент, на котором произошло
+                  событие, в процессе всплытия он неизменен. <br />
+                  this – это текущий элемент, до которого дошло всплытие, на нём
+                  сейчас выполняется обработчик.
+                </p>
+                <div class="col-sm-4 offsetElement">
+                  <section class="second_form">
+                    section
+                    <form>
+                      form
+                      <div>div</div>
+                    </form>
+                  </section>
+                </div>
+                <div class="col-sm-8 offsetElement">
+                  <p>
+                    const form = document.querySelector('.second_form'); <br />
+                    form.onclick = function (event) { <br />
+                    <span class="one"
+                      >alert('target = ' + event.target.tagName + ', this=' +
+                      this.tagName);</span
+                    >
+                    <br />
+                    };
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!----------------------------------------------------->
+    <div id="developments" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12"><h2>Браузерные события.</h2></div>
+        <div id="developments_mouseEvents" class="col-sm-12">
+          <h3>События мыши.</h3>
+        </div>
+        <div class="col-sm-5"><h3>auxclick</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Кнопка указывающего устройства (любая неосновная кнопка) была нажата
+            и отпущена на элементе.
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>click</h3></div>
+        <div class="col-sm-7">
+          <p>Происходит, когда кликнули на элемент левой кнопкой мыши.</p>
+        </div>
+        <div class="col-sm-5"><h3>dblclick</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Происходит, когда дважды кликнули на элемент левой кнопкой мыши.
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>contextmenu</h3></div>
+        <div class="col-sm-7">
+          <p>Происходит, когда кликнули на элемент правой кнопкой мыши.</p>
+        </div>
+        <div class="col-sm-5"><h3>mouseover</h3></div>
+        <div class="col-sm-7"><p>Когда мышь наводится на элемент.</p></div>
+        <div class="col-sm-5"><h3>mouseout</h3></div>
+        <div class="col-sm-7"><p>Когда мышь покидает элемент.</p></div>
+        <div class="col-sm-5"><h3>mousedown</h3></div>
+        <div class="col-sm-7"><p>Когда нажали кнопку мыши на элементе.</p></div>
+        <div class="col-sm-5"><h3>mouseup</h3></div>
+        <div class="col-sm-7"><p>Когда отжали кнопку мыши на элементе.</p></div>
+        <div class="col-sm-5"><h3>mousemove</h3></div>
+        <div class="col-sm-7"><p>При движении мыши.</p></div>
+        <div class="col-sm-5"><h3>mouseenter</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Указывающее устройство перемещено на элемент, к которому подключён
+            обработчик.
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>mouseleave</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Указывающее устройство перемещается от элемента, к которому
+            подключён обработчик.
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>pointerlockchange</h3></div>
+        <div class="col-sm-7">
+          <p>Указатель был заблокирован или отпущен.</p>
+        </div>
+        <div class="col-sm-5"><h3>pointerlockerror</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Указатель был заблокирован по техническим причинам или из-за отказа
+            в разрешении.
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>select</h3></div>
+        <div class="col-sm-7"><p>Выбирается какой-то текст.</p></div>
+        <div class="col-sm-5"><h3>wheel</h3></div>
+        <div class="col-sm-7">
+          <p>Колесо указывающего устройства вращается в любом направлении.</p>
+        </div>
+        <div id="developments_management" class="col-sm-12">
+          <h3>События на элементах управления.</h3>
+        </div>
+        <div class="col-sm-5"><h3>submit</h3></div>
+        <div class="col-sm-7"><p>Пользователь отправил форму < form >.</p></div>
+        <div class="col-sm-5"><h3>reset</h3></div>
+        <div class="col-sm-7"><p>Кнопка сброса нажата.</p></div>
+        <div id="developments_focus" class="col-sm-12">
+          <h3>События фокуса.</h3>
+        </div>
+        <div class="col-sm-5"><h3>focus</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Пользователь фокусируется на элементе, например нажимает на < input
+            >.
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>blur</h3></div>
+        <div class="col-sm-7"><p>Элемент потерял фокус.</p></div>
+        <div id="developments_keyboards" class="col-sm-12">
+          <h3>Клавиатурные события.</h3>
+        </div>
+        <div class="col-sm-5"><h3>keydown</h3></div>
+        <div class="col-sm-7"><p>Когда пользователь нажимает клавишу.</p></div>
+        <div class="col-sm-5"><h3>keyup</h3></div>
+        <div class="col-sm-7"><p>Когда пользователь отпускает клавишу.</p></div>
+        <div class="col-sm-5"><h3>keypress</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Любая клавиша, кроме Shift, Fn, CapsLock, находится в нажатом
+            положении. (Происходит непрерывно.)
+          </p>
+        </div>
+        <div class="col-sm-12"><h3>События документа.</h3></div>
+        <div class="col-sm-5"><h3>DOMContentLoaded</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Когда HTML загружен и обработан, DOM документа полностью построен и
+            доступен.
+          </p>
+        </div>
+        <div id="developments_cssEvents" class="col-sm-12">
+          <h3>CSS events.</h3>
+        </div>
+        <div class="col-sm-5"><h3>animationstart</h3></div>
+        <div class="col-sm-7"><p>CSS-анимация началась.</p></div>
+        <div class="col-sm-5"><h3>animationcancel</h3></div>
+        <div class="col-sm-7"><p>CSS-анимация прервалась.</p></div>
+        <div class="col-sm-5"><h3>animationend</h3></div>
+        <div class="col-sm-7"><p>CSS-анимация завершена.</p></div>
+        <div class="col-sm-5"><h3>animationiteration</h3></div>
+        <div class="col-sm-7"><p>CSS-анимация повторяется.</p></div>
+        <div class="col-sm-5"><h3>transitionstart</h3></div>
+        <div class="col-sm-7">
+          <p>
+            CSS переход уже фактически начался (запустился после каких-либо
+            задержек).
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>transitioncancel</h3></div>
+        <div class="col-sm-7"><p>CSS переход отменён.</p></div>
+        <div class="col-sm-5"><h3>transitionend</h3></div>
+        <div class="col-sm-7"><p>CSS переход завершён.</p></div>
+        <div class="col-sm-5"><h3>transitionrun</h3></div>
+        <div class="col-sm-7">
+          <p>
+            CSS переход начал выполняться (запускается до начала любой
+            задержки).
+          </p>
+        </div>
+        <div id="developments_page" class="col-sm-12">
+          <h3>События журнала сессии.</h3>
+        </div>
+        <div class="col-sm-5"><h3>pagehide</h3></div>
+        <div class="col-sm-7">
+          <p>Выполняется обход записей журнала сессии.</p>
+        </div>
+        <div class="col-sm-5"><h3>pageshow</h3></div>
+        <div class="col-sm-7">
+          <p>Выполняется переход к записи журнала сессии.</p>
+        </div>
+        <div class="col-sm-5"><h3>popstate</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Выполняется переход к записи журнала сессии (в некоторых случаях).
+          </p>
+        </div>
+        <div id="developments_composition" class="col-sm-12">
+          <h3>События Text Composition</h3>
+        </div>
+        <div class="col-sm-5"><h3>compositionstart</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Подготавливается композиция отрывка текста (аналогично нажатию
+            клавиш для ввода с клавиатуры, но работает с другими входами, такими
+            как распознавание речи).
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>compositionupdate</h3></div>
+        <div class="col-sm-7">
+          <p>К отрывку составляемого текста добавляется символ.</p>
+        </div>
+        <div class="col-sm-5"><h3>compositionend</h3></div>
+        <div class="col-sm-7">
+          <p>Составление отрывка текста завершено или отменено.</p>
+        </div>
+        <div id="developments_print" class="col-sm-12">
+          <h3>События печати</h3>
+        </div>
+        <div class="col-sm-5"><h3>beforeprint</h3></div>
+        <div class="col-sm-7"><p>Диалоговое окно печати открыто.</p></div>
+        <div class="col-sm-5"><h3>afterprint</h3></div>
+        <div class="col-sm-7"><p>Диалоговое окно печати закрыто.</p></div>
+        <div id="developments_resource" class="col-sm-12">
+          <h3>События ресурса.</h3>
+        </div>
+        <div class="col-sm-5"><h3>error</h3></div>
+        <div class="col-sm-7"><p>Не удалось загрузить ресурс.</p></div>
+        <div class="col-sm-5"><h3>abort</h3></div>
+        <div class="col-sm-7"><p>Загрузка ресурса была прервана.</p></div>
+        <div class="col-sm-5"><h3>load</h3></div>
+        <div class="col-sm-7">
+          <p>Ресурс и его зависимые ресурсы завершили загрузку.</p>
+        </div>
+        <div class="col-sm-5"><h3>loadend</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Выполнение остановлено (после отправки "error", "abort" или "load").
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>loadstart</h3></div>
+        <div class="col-sm-7"><p>Выполнение началось.</p></div>
+        <div class="col-sm-5"><h3>progress</h3></div>
+        <div class="col-sm-7"><p>В ходе выполнения.</p></div>
+        <div class="col-sm-5"><h3>timeout</h3></div>
+        <div class="col-sm-7">
+          <p>Выполнение прекращено по истечении установленного времени.</p>
+        </div>
+        <div class="col-sm-5"><h3>beforeunload</h3></div>
+        <div class="col-sm-7">
+          <p>Окно, документ и его ресурсы будут выгружены.</p>
+        </div>
+        <div class="col-sm-5"><h3>unload</h3></div>
+        <div class="col-sm-7">
+          <p>Выгружается документ или зависимый ресурс.</p>
+        </div>
+        <div id="developments_network" class="col-sm-12">
+          <h3>Сетевые события.</h3>
+        </div>
+        <div class="col-sm-5"><h3>online</h3></div>
+        <div class="col-sm-7"><p>Браузер получил доступ к сети.</p></div>
+        <div class="col-sm-5"><h3>offline</h3></div>
+        <div class="col-sm-7"><p>Браузер потерял доступ к сети.</p></div>
+        <div id="developments_web" class="col-sm-12">
+          <h3>События веб-сокетов.</h3>
+        </div>
+        <div class="col-sm-5"><h3>open</h3></div>
+        <div class="col-sm-7"><p>Установлено соединение с WebSocket.</p></div>
+        <div class="col-sm-5"><h3>message</h3></div>
+        <div class="col-sm-7">
+          <p>Сообщение принимается через WebSocket.</p>
+        </div>
+        <div class="col-sm-5"><h3>error</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Соединение WebSocket было закрыто с предубеждением (например,
+            некоторые данные не могут быть отправлены).
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>close</h3></div>
+        <div class="col-sm-7"><p>Соединение WebSocket было закрыто.</p></div>
+        <div id="developments_view" class="col-sm-12">
+          <h3>События представления.</h3>
+        </div>
+        <div class="col-sm-5"><h3>fullscreenchange</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Элемент был переведён в полноэкранный режим или обратно в нормальный
+            режим.
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>fullscreenerror</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Переход в полноэкранный режим был невозможен по техническим причинам
+            или из-за отказа в разрешении.
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>resize</h3></div>
+        <div class="col-sm-7"><p>Размер просмотра документа изменён.</p></div>
+        <div class="col-sm-5"><h3>scroll</h3></div>
+        <div class="col-sm-7"><p>Документ или элемент были прокручены.</p></div>
+        <div id="developments_buffer" class="col-sm-12">
+          <h3>События буфера обмена.</h3>
+        </div>
+        <div class="col-sm-5"><h3>cut</h3></div>
+        <div class="col-sm-7">
+          <p>Выделение было вырезано и скопировано в буфер обмена.</p>
+        </div>
+        <div class="col-sm-5"><h3>copy</h3></div>
+        <div class="col-sm-7">
+          <p>Выделение было скопировано в буфер обмена.</p>
+        </div>
+        <div class="col-sm-5"><h3>paste</h3></div>
+        <div class="col-sm-7"><p>Элемент из буфера обмена был вставлен</p></div>
+        <div id="developments_drag" class="col-sm-12">
+          <h3>События Drag & Drop</h3>
+        </div>
+        <div class="col-sm-5"><h3>drag</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Элемент или выделение текста перетаскивается. (Срабатывает
+            непрерывно каждые 350 мс).
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>dragend</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Операция перетаскивания завершается (отпуская кнопку мыши или
+            нажимая клавишу выхода).
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>dragenter</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Перетаскиваемый элемент или выделенный текст попадает в допустимую
+            цель перетаскивания.
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>dragstart</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Пользователь начинает перетаскивать элемент или выделенный текст.
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>dragleave</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Перетаскиваемый элемент или выделенный текст оставляет допустимую
+            цель перетаскивания.
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>dragover</h3></div>
+        <div class="col-sm-7">
+          <p>
+            Выбранный элемент или текст перетаскивается над допустимой целью
+            перетаскивания. (Срабатывает непрерывно каждые 350 мс).
+          </p>
+        </div>
+        <div class="col-sm-5"><h3>drop</h3></div>
+        <div class="col-sm-7">
+          <p>Элемент перетаскивается на допустимую цель перетаскивания.</p>
+        </div>
+      </div>
+    </div>
+    <div id="back-top"><a href="#"></a></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/page_dom.js"></script>
+  </body>
+</html>

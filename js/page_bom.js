@@ -1,0 +1,1 @@
+function bomAlert(){alert("Hello World!")}function bomPrompt(){person=prompt("What's you name?"),alert("Hello, "+person)}function bomConfirm(){person=prompt("What's you name?"),confirm("Your name is "+person+" ?")?alert("Hello,"+person):alert("Sorry")}
