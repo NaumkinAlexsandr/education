@@ -1,2 +1,2 @@
 /*! For license information please see index.js.LICENSE.txt */
-(self.webpackChunkweb=self.webpackChunkweb||[]).push([["index"],{"./src/js/script.js":()=>{$((function(){$('a[href^="#"]').click((function(){var s=$(this).attr("href");return $("html, body").animate({scrollTop:$(s).offset().top-140},1e3),!1}))}))}},s=>{var e;e="./src/js/script.js",s(s.s=e)}]);
+(self.webpackChunkweb=self.webpackChunkweb||[]).push([["index"],{"./src/js/script.js":()=>{$((function(){$('a[href^="#"]').click((function(){var s=$(this).attr("href");return $(window).width()<400?($("html, body").animate({scrollTop:$(s).offset().top-150},1e3),!1):($("html, body").animate({scrollTop:$(s).offset().top-110},1e3),!1)}))}))}},s=>{var t;t="./src/js/script.js",s(s.s=t)}]);
