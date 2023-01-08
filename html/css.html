@@ -100,12 +100,17 @@
           </div>
           <form class="form-inline row">
             <input
+              id="text-to-find"
               class="form-control mr-sm-2"
               type="search"
               placeholder="Поиск..."
               aria-label="Search"
             />
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+            <button
+              class="btn btn-outline-primary my-2 my-sm-0"
+              type="submit"
+              onclick="javascript: FindOnPage('text-to-find'); return false;"
+            >
               Поиск
             </button>
           </form>
@@ -2894,5 +2899,6 @@
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/page_css.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
   </body>
 </html>
